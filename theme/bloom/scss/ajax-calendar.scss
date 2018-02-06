@@ -1,0 +1,415 @@
+
+/*
+	READ NE:
+
+	Cherry-picked from calendar.scss - kept just in case something isn't copied across
+
+	To do lists are for future reference
+
+	DO NOT ADD word-wrap: break-word;
+	for the production version because it'll break up real words
+	it's only for testing Silvia's long title
+*/
+
+.ajax-maincalendar{
+	.buttons{
+		@include media-breakpoint-up(xs){
+			float: right;
+		}
+	}
+	//@include border-radius($border-radius);
+	margin-bottom: 1.25rem;
+	// h2.header{
+	// 	margin-bottom: 1rem;
+	// }
+	.controls{
+		clear:both;
+		.calendar-controls{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-content: stretch;
+			.arrow_link{
+				position: relative;
+				display: flex;
+				flex: 1;
+				flex-direction: row;
+				align-items: center!important;
+				background-color: $blocks-gray;
+				text-align: center;
+				color: $brand-secondary;
+				@include border-top-radius($border-radius);
+				@include transition(background-color .3s ease);
+				&:hover {
+					text-decoration: none;
+					background-color: darken($blocks-gray, 5%);
+				}
+				&:active,
+				&:focus{
+					text-decoration: none;
+				}
+				.arrow{
+					flex:1;
+					visibility: hidden;
+					@include media-breakpoint-down(xs) {
+						margin-top: 10px;
+					}
+				}
+				.arrow_text{
+					flex:3;
+					@include media-breakpoint-down(xs) {
+						display: none;
+					}					
+				}
+				&.previous{
+					.arrow{
+						&:before{
+							content: $fa-var-chevron-left;
+							font-family:FontAwesome;
+							visibility: visible;
+						}						
+					}
+				}
+				&.next{
+					.arrow{
+						&:after{
+							content: $fa-var-chevron-right;
+							font-family:FontAwesome;
+							visibility: visible;
+						}
+					}
+				}
+			}
+			.current{
+				background-color: $brand-secondary;
+				@include border-top-radius($border-radius);
+				padding: 1.25rem;
+				flex: 3;
+				margin-bottom: 0;
+				font-size: $font-size-lg;
+				color: $btn-text-color;
+				@include media-breakpoint-down(xs){
+					flex: 2;
+				}
+			}
+		}
+	}
+
+	//table
+	.ajaxcalendar{
+		background-color: $body-bg;
+		display: flex;
+		flex-direction: column;
+		a{
+			color: $brand-secondary;
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+		}
+		ul{
+			padding-left: 0;
+			margin:0;
+			font-weight: 400;
+			line-height: $font-size-base;
+			&.event-detail li{
+				border: $border-width solid transparent;
+				border-left: none;
+				background: transparent;
+				@include border-right-radius($border-radius);
+				@include transition(all .25s ease-out);
+				&:hover, &:focus{
+					background-color: $body-bg;
+					border-color: darken($blocks-blue, 10%);
+					a{
+						white-space: normal;
+						word-wrap: break-word;
+					}
+				}
+				a{
+					display: block;
+					padding: 0.5rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					width: 100%;
+				}
+				@include media-breakpoint-up(sm){
+					&.events-underway{
+						border-left: 5px solid darken($blocks-blue, 15%);
+						a{
+							color: $brand-secondary;
+						}
+					}
+					&.calendar_event_global{
+						border-left: 5px solid $event-type-global;
+					}
+					&.calendar_event_course{
+						border-left: 5px solid $event-type-course;
+					}
+					&.calendar_event_group{
+						border-left: 5px solid $event-type-group;
+					}
+					&.calendar_event_user{
+						border-left: 5px solid $event-type-user;
+					}
+				}
+				@include media-breakpoint-down(xs){
+					overflow: hidden;
+					height: 13px;
+					line-height: 1.5;
+					//border: none;
+					padding: 0;
+					@include border-radius(0);
+					&.calendar_event_global{
+						background-color: $event-type-global;
+					}
+					&.calendar_event_course{
+						background-color: $event-type-course;
+					}
+					&.calendar_event_user{
+						background-color: $event-type-user;
+					}
+					&.calendar_event_group{
+						background-color: $event-type-group;
+					}
+					&.events-underway{
+						background-color: darken($blocks-blue, 15%);
+					}
+					a{
+						height: 100%;
+					}
+				}
+			}
+		}
+		thead, tbody{
+			display: flex;
+			flex-direction: column;
+			tr{
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 4px;
+				justify-content: space-between;
+				padding: 6px;
+				td, th{
+					display: flex;
+					flex: 1;
+					flex-direction: column;
+				}
+			}
+		}
+		thead{
+			tr{
+				background: $blocks-gray;
+				border-top: 3px solid $brand-secondary;
+				margin-bottom: 8px;
+				@include border-bottom-radius($border-radius);
+				th{
+					vertical-align: top;
+					text-align: center;
+					padding: 1.25rem 0;
+					border: none;
+					text-transform: uppercase;
+					color: $brand-secondary;
+				}
+			}
+		}
+		tbody{
+			tr{
+				background-color: $blocks-blue;
+				@include border-radius($border-radius);
+				td{
+					min-height: 40px;
+					position: relative;
+					border: none;
+					padding: 0;
+					overflow: hidden;
+					padding-bottom: 0.25rem;
+					@include border-radius($border-radius);
+					&:not(:last-child){
+						border-right: 3px solid $body-bg;
+					}
+					.day{
+						text-align: center;
+						font-size: $font-size-lg;
+						> a{
+							display: block;
+						}
+					}
+					&.has-event{
+						.day{
+							font-weight: 900;
+						}
+					}
+					&.weekend.day, &.dayblank{
+						color: lighten($brand-secondary, 35%);
+						> a{
+							color: lighten($brand-secondary, 35%);
+						}
+					}
+					&.today{
+						background-color: darken($blocks-blue, 5%);
+					}
+					&:not(.dayblank){
+						@include transition(background-color .25s ease-out);
+						@include media-breakpoint-up(sm){
+							&:hover{
+						  	background-color: darken($blocks-blue, 5%);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//for loader and fade in/out
+	.ajaxcalendar td{
+		.event-detail{
+			opacity: 1;
+			@include transition(opacity .25s ease-out);
+		}
+		&.loader{
+			.day,
+			.event-detail{
+				opacity:0;
+			}
+			&:before{
+				margin-left: -15px;//half of font-size
+				top: 0;
+			}
+		}
+	}
+
+
+	//detail box that shows up below the calendar when a day is clicked
+	#event_detail_box{
+		margin-top:4rem;
+		h2{
+			color: $brand-secondary;
+		}
+		.event{
+			//opacity: 0;
+
+			-webkit-animation: 1s ease 0s normal forwards 1 fadein;
+			animation: 1s ease 0s normal forwards 1 fadein;
+		}
+		.btn.backto-calendar{
+			&.move{
+				position:fixed;
+				bottom:0;
+			}
+		}
+	}
+	@keyframes fadein{
+		0% { opacity:0; }
+		100% { opacity:1; }
+	}
+	@-webkit-keyframes fadein{
+		0% { opacity:0; }
+		100% { opacity:1; }
+	}
+
+
+	//detail box under the calendar and detail page
+	.eventlist{
+		.event{
+			padding: 2rem 0;
+			border: none;
+			.card-header{
+				background: darken($blocks-blue, 5%);
+				padding: 1.25rem;
+			}
+			.icon{
+				width: 32px;
+				height: 32px;
+				margin-right: 1rem;
+				padding: 0;
+				float: left;
+			}
+			.name{
+				margin-bottom: 1.25rem;
+			}
+			.referer{
+				margin-bottom: 1.25rem;
+				line-height: 32px;
+			}
+			.course, .date{
+				margin-bottom: 0.8rem;
+			}
+			.description{
+				background: #fff;
+				margin-bottom: 1.25rem;
+				padding: 1.25rem;
+				border: $border-width solid darken($blocks-blue, 5%);
+				border-left: 5px solid $event-type-course;
+				border-bottom-right-radius: $border-radius;
+				p{
+					margin-bottom: 0;
+				}
+				&.calendar_event_global{
+					border-left: 5px solid $event-type-global;
+				}
+				&.calendar_event_course{
+					border-left: 5px solid $event-type-course;
+				}
+				&.calendar_event_group{
+					border-left: 5px solid $event-type-group;
+				}
+				&.calendar_event_user{
+					border-left: 5px solid $event-type-user;
+				}
+			}
+		}
+		.commands{
+			//to do: standardise the styles by core image replace
+			a{
+				margin-right: 3px;
+				display: inline-block;
+				background: $brand-secondary;
+				@include border-radius($border-radius);
+				@include transition(background .25s ease-out);
+				&:hover{
+					background: darken($brand-secondary, 5%);
+				}
+				&:last-of-type{
+					margin-right: 0;
+				}
+				&:before{
+					font-family: bloom;
+					color: $btn-text-color;
+					display: inline-block;
+					width: 24px;
+					line-height: 24px;
+					text-align: center;
+				}
+				&:nth-of-type(1){
+					&:before{
+						content: $setting; // replacing "edit event" icon
+					}
+				}
+				&:nth-of-type(2){
+					&:before{
+						content: $cross; // replacing "delete event" icon
+					}
+				}
+			}
+			img{
+				display: none;
+			}
+		}
+	}
+	.bottom{//it's in the view.php and couldn't remove it
+		display:none;
+	}
+}
+
+.block_export{
+	.singlebutton{
+		display: block;
+		margin: 0;
+	}
+	.ical-link{
+		@extend .btn;
+		@extend .btn-primary;
+	}
+}

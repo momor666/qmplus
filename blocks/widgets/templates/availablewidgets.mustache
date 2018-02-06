@@ -1,0 +1,19 @@
+{{!
+  Used for rendering the content of the 'Available widgets' tab of the block.
+  For details of the data expected, see the 'available' section of the main.mustache file
+}}
+<div class="widgets-availableholder row">
+    <div class="widgets-maxwarning">{{#str}}maxwarning, block_widgets{{/str}}</div>
+    {{#availablewidgets}}
+        <div class="col-12 col-md-6 mb-1">
+            <a class="widgets-available {{#inuse}}inuse{{/inuse}}" data-type="{{type}}" href="#">
+                {{title}}
+            </a>
+        </div>
+    {{/availablewidgets}}
+    {{^availablewidgets}}
+        <div class="nowidgets">
+            {{#str}}nowidgetsavailable, block_widgets{{/str}}
+        </div>
+    {{/availablewidgets}}
+</div>

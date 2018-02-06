@@ -1,0 +1,9 @@
+div.editor_atto_content blockquote {
+    border: 1px dashed #eee;
+    width: auto !important;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 10px 30px;
+}

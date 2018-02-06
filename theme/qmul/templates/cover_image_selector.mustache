@@ -1,0 +1,11 @@
+<div id="courseimagecontrol">
+    <label class="btn btn-sm btn-file btn-secondary state-visible" for="coverfiles">
+    	<span class="glyphicon glyphicon-camera"></span>
+    	<span>{{#str}}changecourseimage, theme_qmul{{/str}}</span>
+    	<input id="coverfiles" name="coverfiles[]" type="file" accept="{{accepttypes}}"/>
+    </label>
+    <div id="changecourseimageconfirmation">
+    	<button class="btn btn-sm btn-success ok">{{#str}}save, admin{{/str}}</button>
+    	<button class="btn btn-sm btn-danger cancel">{{#str}}cancel, moodle{{/str}}</button>
+    </div>
+</div>

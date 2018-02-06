@@ -1,0 +1,12 @@
+// Strip down core bootstrap for editor.
+
+// Core variables and mixins.
+@import "bootstrap/bootstrap"; // Modify this for custom colors, font-sizes, etc.
+@import "variables";
+@import "mixins";
+@import "moodle/glyphicons";
+
+// Moodle override.
+@import "synergy"; // The final override.
+@import "variables"; // The final override.
+@import "moodle/editor"; // The final override.

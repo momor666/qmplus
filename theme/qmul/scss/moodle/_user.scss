@@ -1,0 +1,245 @@
+.user-box {
+    margin: 8px;
+    width: 115px;
+    height: 160px;
+    text-align: center;
+    float: left;
+    clear: none;
+}
+
+.ajax-contact-button {
+    box-sizing: border-box;
+    position: relative;
+    &.loading {
+        .loading-icon {
+            display: block;
+        }
+    }
+    .loading-icon {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        .icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.userlist {
+    #showall {
+        margin: 10px 0;
+    }
+    table {
+        &#participants {
+            th,
+            tr {
+                padding: 4px 0.75rem;
+            }
+        }
+        &.controls {
+            tr {
+                &.lastrow {
+                    &.right,
+                    &.left {
+                        padding: 0;
+                    }
+                }
+            }
+            td {
+                @include media-breakpoint-down(md) {
+                    display: table-row;
+                    border: none;
+                }
+                &.right,
+                &.left {
+                    padding: 4px;
+                }
+            }
+        }
+    }
+    .buttons {
+        label {
+            padding: 0 3px;
+        }
+    }
+}
+
+.userinfobox {
+    width: 100%;
+    padding: 10px;
+    .left,
+    .side {
+        width: 100px;
+        vertical-align: top;
+    }
+    .content {
+        vertical-align: top;
+    }
+    .list td {
+        padding: 3px;
+    }
+    .links {
+        width: 100px;
+        padding: 5px;
+        vertical-align: bottom;
+        input[type=checkbox] {
+            margin-top: 10px;
+        }
+        a {
+            display: block;
+        }
+    }
+    td.badge {
+        text-align: right;
+        white-space: nowrap;
+        vertical-align: top;
+        font-weight: bold;
+    }
+}
+
+.groupinfobox {
+    @include make-well;
+    .left {
+        padding: 10px;
+        width: 100px;
+        vertical-align: top;
+    }
+}
+
+#groupeditform {
+    .groups,
+    .members {
+        min-width: 175px;
+        width: 49%;
+        float: left;
+        text-align: left;
+        select {
+            min-width: 175px;
+            max-width: 90%;
+            padding: 0;
+            height: initial;
+            option {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}
+
+.course-participation #showall {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#user-policy {
+    #policyframe {
+        width: 100%;
+        height: 100%;
+    }
+    .noticebox {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 250px;
+    }
+}
+
+#chooseuser {
+    h3 {
+        margin: 0 0 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .125);
+        label {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.userselector {
+    max-width: 260px;
+    > div {
+        margin-top: 1rem;
+        label {
+            margin-right: 0.5rem;
+        }
+        #userselector_options_inner {
+            .form-check {
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+                line-height: 1.1;
+                .form-check-input {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+    select.form-control {
+        min-width: 100%;
+        width: auto;
+        padding: 1rem;
+        margin: 0;
+        background-image: none;
+    }
+}
+
+
+/** user full profile */
+
+#page-user-profile .messagebox {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/** user course profile */
+
+#page-course-view-weeks .messagebox {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@include media-breakpoint-down(sm) {
+    .userlist table.controls td,
+    .userlist table.controls td.right {
+        display: block;
+        text-align: left;
+    }
+}
+
+.path-user {
+    .userlist table.controls td.right {
+        padding: .75rem;
+    }
+    .buttons {
+        .btn-group {
+            display: block;
+            [type='button'] {
+                display: inline-block;
+            }
+        }
+        [type='button'] {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.profileeditor {
+    .singleselect {
+        margin-bottom: 0;
+    }
+    .singlebutton {
+        display: inline-block;
+        margin-left: 3px;
+        margin-top: 5px;
+    }
+}

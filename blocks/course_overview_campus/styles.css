@@ -1,0 +1,62 @@
+/* Positioning of icons */
+.block_course_overview_campus .hidecourseicon {
+    float: right;
+    margin-left: 20px;
+}
+
+.block_course_overview_campus .hidenewsicon {
+    float: left;
+}
+
+
+/* Used for hiding courses and news in courselist */
+.coc-hidden {
+    display: none;
+}
+
+
+/* Hidden courses management */
+#coc-hiddencoursesmanagement-bottom,
+#coc-hiddencoursesmanagement-top {
+    font-size: 90%;
+    text-align: center; /* For some reason, the Bootstrap class text-center does not work here yet */
+}
+
+#coc-hiddencoursescount {
+    color: darkred;
+}
+
+
+/* Filter submit appearance */
+#coc-filtersubmit {
+    text-align: center; /* For some reason, the Bootstrap class justify-content-center does not work here yet */
+}
+
+.jsenabled #coc-filtersubmit {
+    display: none; /* Hide submit button when JS is enabled */
+}
+
+
+/* Course list appearance */
+#coc-courselist .coursebox h3 {
+    margin: 0; /* Remove standard margin from h3 heading*/
+    padding: 0 0 0 20px; /* Add left padding to place the course news icon there */
+}
+
+#coc-courselist .coc-metainfo {
+    font-size: 85%;
+    font-weight: normal; /* To prevent the text from being shown in bold as it's still a h3 heading*/
+    white-space: pre-wrap; /* To support multiple whitespaces before and after pipe */
+}
+
+
+/* Course news appearance */
+#coc-courselist .coc-coursenews {
+    border-left: 1px dashed lightgrey;
+    margin: 10px 0 0 30px;
+    padding: 0 0 0 10px;
+}
+
+#coc-courselist .coursebox .iconlarge {
+    float: left;
+}

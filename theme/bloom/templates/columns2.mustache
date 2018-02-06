@@ -1,0 +1,49 @@
+{{{ output.doctype }}}
+<html {{{ output.htmlattributes }}}>
+<head>
+    <title>{{ output.page_title }}</title>
+    <link rel="shortcut icon" href="{{{ output.get_favicon }}}" />
+    {{{ output.standard_head_html }}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body {{{ bodyattributes }}}>
+
+    <div id="page-wrapper" {{#hasblocks}}class="has-sidebar"{{/hasblocks}}>
+
+    {{{ output.standard_top_of_body_html }}}
+
+    {{>theme_bloom/header}}
+
+        <div id="page" class="container-fluid">
+
+        {{{ output.full_header }}}
+
+        <div id="page-content">
+            {{#hasblocks}}
+                <div id="region-main-box" class="col-lg-8">
+            {{/hasblocks}}
+            {{^hasblocks}}
+                <div id="region-main-box" class="col-xs-12">
+            {{/hasblocks}}
+                <section id="region-main">
+                    {{{ output.course_content_header }}}
+                    {{{ output.main_content }}}
+                    {{{ output.course_content_footer }}}
+                </section>
+            </div>
+            {{#hasblocks}}
+            {{{ sidepreblocks }}}
+            {{/hasblocks}}
+        </div>
+    </div>
+</div>
+
+{{>theme_bloom/footer}}
+
+
+</body>
+</html>
+{{#js}}
+    require(['theme_bloom/loader'], function() {});
+{{/js}}

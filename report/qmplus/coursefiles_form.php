@@ -1,0 +1,59 @@
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Form for generating mime type list
+ *
+ * @package    report_qmplus
+ * @copyright  2015 Queen Mary University of London
+ * @author     Panagiotis Paralakis  <p.paralakis@qmul.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+if (!defined('MOODLE_INTERNAL')) {
+    die('Direct access to this script is forbidden.');
+}
+
+require_once("$CFG->libdir/formslib.php");
+
+/**
+ * class for displaying mime type form.
+ *
+ * @copyright  2015 Queen Mary University of London
+ * @author     Panagiotis Paralakis  <p.paralakis@qmul.ac.uk>
+ */
+class report_qmplus_coursefiles_form extends moodleform {
+
+    /**
+     * Called to define this moodle form
+     *
+     * @return void
+     */
+    public function definition() {
+        $mform =& $this->_form;
+
+        $mform->addElement('html', "<h2>".get_string('coursefilestitle', 'report_qmplus')."</h2>");
+        $mform->addElement('html', "<p>".get_string('coursefilesreportsdesc', 'report_qmplus')."</p>");
+
+        $mform->addElement('select', 'course', get_string('course', 'report_qmplus'), report_qmplus_getCourse_list(),
+            array('id'=>'course'));
+        $mform->addElement('date_time_selector', 'reportfrom', get_string('from'), null, array('class' => 'id_reportfrom'));
+        $mform->addElement('date_time_selector', 'reportto', get_string('to'), null, array('class' => 'id_reportto'));
+
+        $mform->addElement('submit', 'submitbutton', get_string('getreport', 'report_qmplus'), array('id'=>'coursesubmit'));
+
+    }
+}

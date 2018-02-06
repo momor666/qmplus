@@ -1,0 +1,481 @@
+.btn {
+    box-shadow: none;
+    white-space: normal;
+    max-width: 100%;
+    font-weight: 600;
+    &:focus {
+        border: 1px solid transparent;
+    }
+    padding-right: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#fff'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-position: calc(100% - 0.5rem) center;
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+    &:hover,
+    &:hover:active,
+    &:focus,
+    &:focus:active,
+    &:active {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#fff'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    svg {
+        color: inherit;
+    }
+}
+
+.btn.btn-block {
+    text-align: left;
+}
+
+.btn-qmul {
+    @include button-variant(#fff,
+    $brand-qmul,
+    $brand-qmul);
+}
+
+.btn-secondary {
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#{$brand-primary}'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    &:hover,
+    &:hover:active,
+    &:focus,
+    &:focus:active,
+    &:active {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#{$brand-primary}'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .moodle-dialogue-bd & {
+        background-color: #fff;
+        border: 1px solid darken($gray-lighter, 5%);
+        &:hover,
+        &:hover:active,
+        &:focus,
+        &:focus:active,
+        &:active {
+            background-color: #fff;
+            border: 1px solid darken($gray-lighter, 5%);
+        }
+    }
+}
+
+.btn-default {
+    @extend .btn-secondary;
+}
+
+.btn[class*="btn-outline-"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#{$gray-dark}'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    &:hover,
+    &:hover:active,
+    &:focus,
+    &:focus:active,
+    &:active {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000)' fill='#fff'%3E%3Cg transform='translate(80.000000, 916.000000)'%3E%3Cg transform='translate(20.000000, 275.000000)'%3E%3Cpolygon points='0 5.25 1.25 4 7.5 10.25 1.25 16.5 0 15.25 4.9609375 10.25'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+}
+
+.btn-group .btn {
+    background-image: none;
+    &:hover,
+    &:hover:active,
+    &:focus,
+    &:focus:active,
+    &:active {
+        background-image: none;
+    }
+}
+
+.singlebutton form {
+    display: inline-block;
+    margin-right: .25rem;
+    margin-bottom: .25rem;
+    margin-left: .25rem;
+    .createnewquestion & {
+        margin-left: 0;
+    }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+}
+
+.btn.noarrow,
+.btn.noarrow:focus {
+    background-image: none;
+    padding-right: 1rem;
+    &.btn-sm {
+        padding-right: .5rem;
+    }
+}
+
+.input-group-btn {
+    margin-left: -.25rem;
+}
+
+.continuebutton {
+    text-align: center;
+}
+
+.advancedbutton {
+    margin-bottom: 1.5rem;
+}
+
+.addbloglink a,
+.comment-area .fd a {
+    @include make-button;
+    @include button-variant($btn-primary-color,
+    $btn-primary-bg,
+    $btn-primary-border);
+}
+
+input[type=submit] + input[type=submit] {
+    margin-left: .5rem;
+    &.actionbutton {
+        margin-left: .25rem;
+    }
+}
+
+.recipienttable td.actions {
+    text-align: center;
+}
+
+.helpbutton {
+    .mform &,
+    #adminsettings &,
+    .ftoggler &,
+    .form-check &,
+    .checkbox & {
+        position: absolute;
+        top: 50%;
+        margin-top: -21px;
+        .btn {
+            padding: .5rem;
+            .glyphicon {
+                border: 5px solid #fff;
+            }
+        }
+    }
+    .mform &,
+    #adminsettings & {
+        top: calc(.25rem - 3px);
+        left: -40px;
+        margin-top: 0;
+    }
+    .form-inline .form-check + & {
+        position: static;
+        margin-right: 1rem;
+        margin-left: -0.8rem;
+        a {
+            padding: 0;
+        }
+    }
+    .form-check &,
+    .checkbox &,
+    [data-fieldtype="selectgroups"] &,
+    [data-fieldtype="questioncategory"] & {
+        top: 50%;
+        margin-top: -21px;
+        left: -41px;
+    }
+    #id_courseformathdr .fitemtitle & {
+        top: 50%;
+        left: -40px;
+        margin-top: -24px;
+        .btn .glyphicon {
+            border: 5px solid #fff;
+        }
+    }
+    .ftoggler &,
+    .fitemtitle & {
+        position: absolute;
+        left: -16px;
+        margin-top: -17px;
+        top: 50%;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 24px;
+            left: 50%;
+            top: 50%;
+            background-color: $card-cap-bg;
+            margin-top: -12px;
+        }
+    }
+    .mform .form-checkbox + &,
+    #adminsettings .form-checkbox + & {
+        top: 50%;
+        margin-top: -21px;
+    }
+    .mform .border-0 &,
+    #adminsettings .border-0 &,
+    div[role="main"] > .mform > .form-group & {
+        top: 50%;
+        left: -21px;
+        margin-top: -21px;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 24px;
+            left: 50%;
+            top: 50%;
+            background-color: $card-cap-bg;
+            margin-top: -12px;
+        }
+        .btn .glyphicon {
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+    #page-mod-quiz-mod #id_reviewoptionshdr .felement .fitem &,
+    .completionprogress &,
+    [data-fieldtype="group"] .form-check &,
+    #page-admin-upgradesettings .border-0 &,
+    .mform table &,
+    #id_gradeheader & {
+        top: auto;
+        left: auto;
+        right: auto;
+        position: relative;
+        margin: 0;
+        &:before {
+            display: none;
+        }
+        .btn {
+            padding: 0;
+            line-height: 100%;
+            border: none;
+            .glyphicon {
+                border: none;
+            }
+        }
+    }
+    #id_gradeheader & {
+        float: right;
+    }
+    [data-fieldtype="group"] .form-check & {
+        margin: 0 .5rem 0 .25rem;
+    }
+    h2 & {
+        display: inline-block;
+        vertical-align: text-top;
+        line-height: 100%;
+        margin-right: .25rem;
+        float: left;
+        @include media-breakpoint-up(sm) {
+            margin-left: .25rem;
+            margin-right: auto;
+            float: none;
+        }
+        .btn {
+            padding: 0;
+            vertical-align: top;
+        }
+    }
+    .forumsearch & {
+        .btn {
+            padding: 0;
+            margin: 0 .25rem;
+            background-color: transparent;
+            .glyphicon {
+                background-color: $brand-primary;
+                color: #fff;
+            }
+        }
+    }
+    .btn {
+        outline: 0;
+        line-height: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0 .5rem;
+        &-link {
+            &:hover,
+            &:focus {
+                color: darken($brand-primary, 20%);
+            }
+        }
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+        .glyphicon {
+            top: 0;
+            min-width: 100%;
+            border-radius: 50%;
+            background-color: #fff;
+            .ftoggler &,
+            .fitemtitle &,
+            #page-mod-quiz-mod #id_reviewoptionshdr .felement .fitem & {
+                border: none;
+            }
+        }
+    }
+    [data-content=''] {
+        display: none;
+    }
+}
+
+.filemanager-toolbar {
+    .btn {
+        padding: .5rem .75rem;
+        background: $gray-lightest;
+        &:hover {
+            background: #fff;
+        }
+        img {
+            margin: 0;
+        }
+    }
+}
+
+.navbar-toggler {
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+}
+
+button:not(.btn):not(.navbar-toggler):not(.close):not(.blank):not([class^="atto_"]):not([class^="vjs-"]),
+[type="button"]:not(.btn):not(.navbar-toggler):not(.close):not(.blank):not([class^="atto_"]):not([class^="vjs-"]),
+[type="reset"]:not(.btn),
+[type="submit"]:not(.btn) {
+    @include make-button;
+}
+
+[type="submit"]:not(.btn) {
+    @include make-button;
+    @include button-variant($btn-primary-color,
+    $btn-primary-bg,
+    $btn-primary-border);
+    white-space: normal;
+}
+
+.cancelinstallone {
+    margin-left: 1rem;
+}
+
+.singlebutton {
+    .buttons & {
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+.atto-fullscreen .editor_atto {
+    z-index: 10000;
+}
+
+.editor_atto_wrap .editor_atto .editor_atto_toolbar button {
+    padding: 4px 9px;
+    border-radius: 0;
+    border: none;
+    line-height: 1;
+}
+
+.editbutton {
+    button.blank {
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        color: $gray-dark;
+        &:hover,
+        &:focus {
+            padding: 0;
+            margin: 0;
+            background: none;
+            border: none;
+            color: $gray-dark;
+            outline: none;
+            box-shadow: none;
+        }
+        .glyphicon {
+            top: -5px;
+        }
+        .switch {
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            margin: 0;
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 34px;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    height: 13px;
+                    width: 13px;
+                    bottom: 4px;
+                    background-color: white;
+                    border-radius: 50%;
+                }
+            }
+            span.label {
+                position: absolute;
+                background: none;
+                padding: 0;
+                color: #fff;
+                top: 4px;
+                font-size: 10px;
+                font-weight: normal;
+            }
+        }
+    }
+    &.off {
+        .slider {
+            background-color: $brand-danger;
+            &:before {
+                left: auto;
+                right: 4px;
+            }
+        }
+        span.label {
+            left: 7px;
+        }
+    }
+    &.on {
+        .slider {
+            background-color: $brand-success;
+            &:before {
+                left: 4px;
+                right: auto;
+            }
+        }
+        span.label {
+            right: 7px;
+        }
+    }
+}
+
+.confirmation-buttons {
+    input[type=button] {
+        @include make-button();
+        @include button-variant($btn-secondary-color,
+            $btn-secondary-bg,
+            $btn-secondary-border);
+    }
+}

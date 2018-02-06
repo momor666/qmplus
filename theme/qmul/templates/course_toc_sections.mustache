@@ -1,0 +1,23 @@
+<ol id="sections" class="sections {{listlarge}}" start="0">
+    {{#chapters}}
+    <li{{#iscurrent}} class="current"{{/iscurrent}}>
+        {{#outputlink}}
+            <a class="sections-title" href="{{url}}">{{{title}}}</a>
+        {{/outputlink}}
+        {{^outputlink}}
+            <span class="sections-title">{{title}}</span>
+        {{/outputlink}}
+        {{#iscurrent}}
+            <span class="badge badge-info">
+                <small>{{#str}}current, theme_qmul{{/str}}</small>
+            </span>
+        {{/iscurrent}}
+        {{> theme_qmul/course_toc_progress }}
+        {{#availabilitystatus}}
+        <span class="badge {{availabilityclass}}">
+            <small class="published-status">{{availabilitystatus}}</small>
+        </span>
+        {{/availabilitystatus}}
+    </li>
+    {{/chapters}}
+</ol>

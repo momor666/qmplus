@@ -1,0 +1,101 @@
+@font-face {
+	font-family: 'Lato';
+	src: url([[font:theme|Lato-Regular.ttf]]) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url([[font:theme|Lato-Bold.ttf]]) format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url([[font:theme|Lato-Italic.ttf]]) format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url([[font:theme|Lato-Light.ttf]]) format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'bloom';
+    src: url([[font:theme|bloom_icon_font-webfont.woff2]]) format('woff2'),
+         url([[font:theme|bloom_icon_font-webfont.woff]]) format('woff'),
+         url([[font:theme|bloom_icon_font-webfont.ttf]]) format('truetype'),
+         url([[font:theme|bloom_icon_font-webfont.svg]]) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// bloom icon font variables
+$activity: "1";
+$grade: "2";
+$deadline: "3";
+$feedback: "4";
+$location: "5";
+$search: "6";
+$submit: "7";
+$summary: "8";
+$time: "9";
+$setting: "0";
+$cross: "a";
+$logout: "b";
+$messages: "c";
+$notifications: "d";
+$profile: "e";
+$home: "f";
+$drag: "g";
+$refresh: "h";
+$undo: "i";
+$redo: "j";
+$lock: "k";
+$expand:"l";
+$collapse: "m";
+$merge: "n";
+$show: "o";
+$hide: "p";
+$pinned: "q";
+$unpinned: "r";
+$subsection: "s";
+$add-file: "t";
+$upload: "u";
+$download: "v";
+$help: "w";
+$help-inverse: "x";
+$groups: "y";
+$groups-separate: "z";
+$course: "A";
+$assignment: "B";
+$add-folder: "C";
+$tick: "D";
+$menu: "E";
+
+/***LOADER TEMP **/
+.block_calendar_agenda,
+.block_info_panel #info_panel_tabs,
+.ajaxcalendar td{
+	&.loader:before{
+		content: $fa-var-rotate-right;
+		font-family:fontawesome;
+		color:$brand-secondary;
+		left:50%;
+		font-size:30px;
+		position: absolute;
+		-webkit-animation:spin 4s linear infinite;
+	    -moz-animation:spin 4s linear infinite;
+	    animation:spin 4s linear infinite;
+	}
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+

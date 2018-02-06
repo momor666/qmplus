@@ -1,0 +1,10 @@
+{
+    "name": "moodle-gradereport_qmul_sits-tree",
+    "builds": {
+        "moodle-gradereport_qmul_sits-tree": {
+            "jsfiles": [
+                "tree.js"
+            ]
+        }
+    }
+}

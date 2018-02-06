@@ -1,0 +1,43 @@
+{{!
+  Used for rendering the content of the widgets block, including the tabs across the top.
+
+  Example content:
+  {
+    widgets: [
+       id: 'widget-4-15-3'
+       classes: 'widgets-widget widgets-helloworld',
+       items: [
+           'Some content <strong>optionally containing HTML</strong>',
+           'Some more content'
+       ]
+       footer: '<a href="...">link to page</a>'
+    ],
+    availablewidgets: [
+       type: 'helloworld',
+       title: 'Hello world',
+       inuse: true
+    ],
+  }
+}}
+<div class="widgets-main">
+    <ul class="nav nav-tabs mb-1 widgettabs" role="tablist">
+        <li class="nav-item tab">
+            <a class="nav-link link mywidgetslink {{#haswidgets}}active{{/haswidgets}}" data-toggle="tab" href="#widgets-mywidgets">
+                {{#str}}mywidgets, block_widgets{{/str}}
+            </a>
+        </li>
+        <li class="nav-item tab">
+            <a class="nav-link link {{^haswidgets}}active{{/haswidgets}}" data-toggle="tab" href="#widgets-available">
+                {{#str}}availablewidgets, block_widgets{{/str}}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane mywidgets {{#haswidgets}}active{{/haswidgets}}" id="widgets-mywidgets" role="tabpanel">
+            {{>block_widgets/mywidgets}}
+        </div>
+        <div class="tab-pane allwidgets {{^haswidgets}}active{{/haswidgets}}" id="widgets-available" role="tabpanel">
+            {{>block_widgets/availablewidgets}}
+        </div>
+    </div>
+</div>

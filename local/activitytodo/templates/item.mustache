@@ -1,0 +1,33 @@
+{{!
+  This is an item in the todolist report.
+}}
+<div class="card col-12 activitytodo-item {{#isoverdue}}activitytodo-overdue alert-danger{{/isoverdue}}" data-cmid="{{cmid}}">
+    <div class="row">
+        <div class="col-6 pl-2">
+            <div class="activitytodo-activityname">
+                <h6>{{{activityname}}}</h6>
+            </div>
+            <div class="activitytodo-coursename">
+                <small class="text-muted">{{{coursename}}}</small>
+            </div>
+        </div>
+        <div class="col-6 text-right">
+            <div class="activitytodo-duedate">
+                {{#str}}due, local_activitytodo{{/str}}
+                <span class="activitytodo-showduedate" data-format="{{dateformat}}">{{duedate}}</span>
+                {{^lockduedate}}
+                    {{> local_activitytodo/duedateicon }}
+                {{/lockduedate}}
+            </div>
+            <span class="activitytodo-note">
+                {{> local_activitytodo/noteicon }}
+                <span class="activitytodo-notecontent">{{notecontent}}</span>
+            </span>
+            <span class="activitytodo-actions">
+                <a href="#" class="activitytodo-remove">
+                    {{#pix}}t/delete, core, {{#str}}removetodo, local_activitytodo{{/str}}{{/pix}}
+                </a>
+            </span>
+        </div>
+    </div>
+</div>

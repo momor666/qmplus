@@ -1,0 +1,7 @@
+{
+    "moodle-atto_qmulcite-button": {
+        "requires": [
+            "moodle-editor_atto-plugin"
+        ]
+    }
+}

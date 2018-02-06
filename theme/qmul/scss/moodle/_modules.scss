@@ -1,0 +1,1551 @@
+/* modules.less */
+
+// The home for small tweaks to modules that don't require
+// changes drastic enough to pull in the full module css
+// and replace it completely
+// Plus some misc. odds and ends
+select {
+    width: auto;
+}
+
+#pictures {
+    max-width: 100%;
+}
+
+// Forum
+.path-mod-forum .forumheaderlist,
+.path-mod-forum .forumheaderlist td {
+    border: none;
+    .picture {
+        min-width: calc(35px + 1.5rem);
+    }
+}
+
+.path-mod-forum td.discussionsubscription {
+    > a > img {
+        width: 20px;
+        height: 15px;
+    }
+}
+
+.path-mod-forum div.discussionsubscription {
+    a.discussiontoggle {
+        @include make-badge;
+        @extend .badge-info;
+        > img {
+            width: 20px;
+            display: none;
+        }
+        @extend .glyphicon-envelope;
+        &:before {
+            @include make-glyphicon;
+        }
+    }
+}
+
+.section .content td {
+    white-space: normal !important;
+}
+
+.path-mod-forum .forumheaderlist {
+    margin-top: 0;
+    thead .header {
+        white-space: normal;
+        vertical-align: top;
+    }
+    thead .header.lastpost {
+        text-align: right;
+    }
+    td.picture {
+        box-sizing: content-box;
+    }
+    .discussion {
+        .author,
+        .replies,
+        .lastpost {
+            white-space: normal;
+        }
+        .replies {
+            text-align: center;
+        }
+        .topic,
+        .topic.starter,
+        .picture,
+        .author,
+        .replies,
+        .lastpost {
+            vertical-align: middle;
+        }
+        .topic.pinned img {
+            padding: 0;
+        }
+    }
+}
+
+body.path-mod-feedback #region-main .mform.feedback_form .femptylabel .fitemtitle {
+    display: none;
+}
+
+.path-mod-feedback {
+    .feedback_description {
+        padding: 15px 0;
+    }
+    .complete-feedback {
+        a {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+    .feedback_bar_image {
+        height: 5px;
+    }
+    &#page-mod-feedback-view {
+        .feedbackinfo {
+            clear: left;
+        }
+    }
+    #feedback_complete_form .form-group.row.fitem.feedback_mode {
+        display: block;
+        border: none;
+        margin-bottom: 1rem;
+        .form-label-wrap {
+            display: none;
+        }
+        .form-inline {
+            padding: 0;
+            .static-form-control {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+    .mform.feedback_form {
+        .feedback_mode {
+            font-weight: bold;
+            margin-top: -50px;
+            padding: 10px;
+            .femptylabel .felement {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .fitem {
+            .fitemtitle {
+                padding-left: 0;
+                margin-bottom: 15px;
+                label {
+                    font-weight: bold;
+                }
+            }
+        }
+        #fgroup_id_buttonar {
+            .fitemtitle {
+                display: none;
+            }
+            br {
+                display: none;
+            }
+            .fgroup {
+                width: 100%;
+            }
+            input[type=submit] {
+                width: calc(50% - 20px);
+                margin-left: 0;
+                margin-right: 0;
+                &.form-submit {}
+                &:first-child {
+                    margin-right: 35px;
+                }
+            }
+        }
+    }
+}
+
+.path-mod-forum:target~.forumpost:before {
+    background: $brand-info;
+}
+
+#page-mod-forum-discuss .discussioncontrol.exporttoportfolio {
+    float: none;
+    margin-bottom: 0.5rem;
+}
+
+.pagelayout-frontpage .forumpost .row {
+    .options {
+        .commands {
+            margin-left: 0;
+            text-align: left;
+            flex: 0 0 50%;
+        }
+        .link {
+            text-align: right;
+        }
+        @include media-breakpoint-down(sm) {
+            display: block;
+            .commands, .link {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+}
+
+.forumpost {
+    padding: 0 0 15px 65px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid $gray-light;
+    zoom: 1;
+    #page-site-index & {
+        border-bottom: none;
+    }
+    .row.header {
+        margin-bottom: 3px;
+        text-align: left;
+        > .left {
+            width: 50px;
+            position: absolute;
+            left: -65px;
+            top: 7.5px;
+            > a {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 50%;
+                padding: 0;
+                .userpicture {
+                    margin: 0;
+                }
+            }
+        }
+        .topic {
+            margin-left: 0;
+            clear: both;
+            padding: 10px;
+            .subject {
+                @extend .h5;
+            }
+            .author a {
+                font-weight: bold;
+            }
+        }
+    }
+    .row.maincontent,
+    .row.side {
+        width: 100%;
+        float: none;
+        padding: 10px;
+        box-sizing: border-box;
+        .left {
+            position: absolute;
+            width: 85px;
+            left: -95px;
+            top: 100px;
+        }
+        .no-overflow {
+            clear: both;
+            width: calc(100% + 30px);
+        }
+    }
+    .subject {
+        @extend .h5;
+    }
+    .row {
+        .options {
+            margin-right: 0;
+            margin-left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            background-color: $gray-lightest;
+            border-radius: $border-radius;
+            padding: .25rem .25rem .25rem .75rem;
+            &:empty {
+                background: none;
+            }
+            .link {
+                text-align: left;
+                order: 1;
+                flex: 0 0 50%;
+            }
+            .commands {
+                display: inline-block;
+                margin-left: auto;
+                font-size: 0;
+                text-align: right;
+                a:not(.noicon) {
+                    body.ie &,
+                    body.gecko & {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background-position: 50%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        margin-left: 10px;
+                        &.reply {
+                            background-image: url([[pix:theme|forumicons/reply]]);
+                        }
+                        &.edit {
+                            background-image: url([[pix:theme|forumicons/edit]]);
+                        }
+                        &.delete {
+                            background-image: url([[pix:theme|forumicons/delete]]);
+                        }
+                        &.split {
+                            background-image: url([[pix:theme|forumicons/split]]);
+                        }
+                        &.parent {
+                            background-image: url([[pix:theme|forumicons/parent]]);
+                        }
+                        &.permalink {
+                            background-image: url([[pix:theme|forumicons/permalink]]);
+                        }
+                    }
+                    body:not(.ie):not(.gecko) & {
+                        width: 30px;
+                        height: 30px;
+                        display: inline-block;
+                        mask-position: 50%;
+                        mask-repeat: no-repeat;
+                        mask-size: 20px 20px;
+                        margin-left: 5px;
+                        background-color: $gray-light;
+                        &:hover {
+                            background-color: $brand-primary;
+                        }
+                        &.reply {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='22px' viewBox='0 0 30 22'%3E%3Cg%3E%3Cpath d='M29.0917969,9.93564192 C27.284707,6.25107424 22.4055469,4.40874236 14.4537305,4.40874236 L10.7064844,4.40874236 L10.7064844,0.897917031 C10.7064844,0.660048035 10.6004883,0.45431441 10.3886719,0.280668122 C10.1767383,0.106925764 9.92601562,0.0200305677 9.63591797,0.0200305677 C9.34576172,0.0200305677 9.09480469,0.106925764 8.88298828,0.280668122 L0.3178125,7.30231878 C0.105996094,7.47620524 0,7.68184279 0,7.91956769 C0,8.15724454 0.105996094,8.3628821 0.3178125,8.53667249 L8.88304688,15.5585153 C9.09509766,15.7320655 9.34605469,15.8192489 9.63597656,15.8192489 C9.92583984,15.8192489 10.1767383,15.7321135 10.3887305,15.5585153 C10.6006055,15.384917 10.706543,15.1791354 10.706543,14.9413624 L10.706543,11.4302969 L14.4537891,11.4302969 C15.5465039,11.4302969 16.5250195,11.4575808 17.3892773,11.5123406 C18.2534766,11.5672445 19.1126953,11.665524 19.9655273,11.8074192 C20.8188867,11.9491223 21.5606836,12.1432314 22.1908594,12.3903231 C22.820918,12.6374148 23.4092578,12.9550218 23.9558203,13.3434323 C24.5024414,13.7322271 24.9485742,14.1936507 25.2945117,14.7287118 C25.6399805,15.2636288 25.9105078,15.8964891 26.1058008,16.6279651 C26.3006836,17.3594891 26.3985938,18.1869869 26.3985938,19.1101703 C26.3985938,19.6129039 26.3705273,20.175393 26.3149219,20.7970611 C26.3149219,20.8516769 26.3010938,20.959179 26.2730273,21.1192795 C26.2453125,21.2793799 26.2313086,21.4003799 26.2313086,21.4825197 C26.2313086,21.6194672 26.2786523,21.7338384 26.3732813,21.8252969 C26.4683203,21.9166594 26.5994531,21.9622445 26.7666797,21.9622445 C26.9451563,21.9622445 27.1011328,21.8846681 27.2350781,21.729131 C27.3128906,21.6469432 27.3851367,21.54631 27.4524609,21.4273275 C27.5194336,21.3086332 27.5948438,21.1715415 27.6782813,21.0160524 C27.7621289,20.8605633 27.8206641,20.7512358 27.8539453,20.6871092 C29.2701563,18.0817904 29.9784375,16.020131 29.9784375,14.5023231 C29.9783203,12.6830961 29.6829492,11.1606288 29.0917969,9.93564192 L29.0917969,9.93564192 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                        }
+                        &.edit {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='23px' height='22px' viewBox='0 0 23 22'%3E%3Cg%3E%3Cpath d='M13.7294611,3.6788425 L18.2208843,8.17022391 L6.85185199,19.5392562 L2.36297533,15.0478748 L13.7294611,3.6788425 L13.7294611,3.6788425 Z M21.6290057,2.59562429 L19.6260038,0.592622391 C18.8519127,-0.181468691 17.5949488,-0.181468691 16.8182277,0.592622391 L14.8995522,2.51129791 L19.3909753,7.00272106 L21.6290057,4.7646907 C22.2293928,4.16426186 22.2293928,3.19601139 21.6290057,2.59562429 L21.6290057,2.59562429 Z M0.0125237192,21.3608729 C-0.0692144213,21.7287362 0.262914611,22.0583605 0.630819734,21.9688994 L5.63575712,20.7553928 L1.14688046,16.2640114 L0.0125237192,21.3608729 L0.0125237192,21.3608729 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                            &:hover {
+                                background-color: $brand-warning;
+                            }
+                        }
+                        &.delete {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14px' height='22px' viewBox='0 0 14 22'%3E%3Cg%3E%3Cpolygon points='0.951731092 21.9828067 10.1954286 21.9828067 11.1197983 7.88616807 0.0273613445 7.88616807'%3E%3C/polygon%3E%3Cpath d='M9.55248319,3.44031933 L10.1531849,1.78994958 L5.23539916,0 L4.6347437,1.65036975 L1.0132479,0.332264706 L0.0647983193,2.93810924 L12.2255294,7.36426891 L13.173979,4.75842437 L9.55248319,3.44031933 L9.55248319,3.44031933 Z M6.06409664,1.77714706 L8.3759916,2.61864706 L8.24953782,2.96607143 L5.93759664,2.12461765 L6.06409664,1.77714706 L6.06409664,1.77714706 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                            &:hover {
+                                background-color: $brand-danger;
+                            }
+                        }
+                        &.split {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='27px' height='22px' viewBox='0 0 27 22'%3E%3Cg%3E%3Cpath d='M26.5664865,5.14264865 L22.2491351,0.825297297 C21.914973,0.491135135 21.4107568,0.391837838 20.9743243,0.572 C20.5378919,0.752756757 20.2507027,1.17848649 20.2507027,1.65 L20.2507027,3.80956757 C17.3526486,4.37264865 14.8702162,6.20578378 13.4497297,8.70783784 C12.0298378,6.20578378 9.57654054,4.37264865 6.64994595,3.80956757 L6.64994595,1.65 C6.64994595,1.17848649 6.36632432,0.752756757 5.92989189,0.572 C5.49524324,0.391243243 4.994,0.491135135 4.65983784,0.825891892 L0.341891892,5.14324324 C-0.114162162,5.5992973 -0.114162162,6.33778378 0.341891892,6.79324324 L4.65983784,11.1117838 C4.994,11.4453514 5.49464865,11.5452432 5.93048649,11.3644865 C6.36691892,11.1837297 6.65054054,10.758 6.65054054,10.2864865 L6.65054054,8.66027027 C8.65908108,9.42789189 10.0647027,11.3656757 10.0647027,13.6292973 L10.0647027,19.9432973 C10.0647027,20.8964324 10.8364865,21.6676216 11.7884324,21.6676216 L12.1564865,21.6676216 L14.7501081,21.6676216 L15.1104324,21.6676216 C16.0635676,21.6676216 16.8347568,20.8958378 16.8347568,19.9432973 L16.8347568,13.6298919 C16.8347568,11.3656757 18.2695135,9.42789189 20.2489189,8.66086486 L20.2489189,10.2870811 C20.2489189,10.7591892 20.5349189,11.1843243 20.9725405,11.3650811 C21.4077838,11.5458378 21.9108108,11.4459459 22.244973,11.1123784 L26.5647027,6.79383784 C27.0225405,6.33778378 27.0225405,5.5992973 26.5664865,5.14264865 L26.5664865,5.14264865 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                        }
+                        &.parent {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='25px' height='22px' viewBox='0 0 25 22' %3E%3Cg%3E%3Cpath d='M21.5925926,15.4814815 L21.5925926,10.5925926 L12.6296296,10.5925926 L12.6296296,6.49040741 C14.2348148,6.28874074 15.4814815,4.91822222 15.4814815,3.25925926 C15.4814815,1.46218519 14.0192963,0 12.2222222,0 C10.4251481,0 8.96296296,1.46218519 8.96296296,3.25925926 C8.96296296,4.91822222 10.2096296,6.28874074 11.8148148,6.49040741 L11.8148148,10.5925926 L2.85185185,10.5925926 L2.85185185,15.4814815 L0,15.4814815 L0,22 L6.51851852,22 L6.51851852,15.4814815 L3.66666667,15.4814815 L3.66666667,11.4074074 L11.8148148,11.4074074 L11.8148148,15.4814815 L8.96296296,15.4814815 L8.96296296,22 L15.4814815,22 L15.4814815,15.4814815 L12.6296296,15.4814815 L12.6296296,11.4074074 L20.7777778,11.4074074 L20.7777778,15.4814815 L17.9259259,15.4814815 L17.9259259,22 L24.4444444,22 L24.4444444,15.4814815 L21.5925926,15.4814815 L21.5925926,15.4814815 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                        }
+                        &.permalink {
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='22px' height='22px' viewBox='0 0 22 22'%3E%3Cg%3E%3Cpath d='M20.8651588,13.4249099 L18.0613863,10.6214206 C17.3067768,9.86676395 16.3903305,9.48922318 15.3119528,9.48922318 C14.215588,9.48922318 13.2812961,9.88460944 12.5083691,10.675382 L11.3222103,9.48922318 C12.11303,8.71648498 12.5083691,7.77756652 12.5083691,6.67213734 C12.5083691,5.59380687 12.1355021,4.6818927 11.3895794,3.93592275 L8.61290558,1.14593562 C7.86707725,0.382167382 6.95053648,0.000141630901 5.86328326,0.000141630901 C4.78495279,0.000141630901 3.872897,0.373197425 3.12706867,1.11902575 L1.14565236,3.0868927 C0.38183691,3.83290987 0,4.74482403 0,5.82306009 C0,6.90139056 0.377493562,7.81807296 1.13219742,8.57282403 L3.93578112,11.3763133 C4.69067382,12.1311116 5.60721459,12.5085107 6.68554506,12.5085107 C7.78172103,12.5085107 8.71629614,12.1131717 9.48903433,11.3223047 L10.6751931,12.5085107 C9.8844206,13.2813906 9.48903433,14.2202618 9.48903433,15.3256438 C9.48903433,16.4040687 9.86190129,17.3157468 10.6077768,18.0618584 L13.3846867,20.8517039 C14.1306567,21.6154249 15.046867,21.9974979 16.1341202,21.9974979 C17.2125923,21.9974979 18.1242232,21.6246781 18.8703348,20.8787082 L20.8518927,18.9108884 C21.6156137,18.1647768 21.9977339,17.2529571 21.9977339,16.1746738 C21.9974979,15.096485 21.6200987,14.1800386 20.8651588,13.4249099 L20.8651588,13.4249099 Z M9.48922318,7.6564721 C9.46226609,7.62951502 9.37903433,7.54420601 9.23995279,7.40040343 C9.10077682,7.25660086 9.00413734,7.16000858 8.95027039,7.11053219 C8.89630901,7.061103 8.81090558,6.99373391 8.6941073,6.90818884 C8.57712017,6.82278541 8.4626824,6.76448069 8.35041631,6.73299142 C8.23805579,6.70154936 8.11445923,6.68587554 7.97962661,6.68587554 C7.62030901,6.68587554 7.31471674,6.8117382 7.06308584,7.06322747 C6.81145494,7.31471674 6.68578112,7.6202618 6.68578112,7.97976824 C6.68578112,8.11445923 6.70145494,8.23805579 6.732897,8.35041631 C6.76433906,8.46287124 6.8227382,8.57740343 6.90809442,8.69415451 C6.99349785,8.81095279 7.06091416,8.89635622 7.11029614,8.9503176 C7.15958369,9.00418455 7.25617597,9.10082403 7.39997854,9.24014163 C7.54378112,9.37941202 7.62909013,9.46245494 7.65604721,9.48945923 C7.38642918,9.76790558 7.06294421,9.90717597 6.68563948,9.90717597 C6.3172103,9.90717597 6.01161803,9.78593991 5.76909871,9.5434206 L2.96527897,6.7397897 C2.7137897,6.4881588 2.58797425,6.18261373 2.58797425,5.8231073 C2.58797425,5.47275966 2.71364807,5.17179399 2.96527897,4.92016309 L4.94674249,2.9521073 C5.20748498,2.70944635 5.5128412,2.58835193 5.86342489,2.58835193 C6.22274249,2.58835193 6.52828755,2.71407296 6.77996567,2.96570386 L9.55654506,5.75569099 C9.80817597,6.00732189 9.93384979,6.31281974 9.93384979,6.67223176 C9.933897,7.04948927 9.78565665,7.37755365 9.48922318,7.6564721 L9.48922318,7.6564721 Z M19.032691,17.0774764 L17.051133,19.045485 C16.7994077,19.2789399 16.4940515,19.395927 16.1344034,19.395927 C15.7657382,19.395927 15.4607124,19.2747854 15.2180515,19.0320773 L12.4414721,16.2419013 C12.189794,15.990176 12.0642618,15.6848197 12.0642618,15.3255494 C12.0642618,14.9481502 12.2124077,14.6201803 12.50903,14.3416395 C12.536176,14.3684077 12.6192189,14.4540472 12.7584893,14.5975193 C12.8977597,14.7413219 12.9943519,14.8379614 13.0483605,14.8873906 C13.1023219,14.9370086 13.1875837,15.0043777 13.3042403,15.0898283 C13.4212275,15.1753262 13.5355708,15.2337725 13.6480258,15.2651202 C13.7604807,15.2966094 13.8839356,15.3122833 14.0186738,15.3122833 C14.3783219,15.3122833 14.6836781,15.1864678 14.9354034,14.9348841 C15.1867511,14.6833476 15.3128026,14.3778026 15.3128026,14.0185322 C15.3128026,13.883794 15.2967983,13.7601974 15.2655923,13.6478841 C15.2339614,13.5354292 15.1757983,13.4208498 15.08997,13.3040987 C15.0044721,13.1874421 14.9374807,13.1018498 14.8878627,13.0478412 C14.8384335,12.9942103 14.741794,12.8975708 14.5980386,12.75797 C14.4542361,12.6187468 14.368927,12.5356567 14.3417811,12.5088884 C14.611588,12.2212833 14.9350258,12.0774807 15.3121416,12.0774807 C15.6717425,12.0774807 15.9770987,12.2032017 16.2284936,12.4548798 L19.0322189,15.2583219 C19.2839442,15.5100472 19.4096652,15.8157339 19.4096652,16.1750043 C19.4096652,16.5251159 19.2839442,16.8264592 19.032691,17.0774764 L19.032691,17.0774764 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                        }
+                    }
+                }
+                a.noicon {
+                    font-size: $font-size-base;
+                    display: inline-block;
+                    position: relative;
+                    top: 1.25rem;
+                    margin-top: -1rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+// Forum Icons - MS EDGE Fix
+@supports (-ms-ime-align:auto) {
+    body .forumpost .row .options .commands a {
+        background-color: transparent !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.reply {
+            background-image: url([[pix:theme|forumicons/reply]]);
+        }
+        &.edit {
+            background-image: url([[pix:theme|forumicons/edit]]);
+        }
+        &.delete {
+            background-image: url([[pix:theme|forumicons/delete]]);
+        }
+        &.split {
+            background-image: url([[pix:theme|forumicons/split]]);
+        }
+        &.parent {
+            background-image: url([[pix:theme|forumicons/parent]]);
+        }
+        &.permalink {
+            background-image: url([[pix:theme|forumicons/permalink]]);
+        }
+    }
+}
+
+// Override hardcoded forum modules styling
+.forumsearch input[type=text] {
+    margin-bottom: 0;
+}
+
+.forumsearch input[type=text],
+.forumsearch input[type="submit"] {
+    margin-top: 0;
+}
+
+.maincalendar .calendarmonth td,
+.maincalendar .calendarmonth th {
+    border: 1px dotted $table-border-color;
+}
+
+.path-grade-report-grader h1 {
+    text-align: inherit;
+}
+
+#page-mod-chat-gui_basic input#message {
+    max-width: 100%;
+}
+
+#page-mod-data-view {
+    #singleimage {
+        width: auto;
+    }
+}
+
+#page-mod-tab-view .row {
+    background: transparent;
+}
+
+.path-mod-data table.mod-data-default-template {
+    th,
+    td {
+        padding: 5px;
+    }
+}
+
+.template_heading {
+    margin-top: 10px;
+}
+
+.breadcrumb-button {
+    float: right;
+    padding-top: 0.75rem;
+    a {
+        @include make-button;
+        @include button-variant($btn-secondary-color,
+        $btn-secondary-bg,
+        $btn-secondary-border);
+    }
+    table {
+        margin: 0;
+        td {
+            padding: 0;
+            border: none;
+        }
+    }
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    z-index: 4030;
+}
+
+.langmenu form {
+    margin: 0;
+}
+
+// contributed by Paul Hibbitts, see http://msdn.microsoft.com/en-us/library/ie/jj583807(v=vs.85).aspx
+canvas {
+    -ms-touch-action: auto;
+}
+
+div#dock {
+    display: none;
+}
+
+// Choice.
+.path-mod-choice {
+    .horizontal .choices {
+        margin: 0;
+        .option {
+            display: inline-block;
+            padding: 10px;
+        }
+    }
+    .results .data {
+        white-space: normal;
+        &.header {
+            padding: 10px;
+        }
+    }
+    .responseaction {
+        label {
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.path-mod-glossary {
+    .glossarysearchbox {
+        input[type=submit] {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Lesson.
+.path-mod-lesson {
+    .slideshow {
+        overflow: auto;
+    }
+    .answeroption {
+        .fcheckbox {
+            label {
+                padding-left: 25px;
+            }
+        }
+        .fradio {
+            label {
+                float: left;
+                padding-left: 5px;
+                margin-top: 3px;
+                margin-bottom: -5px;
+                margin-right: 0;
+            }
+            input[type="radio"] {
+                float: left;
+            }
+        }
+    }
+    .edit_pages_box {
+        span.badge {
+            @extend .badge-default;
+        }
+    }
+}
+
+.path-mod-lesson .firstpageoptions {
+    margin: auto;
+    min-width: 280px;
+    width: 60%;
+}
+
+.path-mod-lesson .centerpadded {
+    padding: 5px;
+    text-align: center;
+}
+
+// Wiki
+.path-mod-wiki .wiki_headingtitle,
+.path-mod-wiki .midpad,
+.path-mod-wiki .wiki_headingtime {
+    text-align: inherit;
+}
+
+.path-mod-wiki .wiki_contentbox {
+    width: 100%;
+}
+
+// Quiz.
+.path-mod-quiz {
+    #user-picture {
+        &.small {
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    .questioncontainer {
+        input[type="text"] {
+            height: 1.5em;
+        }
+    }
+    .othernav {
+        input {
+            max-width: 100%;
+            white-space: normal;
+        }
+    }
+    .block.block_fake#mod_quiz_navblock {
+        .header {
+            background: transparent;
+            h2 {
+                color: $brand-primary;
+                font-size: $font-size-lg;
+            }
+        }
+        .endtestlink,
+        .othernav > a {}
+    }
+    .qn_buttons {
+        a.qnbutton {
+            margin: 0 5px 5px 0;
+            padding: 0;
+            color: $gray-dark;
+            background-color: $gray-light;
+            border-color: $gray-light;
+            &.thispage {
+                color: #fff;
+                background-color: $brand-info;
+                border-color: $brand-info;
+            }
+            &.answersaved {
+                border-color: $brand-primary;
+                background-color: $brand-primary;
+                color: #fff;
+            }
+            &.notanswered,
+            &.incorrect {
+                background: $brand-danger;
+                border-color: $brand-danger;
+                color: #fff;
+            }
+            &.partiallycorrect {
+                background: $brand-warning;
+                border-color: $brand-warning;
+                color: #fff;
+            }
+            &.correct {
+                background: $brand-success;
+                border-color: $brand-success;
+                color: #fff;
+            }
+            .thispageholder,
+            .trafficlight {
+                display: none;
+            }
+            span {
+                border: none;
+                padding: 0;
+            }
+            &:hover {
+                background-image: none;
+            }
+        }
+    }
+    #quiz-timer {
+        padding: 0 0 0 30px;
+        color: $gray-dark;
+        text-align: left;
+        font-size: 18px;
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 21px;
+        float: right;
+        margin: 2px 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='161px' height='161px' viewBox='0 0 161 161'%3E%3Cg%3E%3Cpath d='M153.205202,60.3664362 C152.835245,60.4417979 152.483271,60.5574096 152.151851,60.7047074 C149.99034,61.6595745 148.70491,64.0163404 149.195617,66.4270585 C151.471817,77.6059764 150.928619,88.9530963 147.918954,99.5545509 C143.722426,114.336696 134.730559,127.669109 121.900122,137.074372 C106.880878,148.084032 88.3478936,152.565484 69.7147128,149.696601 C51.0815319,146.826005 34.7563032,136.974176 23.7466436,121.954074 C0.855526596,90.7235 7.63807979,46.6925691 38.8669415,23.7997394 C53.8861862,12.7909362 72.4200266,8.30948404 91.0523511,11.1775106 C109.147723,13.9650372 125.051612,23.3527074 136.039005,37.6483085 L131.315197,36.9691968 C128.503691,36.5632713 125.901144,38.5149681 125.497787,41.3239043 C125.093574,44.1328404 127.043559,46.7371011 129.852495,47.1413138 L146.907362,49.5939947 C147.378372,49.62825 147.512824,49.6470904 147.645564,49.6470904 C150.159904,49.6470904 152.356527,47.7998723 152.725628,45.2392872 L155.178309,28.1844202 C155.582521,25.375484 153.632537,22.7712234 150.823601,22.3670106 C148.013809,21.9619415 145.410404,23.9127819 145.006191,26.7217181 L144.311665,31.5508617 C131.701426,15.0552128 113.418505,4.22453723 92.6178191,1.02080851 C71.2724734,-2.26941489 50.0256117,2.87915957 32.792617,15.5108085 C15.558766,28.1450266 4.2562234,46.8578511 0.968569149,68.2031968 C-2.31908511,89.5493989 2.82606383,110.795404 15.4594255,128.029255 C28.0919309,145.26225 46.8047553,156.563936 68.1509574,159.852447 C72.3592234,160.500729 76.5614947,160.821016 80.7320798,160.821016 C97.7167234,160.821016 114.141293,155.503734 127.97616,145.36159 C153.230894,126.848303 165.513138,95.059367 159.265824,64.3760213 C158.699755,61.5953457 155.989303,59.8037926 153.205202,60.3664362 Z' fill='${brand-primary}'%3E%3C/path%3E%3Cpath d='M108.418941,82.3592074 L90.8802181,82.3592074 C89.5939309,79.4483617 87.2542926,77.107867 84.3434468,75.8224362 L84.3434468,36.3997021 C84.3434468,33.5625053 82.0423457,31.2614043 79.2051489,31.2614043 C76.3679521,31.2614043 74.0668511,33.5625053 74.0668511,36.3997021 L74.0668511,75.8224362 C69.5828298,77.8041064 66.441617,82.2881277 66.441617,87.4975053 C66.441617,94.5352606 72.1673936,100.261037 79.2051489,100.261037 C84.4145266,100.261037 88.8985479,97.1198245 90.8802181,92.6358032 L108.418941,92.6358032 C111.256138,92.6358032 113.557239,90.3347021 113.557239,87.4975053 C113.557239,84.6603085 111.256138,82.3592074 108.418941,82.3592074 L108.418941,82.3592074 Z M76.7173564,87.4975053 C76.7173564,86.1255798 77.8332234,85.0097128 79.2042926,85.0097128 C80.5753617,85.0097128 81.6920851,86.1255798 81.6920851,87.4975053 C81.6920851,88.8694309 80.5762181,89.9844415 79.2042926,89.9844415 C77.832367,89.9844415 76.7173564,88.8685745 76.7173564,87.4975053 L76.7173564,87.4975053 Z' fill='${gray}'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+        &[class^=timeleft] {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='161px' height='161px' viewBox='0 0 161 161'%3E%3Cg%3E%3Cpath d='M153.205202,60.3664362 C152.835245,60.4417979 152.483271,60.5574096 152.151851,60.7047074 C149.99034,61.6595745 148.70491,64.0163404 149.195617,66.4270585 C151.471817,77.6059764 150.928619,88.9530963 147.918954,99.5545509 C143.722426,114.336696 134.730559,127.669109 121.900122,137.074372 C106.880878,148.084032 88.3478936,152.565484 69.7147128,149.696601 C51.0815319,146.826005 34.7563032,136.974176 23.7466436,121.954074 C0.855526596,90.7235 7.63807979,46.6925691 38.8669415,23.7997394 C53.8861862,12.7909362 72.4200266,8.30948404 91.0523511,11.1775106 C109.147723,13.9650372 125.051612,23.3527074 136.039005,37.6483085 L131.315197,36.9691968 C128.503691,36.5632713 125.901144,38.5149681 125.497787,41.3239043 C125.093574,44.1328404 127.043559,46.7371011 129.852495,47.1413138 L146.907362,49.5939947 C147.378372,49.62825 147.512824,49.6470904 147.645564,49.6470904 C150.159904,49.6470904 152.356527,47.7998723 152.725628,45.2392872 L155.178309,28.1844202 C155.582521,25.375484 153.632537,22.7712234 150.823601,22.3670106 C148.013809,21.9619415 145.410404,23.9127819 145.006191,26.7217181 L144.311665,31.5508617 C131.701426,15.0552128 113.418505,4.22453723 92.6178191,1.02080851 C71.2724734,-2.26941489 50.0256117,2.87915957 32.792617,15.5108085 C15.558766,28.1450266 4.2562234,46.8578511 0.968569149,68.2031968 C-2.31908511,89.5493989 2.82606383,110.795404 15.4594255,128.029255 C28.0919309,145.26225 46.8047553,156.563936 68.1509574,159.852447 C72.3592234,160.500729 76.5614947,160.821016 80.7320798,160.821016 C97.7167234,160.821016 114.141293,155.503734 127.97616,145.36159 C153.230894,126.848303 165.513138,95.059367 159.265824,64.3760213 C158.699755,61.5953457 155.989303,59.8037926 153.205202,60.3664362 Z' fill='${brand-danger}'%3E%3C/path%3E%3Cpath d='M108.418941,82.3592074 L90.8802181,82.3592074 C89.5939309,79.4483617 87.2542926,77.107867 84.3434468,75.8224362 L84.3434468,36.3997021 C84.3434468,33.5625053 82.0423457,31.2614043 79.2051489,31.2614043 C76.3679521,31.2614043 74.0668511,33.5625053 74.0668511,36.3997021 L74.0668511,75.8224362 C69.5828298,77.8041064 66.441617,82.2881277 66.441617,87.4975053 C66.441617,94.5352606 72.1673936,100.261037 79.2051489,100.261037 C84.4145266,100.261037 88.8985479,97.1198245 90.8802181,92.6358032 L108.418941,92.6358032 C111.256138,92.6358032 113.557239,90.3347021 113.557239,87.4975053 C113.557239,84.6603085 111.256138,82.3592074 108.418941,82.3592074 L108.418941,82.3592074 Z M76.7173564,87.4975053 C76.7173564,86.1255798 77.8332234,85.0097128 79.2042926,85.0097128 C80.5753617,85.0097128 81.6920851,86.1255798 81.6920851,87.4975053 C81.6920851,88.8694309 80.5762181,89.9844415 79.2042926,89.9844415 C77.832367,89.9844415 76.7173564,88.8685745 76.7173564,87.4975053 L76.7173564,87.4975053 Z' fill='${gray}'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+            background-color: none;
+        }
+        #quiz-time-left {
+            font-size: $font-size-lg;
+        }
+        #page-mod-quiz-summary & {
+            margin: 15px auto;
+        }
+    }
+    .que.ddwtos .drag:not(.unplaced) {
+        background-color: none;
+    }
+    .que {
+        .ablock {
+            .answer input[type="radio"] {
+                margin-right: 10px;
+            }
+            span.answer {
+                margin-left: 10px;
+            }
+        }
+        .info {
+            padding: 10px;
+            background: $gray-lightest;
+            min-height: 25px;
+            .questionflag.label {
+                background-color: none;
+                font-size: 0;
+                font-size: 0;
+                display: block;
+                width: 25px;
+                height: 25px;
+                background-color: transparent;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16px' height='22px' viewBox='0 0 16 22'%3E%3Cg fill='${gray}'%3E%3Cpath d='M15.7213966,8.2841 L0.724137931,1.23273333 L0.724137931,0.366666667 C0.724137931,0.1639 0.561931034,0 0.362068966,0 C0.162206897,0 0,0.1639 0,0.366666667 L0,1.46666667 L0,13.5666667 L0,14.6666667 L0,21.6333333 C0,21.8361 0.162206897,22 0.362068966,22 C0.561931034,22 0.724137931,21.8361 0.724137931,21.6333333 L0.724137931,14.9163667 L15.7014828,8.95766667 C15.8365345,8.90413333 15.9266897,8.77396667 15.9310345,8.62766667 C15.9353793,8.481 15.8528276,8.34606667 15.7213966,8.2841 L15.7213966,8.2841 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-size: 17px;
+                background-position: 50%;
+                .questionflagtext {
+                    display: none;
+                }
+                &.label-danger {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16px' height='22px' viewBox='0 0 16 22'%3E%3Cg fill='${brand-danger}'%3E%3Cpath d='M15.7213966,8.2841 L0.724137931,1.23273333 L0.724137931,0.366666667 C0.724137931,0.1639 0.561931034,0 0.362068966,0 C0.162206897,0 0,0.1639 0,0.366666667 L0,1.46666667 L0,13.5666667 L0,14.6666667 L0,21.6333333 C0,21.8361 0.162206897,22 0.362068966,22 C0.561931034,22 0.724137931,21.8361 0.724137931,21.6333333 L0.724137931,14.9163667 L15.7014828,8.95766667 C15.8365345,8.90413333 15.9266897,8.77396667 15.9310345,8.62766667 C15.9353793,8.481 15.8528276,8.34606667 15.7213966,8.2841 L15.7213966,8.2841 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                }
+            }
+            h3.no {
+                font-size: $font-size-lg;
+                font-weight: bold;
+                line-height: 25px;
+                span.qno {
+                    font-size: $font-size-lg;
+                }
+            }
+            .editquestion {
+                a {
+                    font-size: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='23px' height='22px' viewBox='0 0 23 22' version='1.1'%3E%3Cg fill='${gray-darker}'%3E%3Cpath d='M13.7294611,3.6788425 L18.2208843,8.17022391 L6.85185199,19.5392562 L2.36297533,15.0478748 L13.7294611,3.6788425 L13.7294611,3.6788425 Z M21.6290057,2.59562429 L19.6260038,0.592622391 C18.8519127,-0.181468691 17.5949488,-0.181468691 16.8182277,0.592622391 L14.8995522,2.51129791 L19.3909753,7.00272106 L21.6290057,4.7646907 C22.2293928,4.16426186 22.2293928,3.19601139 21.6290057,2.59562429 L21.6290057,2.59562429 Z M0.0125237192,21.3608729 C-0.0692144213,21.7287362 0.262914611,22.0583605 0.630819734,21.9688994 L5.63575712,20.7553928 L1.14688046,16.2640114 L0.0125237192,21.3608729 L0.0125237192,21.3608729 Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-size: 17px;
+                    background-position: 50%;
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .feedback {
+            @include make-alert;
+            .rightanswer {
+                margin: 0;
+            }
+        }
+        &.notanswered,
+        &.incorrect {
+            .info {
+                h3.no {
+                    color: $brand-danger;
+                }
+            }
+            .feedback {
+                @extend .alert-danger;
+            }
+            .ablock {
+                border-left: 5px solid $brand-danger;
+                padding-left: 15px;
+            }
+        }
+        &.partiallycorrect {
+            .info {
+                h3.no {
+                    color: $brand-warning;
+                }
+            }
+            .feedback {
+                @extend .alert-danger;
+            }
+            .ablock {
+                border-left: 5px solid $brand-warning;
+                padding-left: 15px;
+            }
+        }
+        &.correct {
+            .info {
+                h3.no {
+                    color: $brand-success;
+                }
+            }
+            .feedback {
+                @extend .alert-success;
+            }
+            .ablock {
+                border-left: 5px solid $brand-success;
+                padding-left: 15px;
+            }
+        }
+    }
+    .quizinfo {
+        .quiztable {
+            tbody {
+                tr {
+                    td {
+                        border: none;
+                    }
+                    th {
+                        border: none;
+                        background: $gray-lighter;
+                    }
+                }
+            }
+        }
+        .quizgrade {
+            float: none;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid $brand-primary;
+            font-size: 25px;
+            color: $gray-dark;
+            line-height: 25px;
+            text-align: center;
+            padding-top: 33px;
+            margin: 0 auto 15px;
+            @media (min-width: 34em) {
+                float: right;
+            }
+            @include media-breakpoint-up(md) {
+                 width: 180px;
+                 height: 180px;
+                 font-size: 40px;
+                 padding-top: 75px;
+             }
+        }
+    }
+    .submitbtns {
+        a,
+        input {
+            display: block;
+            float: none;
+            width: 100%;
+            &.mod_quiz-next-nav {}
+        }
+        input.mod_quiz-prev-nav,
+        input.mod_quiz-next-nav {
+            float: left;
+            width: auto;
+        }
+        input.mod_quiz-prev-nav {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' viewBox='0 0 8 13' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-100.000000, -1195.000000) rotate(180)");
+        }
+    }
+}
+
+#page-mod-quiz-attempt,
+#page-mod-quiz-review {
+    #block-region-side-post {
+        width: 0;
+        .block {
+            display: none;
+        }
+    }
+    #region-main {
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    div[role=main] {
+        background: none;
+        padding-top: 0;
+    }
+    aside#mod_quiz_navblock.block {
+        position: fixed;
+        bottom: -1.5rem;
+        display: block;
+        width: 100%;
+        left: 0;
+        margin: 0;
+        text-align: center;
+        z-index: 99;
+        border-top: 5px $brand-primary solid;
+        .header {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 auto;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: $brand-primary;
+            width: auto;
+            transform: translateX(-50%);
+            min-width: 250px;
+            &.minimize {
+                h2:after {
+                    content: "\e601";
+                }
+            }
+            .block-controls {
+                display: none;
+            }
+            h2 {
+                color: #fff;
+                &:after {
+                    content: "\e602";
+                    position: relative;
+                    top: 2px;
+                    display: inline-block;
+                    min-width: 25px;
+                    font-family: 'Glyphicons';
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    margin-left: 5px;
+                }
+            }
+        }
+        .content {
+            position: relative;
+            max-width: 1440px;
+            margin: 0 auto;
+            &.inactive {
+                bottom: -85px;
+            }
+            .multipages {
+                float: none;
+                display: table;
+                margin: 0 auto;
+                @include media-breakpoint-up(md) {
+                    float: left;
+                }
+                a.qnbutton {
+                    display: block;
+                    margin: 2px;
+                }
+            }
+            .othernav {
+                float: none;
+                width: auto;
+                clear: both;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                @include media-breakpoint-up(md) {
+                    clear: none;
+                }
+                a.endtestlink {
+                    margin: 2px 10px;
+                    float: none;
+                    @include media-breakpoint-up(md) {
+                        float: left;
+                        margin: 0 10px;
+                    }
+                }
+                .singlebutton {
+                    float: none;
+                    margin: 2px 10px;
+                    @include media-breakpoint-up(md) {
+                        float: left;
+                        margin: 0;
+                    }
+                    div {
+                        margin: 0;
+                        input {
+                            margin: 0;
+                        }
+                    }
+                }
+                * {
+                    display: inline-block !important;
+                    vertical-align: top;
+                    float: none;
+                    width: auto;
+                    @include media-breakpoint-up(md) {
+                        float: right;
+                        border: none;
+                        margin: 0 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#lesson-timer {
+    @extend #quiz-timer;
+    &[class^=timeleft] {
+        @extend .badge-warning;
+    }
+    display: block;
+    width: 150px;
+    margin: 5px auto;
+}
+
+// Survey module
+.path-mod-survey {
+    .surveytable {
+        .r1 {
+            background-color: $table-bg-accent
+        }
+        .rblock label {
+            text-align: center;
+        }
+    }
+    .resultgraph,
+    .reportsummary,
+    .studentreport,
+    .reportbuttons,
+    .centerpara {
+        text-align: center;
+    }
+    .fullnamecell {
+        padding-right: 20px;
+    }
+}
+
+// Scorm
+#page-mod-scorm-player {
+    #scormpage {
+        @include media-breakpoint-down(xs) {
+            div.yui3-u-1-5 {
+                width: 95%;
+            }
+        }
+        #scorm_content.yui3-u-3-4 {
+            width: 100%;
+            margin-top: 10px;
+            float: left;
+            @include media-breakpoint-up(md) {
+                margin-left: 10px;
+                width: 70%;
+                float: right;
+                margin-top: 0;
+            }
+        }
+        #scorm_content.yui3-u-1 {
+            width: 100%;
+            margin-top: 10px;
+            @include media-breakpoint-up(sm) {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+#scormtablecontainer {
+    margin-bottom: 10px;
+}
+
+#scorm_navpanel #scorm_nav button {
+    display: inline;
+}
+
+#page-mod-scorm-report {
+    div[role=main] {
+        > table {
+            td {
+                display: block;
+                text-align: center;
+                @media(min-width: 34em) {
+                    display: table-cell;
+                }
+            }
+        }
+    }
+}
+
+.searchbox td {
+    padding-right: 10px;
+}
+
+#page-mod-lesson-edit {
+    div[role='main'] {
+        > table {
+            display: block;
+            overflow: auto;
+            @media(min-width: 34em) {
+                display: table;
+            }
+        }
+    }
+}
+
+body.path-mod-workshop {
+    .userplan {
+        th.active,
+        td.active {
+            background: $state-success-bg;
+        }
+    }
+    .example-summary.graded {
+        .singlebutton {
+            input[type="submit"] {
+                background-color: $state-success-bg;
+            }
+        }
+    }
+    .submission-full {
+        .header {
+            background-color: $gray-lightest;
+            padding: .5rem;
+            .author .picture {
+                top: .5rem;
+                left: .5rem;
+            }
+        }
+    }
+    .submission-summary {
+        .title,
+        .userdate,
+        .grade-status {
+            margin-left: 70px;
+        }
+    }
+}
+
+#page-mod-data-templates {
+    #tempform {
+        table {
+            td {
+                display: block;
+                width: 100%;
+                clear: both;
+                @media (min-width: 34em) {
+                    display: table-cell;
+                    width: auto;
+                }
+            }
+        }
+        #availabletags_wrapper {
+            max-width: 100%;
+        }
+    }
+}
+
+table#categoryquestions {
+    overflow: auto;
+}
+
+// Quiz Module settings page
+#page-mod-quiz-mod #id_reviewoptionshdr {
+    .fitem {
+        width: 25%;
+        margin: 0;
+        padding: 0 20px;
+        .felement {
+            line-height: 1;
+            .fitem {
+                float: none;
+                width: 100%;
+                margin-left: 0;
+                padding: 0;
+                &:first-child {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Assign.
+.path-mod-assign [data-region="grade-actions-panel"] [data-region="grade-actions"] .collapse-buttons {
+    z-index: 3;
+    position: relative;
+    left: 0;
+}
+
+.path-mod-assign {
+    .submitforgrading {
+        .icon.spacer {
+            display: none;
+        }
+        .static-form-control {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.path-mod-assign .yui3-widget.yui3-commentsearch-hidden {
+    display: none;
+}
+
+.path-mod-assign [data-region="user-selector"] [data-action="next-user"] {
+    margin-left: 0;
+}
+
+.path-mod-assign [data-region="user-selector"] .alignment {
+    position: relative;
+    span[data-region="input-field"] {
+        position: relative;
+        display: inline-block;
+    }
+}
+
+.path-mod-assign [data-region="user-selector"] .alignment .form-autocomplete-wrap {
+    position: relative;
+}
+
+.path-mod-assign [data-region="user-selector"] .form-autocomplete-suggestions {
+    margin-left: 0;
+}
+
+.path-mod-assign [data-region="user-selector"] .alignment .form-autocomplete-downarrow {
+    top: 0.75rem;
+}
+
+// This section removes the responsiveness from the form in the grading panel
+$popout-header-font-size: 1.5 * $font-size-base;
+// This can't be calculated from modal-title-padding because we are mixing px and rem units.
+$popout-header-height: 4rem;
+.path-mod-assign #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .felement {
+    height: calc(100% - #{$popout-header-height});
+}
+
+.path-mod-assign [data-region="grade-panel"] {
+    padding-top: $spacer;
+}
+
+.path-mod-assign [data-region="grade-panel"] .fitem > .col-md-3,
+.path-mod-assign [data-region="grade-panel"] .fitem > .col-md-9 {
+    width: 100%;
+    padding: 0;
+}
+
+.path-mod-assign [data-region="grade-panel"] fieldset,
+.path-mod-assign [data-region="grade-panel"] .fitem.row {
+    margin: 0 0 1rem 0;
+    clear: both;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.path-mod-assign [data-region="grade-panel"] .fitem > .col-md-3 > .pull-xs-right {
+    float: none !important;
+    /* stylelint-disable-line declaration-no-important */
+}
+
+.path-mod-assign [data-region="grade-panel"] .mform .fitem.has-popout .felement {
+    width: 100%;
+}
+
+.path-mod-assign [data-region="grade-panel"] .mform .fitem .felement {
+    width: auto;
+    float: none;
+}
+
+// Now styles for the popout sections.
+.path-mod-assign [data-region="grade-panel"] .popout {
+    background-color: $modal-content-bg;
+}
+
+.path-mod-assign [data-region="grade-panel"] .fitem.has-popout {
+    background-color: $card-bg;
+    @include border-radius($card-border-radius);
+    border: $card-border-width solid $card-border-color;
+    padding: $card-spacer-x;
+    margin-bottom: $spacer;
+}
+
+.path-mod-assign [data-region="grade-panel"] .has-popout .col-md-3 {
+    border-bottom: $hr-border-width solid $hr-border-color;
+    margin-bottom: $spacer;
+}
+
+.path-mod-assign [data-region="grade-panel"] .popout > .col-md-3 {
+    @extend .modal-header;
+    font-size: $popout-header-font-size;
+}
+
+.path-mod-assign [data-region="grade-panel"] .popout [data-region="popout-button"] {
+    margin-top: 0;
+}
+
+.path-mod-assign {
+    [data-region="grading-navigation-panel"] {
+        height: 95px;
+        @include media-breakpoint-down(md) {
+            height: auto;
+            margin-bottom: 0;
+            [data-region="user-info"] {
+                margin-top: 1rem;
+            }
+        }
+        [data-region="grading-navigation"] {
+            padding: 0;
+            align-items: flex-start;
+            [data-region="assignment-info"] {
+                overflow-y: hidden;
+                padding: .75rem;
+            }
+            [data-region="user-info"] {
+                padding: .75rem;
+                height: auto;
+                @include media-breakpoint-down(md) {
+                    margin-top: 0;
+                }
+                > h4 {
+                    font-size: 1.3rem;
+                    margin-bottom: 0;
+                }
+                .img-rounded {
+                    margin-top: 0;
+                    width: 40px;
+                    height: auto;
+                }
+            }
+            [data-region="user-selector"] {
+                padding: .75rem;
+                text-align: right;
+                @include media-breakpoint-down(md) {
+                    text-align: center;
+                }
+                .alignment {
+                    display: inline-block;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    min-width: 250px;
+                    width: auto;
+                    float: none;
+                }
+            }
+        }
+    }
+    [data-region="review-panel"],
+    [data-region="grade-panel"] {
+        top: 0;
+        @include media-breakpoint-up(md) {
+            top: 95px;
+        }
+        #id_gradeheader {
+            padding: 0;
+            .fcontainer {
+                padding: 0;
+            }
+        }
+    }
+    [data-region="review-panel"] {
+        margin-bottom: 0;
+        &.collapsed {
+            max-height: 30px;
+        }
+        .drawingregion {
+            margin-bottom: 0;
+        }
+        .unsaved-changes {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            .assignfeedback_editpdf_unsavedchanges {
+                position: relative;
+                left: auto;
+                top: auto;
+            }
+        }
+        [data-region="review-panel-toggle"] {
+            height: 30px;
+            position: relative;
+            border: none;
+            text-align: center;
+            background-color: #eee;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            .collapse-icon {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 30px;
+                margin-top: -1px;
+            }
+            .expand-icon {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 30px;
+                margin-top: -1px;
+                .ltr-icon {
+                    display: inline-block;
+                    height: 30px;
+                    line-height: 30px;
+                    vertical-align: top;
+                    float: none;
+                    .glyphicon {
+                        top: 0;
+                        line-height: 30px;
+                    }
+                }
+                .toggle-text {
+                    visibility: visible;
+                    opacity: 1;
+                    height: 30px;
+                    display: inline-block;
+                    line-height: 30px;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+    [data-region="grade-actions"] {
+        padding: 10px;
+    }
+    div.submissionstatustable,
+    div.submissionfull,
+    div.submissionlinks,
+    div.usersummary,
+    div.feedback,
+    div.gradingsummary {
+        margin-bottom: 2rem;
+    }
+    div.submissionstatus,
+    div.submissionstatussubmitted {
+        @include make-badge();
+        color: #000;
+    }
+    .submitconfirm,
+    .submissionlinks,
+    .submissionaction {
+        text-align: left;
+        margin-bottom: 0;
+        .singlebutton form {
+            margin-left: 0;
+        }
+    }
+    .submithelp {
+        padding: .5rem 0;
+    }
+}
+
+.path-mod-assign [data-region="grading-navigation"] [data-region="input-field"] input {
+    width: auto;
+    display: inline-block;
+}
+
+
+/**
+ * Assign feedback.
+ */
+
+.assignfeedback_editpdf_widget * {
+    box-sizing: content-box;
+}
+
+.assignfeedback_editpdf_widget .pageheader div button {
+    box-sizing: border-box;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    height: 30px;
+    position: relative;
+    border: none;
+    top: -2px;
+    border-radius: 0;
+    img {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.assignfeedback_editpdf_widget .commentcolourbutton img {
+    border-width: 0;
+}
+
+.assignfeedback_editpdf_widget .label {
+    @extend .badge;
+    @extend .badge-info;
+}
+
+.assignfeedback_editpdf_menu {
+    padding: 0;
+}
+
+.path-mod-assign [data-region="grade-panel"] .gradingform_guide .remark .commentchooser {
+    float: none;
+}
+
+.path-mod-assign [data-region="grade-panel"] .gradingform_guide .markingguideremark {
+    width: 100%;
+}
+
+.path-mod-assign [data-region="grade-panel"] .mform .fitem .felement[data-fieldtype="grading"] {
+    padding-left: $spacer;
+    padding-right: $spacer;
+}
+
+.path-mod-assign [data-region="grade-panel"] .showmarkerdesc,
+.path-mod-assign [data-region="grade-panel"] .showstudentdesc {
+    background-color: $card-bg;
+}
+
+.path-mod-checklist {
+    .checklist-edititem {
+        padding: 1rem;
+        input[type='text'] {
+            width: auto;
+            display: inline-block;
+        }
+    }
+    .checklistreport .cell.level1-checked {
+        background-color: transparent;
+        border-color: $brand-success;
+        box-shadow: 0px 0px 0px 5px $brand-success inset;
+    }
+}
+
+
+/**
+ * Mod LTI.
+ */
+
+.path-admin-mod-lti {
+    .btn .loader img,
+    #tool-list-loader-container .loader img {
+        height: auto;
+    }
+}
+
+#lti_tab_heading li a {
+    background-image: none;
+}
+
+.path-mod-lightboxgallery {
+    #overlay {
+        opacity: 0;
+    }
+    #prevLink, #nextLink {
+        background-repeat: no-repeat;
+    }
+    #prevLink {
+        background-position: left 15%;
+    }
+    #nextLink {
+        background-position: right 15%;
+    }
+}
+
+.book_content {
+    table {
+        border-color: $gray-dark;
+        thead {
+            border-color: $gray-dark;
+            th {
+                border-color: $gray-dark;
+            }
+        }
+        td {
+            border-color: $gray-dark;
+        }
+    }
+}
+
+.path-mod-checklist {
+    #region-main {
+        div[role=main] {
+            > form {
+                margin-bottom: 1rem;
+                display: inline-block !important;
+            }
+            > div {
+                padding: 0 15px;
+            }
+        }
+    }
+    .checklist_progress_inner {
+        z-index: 9;
+    }
+    .checklistreport {
+        .cell.level0-checked {
+            background-color: rgba($brand-success, 0.4);
+        }
+        .cell.level1-checked {
+            background-color: rgba($brand-success, 0.3);
+        }
+        .cell.level2-checked {
+            background-color: rgba($brand-success, 0.2);
+        }
+        .cell.level0-unchecked {
+            background-color: rgba($brand-danger, 0.4);
+        }
+        .cell.level1-unchecked {
+            background-color: rgba($brand-danger, 0.3);
+        }
+        .cell.level2-unchecked {
+            background-color: rgba($brand-danger, 0.2);
+        }
+    }
+}

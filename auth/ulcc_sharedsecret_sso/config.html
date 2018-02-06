@@ -1,0 +1,49 @@
+<?php
+
+// set to defaults if undefined
+        if (!isset ($config->sharedsecret)) {
+            $config->sharedsecret = 'testmoodle';
+        }
+
+
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string('auth_sharedsecret', 'auth_ulcc_sharedsecret_sso') ?>: </td>
+    <td>
+        <input name="sharedsecret" type="text" size="30" value="<?php echo $config->sharedsecret ?>" />
+        <?php
+
+        if (isset($err["sharedsecret"])) {
+            echo $OUTPUT->error_text($err["sharedsecret"]);
+        }
+
+        ?>
+    </td>
+    <td><?php print_string("auth_sharedsecretdescription", "auth_ulcc_sharedsecret_sso") ?></td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td align="right"><?php print_string('useexpiration', 'auth_ulcc_sharedsecret_sso') ?>: </td>
+    <td><input type="hidden" name="useexpiration" value="0" /><input type="checkbox" name="useexpiration" value="1" <?php echo (!empty($config->useexpiration)) ? "checked='checked'" : ""; ?> /></td>
+    <td><?php print_string("useexpirationdesc", "auth_ulcc_sharedsecret_sso") ?></td>
+</tr>
+<tr>
+    <td align="right"><?php print_string('expirationtime', 'auth_ulcc_sharedsecret_sso') ?>:</td>
+    <td><select name="expirationtime">
+        <option value="600" <?php if (!empty($config->expirationtime) && $config->expirationtime == 600) echo "selected"; ?>>10 minutes</option>
+        <option value="1800" <?php if (!empty($config->expirationtime) && $config->expirationtime == 1800) echo "selected"; ?>  >30 minutes</option>
+        <option value="3600" <?php if (!empty($config->expirationtime) && $config->expirationtime == 3600) echo "selected"; ?>>1 hour</option>
+        <option value="18000"> <?php if (!empty($config->expirationtime) && $config->expirationtime == 18000) echo "selected"; ?>5 hours</option>
+    </select></td>
+    <td><?php print_string("expirationtimedesc", "auth_ulcc_sharedsecret_sso") ?></td>
+</tr>
+
+
+
+</table>

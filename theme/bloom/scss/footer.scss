@@ -1,0 +1,96 @@
+#page-footer{
+	padding:1rem;
+	.card-title{
+		color: $footer-link-color;
+		border-color: $footer-link-color;
+	}
+	.footer-cols{
+		@include media-breakpoint-up(md) {
+			@include make-col(6);
+		}
+		&:nth-child(2){
+			@include media-breakpoint-up(md) {
+				text-align: right;
+				.card-title{
+					padding: 0 0 .4rem 1.25rem;
+				}
+				ul{
+					margin: 0 -1rem 0 0;
+				}
+			}
+		}
+	}
+	.footer-row{
+		@include make-row();
+	}
+	.card-block{
+		ul{
+			display: inline-block;
+			list-style: none;
+			li{
+				margin: 0;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				a{
+					display: block;				
+					&:hover{
+						color: $link-hover-color;
+					}	
+				}				
+			}
+			ul{
+				display: block;
+			}
+		}
+	}
+	.socialmedia{
+		li{
+			float:right;
+			@include media-breakpoint-down(sm) {
+				float: left;
+				padding: 0;
+			}
+			a{
+				&:hover{
+					.fa{
+						&:before{
+							color: $link-hover-color;
+						}
+					}
+				}	
+			}
+			.fa{
+				padding:1rem;
+				&:before{
+					font-size: 2.5rem;
+					color: $footer-link-color;
+				}
+			}
+		}
+	}
+	nav.footerlinks{
+		ul {			
+			li{
+				@include media-breakpoint-up(md) {
+					border-right:1px solid $footer-link-color;
+					a{
+						padding: 0 1rem;				
+					}			
+					&:last-child{
+						border-right:none;
+					}
+				}
+				@include media-breakpoint-down(sm) {
+					float: none;
+				}
+			}
+		}
+	}
+	nav.flatmenu{
+		ul.nav > li{
+			@extend .card-title;
+			color: $footer-link-color !important;
+			border-color: $footer-link-color !important;			
+		} 
+	}
+}

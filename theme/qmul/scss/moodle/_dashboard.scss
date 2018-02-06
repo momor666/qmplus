@@ -1,0 +1,152 @@
+.userstats {
+    .icon {
+        svg {
+            fill: $gray-dark;
+        }
+    }
+    .title {
+        font-size: $font-size-h6;
+    }
+    .number {
+        background: rgba($brand-primary, 0.3);
+        border: 2px solid $brand-primary;
+        color: $gray-dark;
+        font-size: $font-size-h2;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        @include media-breakpoint-up(lg) {
+            margin: auto;
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
+
+.mycourses {
+    margin-bottom: 1.5rem;
+    .col-lg-4 {
+        @include media-breakpoint-between(md, lg) {
+            &:nth-child(2n+1) {
+                clear: both;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            &:nth-child(3n+1) {
+                clear: both;
+            }
+        }
+    }
+    .card-deck {
+        margin-bottom: 1.5rem;
+        &:last-child {
+            margin-bottom: 1.5rem;
+        }
+        .lastcourse {
+            .image {
+                background-color: rgba($brand-primary, 80%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50%;
+                transform: scale(1);
+                transition: transform 0.6s;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                .lastaccess {
+                    padding: 0.25rem;
+                    font-weight: bold;
+                }
+            }
+            .name {
+                border-bottom: 1px solid $gray-lightest;
+            }
+            .courseprogress {
+                height: 50px;
+                .progresstitle {
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+            }
+            .teachers {
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                margin-top: -17.5px;
+                .teacher {
+                    border: 2px solid rgb(255, 255, 255);
+                    margin: 0 0.25rem;
+                }
+            }
+            .activityprogress {
+                align-items: center;
+                justify-content: flex-start;
+                height: 45px;
+                @include media-breakpoint-down(md)
+                {
+                    padding-right: 16px;
+                }
+            }
+            .resume {
+                height: 45px;
+                justify-content: flex-end;
+            }
+        }
+        .mycoursebox {
+            position: relative;
+            overflow: hidden;
+            .header {
+                .title {
+                    position: relative;
+                    z-index: 1;
+                    background: #fff;
+                }
+                .background {
+                    margin-left: (-$card-spacer-x);
+                    margin-right: (-$card-spacer-x);
+                    width: calc(100% + ($card-spacer-x * 2));
+                }
+            }
+            .image {
+                background-color: rgba($brand-primary, 80%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50%;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                position: relative;
+                z-index: 0;
+            }
+            .teachers {
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                margin-top: -17.5px;
+                .teacher {
+                    border: 2px solid rgb(255, 255, 255);
+                    margin: 0 0.25rem;
+                }
+            }
+            .info {
+                padding: 15px;
+                position: relative;
+                z-index: 1;
+                background: rgb(255, 255, 255);
+                h3 {
+                    margin: 0 0 10px;
+                    word-wrap: break-word;
+                }
+            }
+            .courseprogress {
+                margin-bottom: 10px;
+            }
+            .footer {
+                background-color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,459 @@
+$color1: $bloom-courses-color;
+$color2: $bloom-assignments-color;
+$color3: $bloom-user-color;
+
+
+@mixin info-panel-content($color, $col1:null, $col2:null) {
+	border-top:3px solid $color !important;
+	background: $body-bg; 
+
+	@include media-breakpoint-up(md) {
+		.box{
+			.col1{
+				@if $col1 != null {
+					@include make-col($col1);
+				}
+			}
+			.col2{
+				@if $col2 != null {
+					@include make-col($col2);
+				}
+			}
+		}
+	
+	}
+
+	// large icon buttons: upload & details
+	.btn-primary{
+		padding:0;
+		&.upload, &.details{
+			color: $btn-text-color;
+			padding:1.2rem;
+			margin: 0;
+			height: auto ;
+			text-transform: uppercase;
+			font-weight: 900 ;
+			letter-spacing: 1px;
+			background-color: $color;
+			@include transition(background-color .25s ease);
+			&:hover, &:active, &:focus {
+				background-color: darken($color, 10%);
+			}
+		}
+		&.upload::before{
+			content: $fa-var-plus;
+			font-family:FontAwesome;
+			margin-right: 5px;
+		}
+		&.details::after{
+			content: $fa-var-chevron-right;
+			font-family:FontAwesome;
+			margin-left: 5px;			
+		}
+	}
+
+	@if $color1 == $bloom-courses-color{
+	//first tab content
+		.course_list {
+			.coursebox {
+				border: none;
+				margin: $spacer-y/2 0;
+				.card-header {
+					height: 6rem;
+					border-left-color:$color;
+					.arrow {
+						background-color:$color;
+						@include transition(width .3s ease);
+						@include border-radius($border-radius);
+					}
+					+ .activity_info {
+						padding: 1.25rem;
+						@extend .clearfix;
+						.activity_wrapper {
+							@include media-breakpoint-up(sm){
+								@include make-col(6);
+							}						
+						}
+					}
+				}
+
+				//accordions
+				&.has-content {
+					.card-header {
+						.arrow {
+							cursor: pointer;
+							&:before{
+								content: $fa-var-chevron-down;
+								font-family: FontAwesome;
+								font-size: 2rem;
+								color: white;
+								margin-top: 1.5rem;
+							}
+						}
+					}
+				}
+				//accordions opened
+				&.opened {
+					.card-header {
+						.arrow {
+							width: 100%;
+							&:before{
+								content: $fa-var-chevron-up;
+							}
+						}
+						h4 {
+							a {
+								color: #fff;
+							}
+						}
+					}
+				}
+
+				//accordions inside accordions
+				.collapsibleregion{
+					box-sizing: border-box;
+					.collapsibleregion-inner {
+						display: none;
+						background: $body-bg;
+						border: $border-width solid darken($blocks-blue,10%);
+						border-top: 3px solid $color;
+						@include border-bottom-radius($border-radius);
+						.overview{
+							margin: 0;
+							padding: 0.8rem;
+							@include transition(background .25s ease-out);
+							&:hover{
+								background: darken($blocks-blue, 5%);
+							}
+						}
+					}
+					.info{
+						margin:.5rem 0;
+					}
+					.name{
+						font-weight: bold;
+					}
+					a{
+						color:$link-color;
+					}
+					.box{
+						background:transparent;
+					}
+				}
+				.collapsibleregion-caption{
+					cursor: pointer;
+					position: relative;
+					.icon{
+						position:absolute;
+						top:50%;
+						margin-top: -15px;
+						left: 0;
+					}
+					.notification{
+						display: inline-block;
+						padding: 1.25rem;
+						padding-left:40px;
+						font-weight: bold;
+						color: $color;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@mixin info-panel-tab($color){
+	&.ui-tabs-active{
+		a{
+			background-color:$color;
+			color:#fff;
+			@include transition(background-color .25s ease-out);
+		}
+	}
+}
+
+//
+// General styles for infomation panel block
+// #info_panel_tabs: tab headers
+// .ui-tabs-panel: tab contents - courses, assignments and grades
+.block_info_panel{
+	.card-block{
+		background: transparent !important;
+		padding: 0;
+		h3.card-title{
+			display: none;
+		}
+		.card-text{
+			clear:both;
+		}
+	}
+	.errMsg{
+		padding:2rem;
+	}
+	// tab wrapper
+	#info_panel_tabs{
+		padding: 0 0 0 1.5rem;
+		// tab headers
+		ul.ui-tabs-nav{
+			border:none;
+			padding:0 !important;
+			margin-bottom: 0 !important;
+			position:relative;
+			li{
+				border:none;
+				width: calc(33.333% - 3px);
+				margin: 0 4.5px 0 0;
+				padding-bottom:0;
+				&:last-of-type{
+					margin-right: 0;
+				}			
+				@include bloom-label($font-size-base, 900, $body-color);
+				a{
+					color: $body-color;
+					background-color: $blocks-gray;
+					width:100%;
+					height:3rem;
+					padding:1rem;
+					@include border-top-radius($border-radius);
+					&:hover {
+						background-color: darken($blocks-gray, 5%);
+					}
+				}
+				&.courses{
+					@include info-panel-tab($color1);
+				}
+				&.deadlines{
+					position: relative;
+					@include info-panel-tab($color2);
+					.info_panel_urgent_icon{
+						position: absolute;
+						top: -3px;
+						right: -3px;
+						width: 24px;
+						height: 24px;
+						margin: 0;
+					}
+				}
+				&.grades{
+					@include info-panel-tab($color3);
+				}
+			}
+			@include media-breakpoint-down(sm){
+				cursor: pointer;
+				width: 100%;
+				display: block;
+				li.ui-tabs-tab{
+					position: relative;
+					margin-right: 4px;
+					&:last-of-type{
+						margin-right: 0;
+					}
+					&:not(.ui-tabs-active){
+						width: 20%;
+						background: $blocks-gray;
+						@include transition(background .25s ease-out);
+						&:before{ // inserts space for icon in tab
+							@include bloom-icon-insert( "", $body-color, $font-size-h2, $font-size-h2);
+							position: absolute;
+							top: 50%;
+							right: 50%;
+							transform: translateY(-50%) translateX(50%);
+						}
+						&.courses::before{
+							content: $course; // variable for bloom icons in variables.scss
+						}
+						&.deadlines::before{
+							content: $assignment; // variable for bloom icons in variables.scss
+						}
+						&.grades::before{
+							content: $grade; // variable for bloom icons in variables.scss
+						}
+						a{
+							opacity: 0;
+						}
+						&:hover{
+							background: darken($blocks-gray, 5%)
+						}
+					}
+					&.ui-tabs-active{
+						// z-index: 1;
+						// position:relative;
+						width: calc(60% - 8px); // to compensate margin
+					}
+				}
+			}
+		}
+		//tab contents general styles
+		.ui-tabs-panel{
+			padding:0;
+			h4{
+				a {
+					color: $link-color;
+					font-size: $font-size-lg;
+					font-weight: bold;
+				}
+			}
+			.btn-secondary{
+				color: $btn-text-color;
+			}
+			.header,
+			.box{
+				clear:both;
+				margin-bottom: 5px;
+				position: relative;
+				@include border-radius($border-radius);
+			}
+			//header styles for all panels
+			.header{			
+				background-color: $blocks-gray;
+				color:lighten($body-color, 15%);
+				line-height: normal;
+				font-size: $font-size-base;	
+				.col1,
+				.col2{
+					> div{
+						padding: .5rem;
+						&:before{
+							font-family: bloom;
+							margin-right:5px;
+						}
+					}
+				}
+				.title{
+					&:before{
+						content: '1';
+						font-size: $font-size-lg;
+					}
+				}
+				.deadline{
+					&:before{
+						content: '3';
+						font-size: $font-size-lg;
+					}
+				}
+				.grade{
+					&:before{
+						content: '2';
+						font-size: $font-size-lg;
+					}
+				}		
+			}
+			//box styles for all panels
+			.box{
+				background-color: $blocks-blue;
+				line-height: 1.5;
+				.col1{
+					.deadline{
+						&.extension{
+							p{
+								text-decoration: line-through;
+							}
+							.info_panel_extension{
+								font-weight: 900;
+								color: $state-danger-text;
+							}
+						}
+					}
+				}
+				.col2{
+					background-color:#fff;
+				}
+			}
+			.new{
+				position:relative;
+				margin-left: -18px;
+				width: 18px;
+				background: $brand-primary;
+				@include media-breakpoint-up(md) {
+					height:80%;
+					top:10%;
+				}
+				@include border-left-radius($border-radius);
+				&:before{
+					content: 'new';
+					position: absolute;
+					transform: rotate(-90deg);
+					top: 50%;
+					margin-top: -7px;
+					color: $btn-text-color;
+					font-size: 13px;
+					left: 0;
+					right: 0;
+				}
+				img{
+					display: none;
+				}
+			}
+			.icon{
+				width: 30px;
+				height: 30px;
+				margin: 0;
+			}
+			// separate styles for each content
+			&#courses{
+				@include info-panel-content($color1);
+			}
+			&#deadlines{
+				@include info-panel-content($color2);
+			}
+			&#grades{
+				@include info-panel-content($color3, 10, 2);
+			}			
+		}
+	}
+}
+
+
+//move to somewhere else later
+//and write it properly
+table{
+	.info_panel_assignment{
+		word-break: break-word;
+	}
+	&.flexible{
+	 	td,
+	 	th{
+			padding:.5rem;
+			@include media-breakpoint-down(sm){
+				font-size:.9rem;
+				.info_panel_course_submission{
+					font-size:.9rem;
+				}
+				.icon:not(.smallicon){
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// // My deadlines and my grades pages
+//
+.path-blocks-info_panel{
+	#region-main div[role="main"] > h2{
+		font-size: $font-size-base;
+	}
+	&[id*="my_deadlines"]{
+		th.header{
+			border-top-color: $bloom-assignments-color;
+		}
+	}
+	&[id*="my_grades"]{
+		th.header{
+			border-top-color: $bloom-user-color;
+		}
+	}
+	.resettable{ //where is this????
+		margin-bottom: 1.25rem;
+		a{
+			@extend .btn;
+			@extend .btn-secondary;
+			margin: 0 !important;
+			&:before{
+				@include bloom-icon-insert($undo, null, $font-size-base, null);
+			}
+		}
+	}
+}

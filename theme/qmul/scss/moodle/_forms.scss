@@ -1,0 +1,1377 @@
+form {
+    position: relative;
+    &.mform {
+        margin: 0 0 1rem 0;
+        > .buttons {
+            margin-bottom: 1rem;
+        }
+    }
+    &.atto_form {
+        input:not([type="radio"]):not([type="checkbox"]),
+        input[type="text"],
+        input[type="url"],
+        select,
+        textarea {
+            @include make-form-control;
+            display: inline-block;
+            width: auto;
+            margin: 0 .5rem .5rem 0;
+        }
+    }
+    legend {
+        margin-bottom: 0;
+        float: left;
+        width: 100%;
+        line-height: 1.1;
+        background-color: $gray-lightest;
+        .fheader {
+            display: block;
+            padding: 15px 65px 15px 20px;
+            position: relative;
+            &:before {
+                content: "\e434";
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                top: 50%;
+                right: 10px;
+                margin-top: -25px;
+                text-align: center;
+                line-height: 50px;
+                transition: transform 0.3s;
+                display: inline-block;
+                font-family: 'Glyphicons';
+                font-style: normal;
+                font-weight: 400;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+    }
+    label {
+        margin-right: .5rem;
+    }
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+    h3 {
+        margin: 25px -15px 10px -15px;
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: normal;
+        line-height: 1.1;
+        & + .form-item {
+            padding-top: 20px;
+        }
+        & + fieldset {
+            margin: 25px -15px;
+            position: relative;
+        }
+        & + h3:last-of-type {
+            margin-bottom: 25px;
+        }
+        & + .form-buttons {
+            margin: 1.5rem -15px 0 -15px;
+        }
+        .generalbox & {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    .form-defaultinfo {
+        word-break: break-all;
+    }
+    .course-listing h3 {
+        margin: 0 0 1rem 0;
+    }
+    fieldset {
+        padding: 0 15px;
+        margin-bottom: 15px;
+        &.invisiblefieldset {
+            padding: 0;
+        }
+        &.collapsible {
+            padding: 0;
+            border: 1px solid rgba(0, 0, 0, .125);
+            margin-bottom: 1rem;
+            .form-item,
+            .form-group {
+                border: none;
+                padding: 0 15px;
+                margin-bottom: 1.5rem;
+                &:last-child {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                }
+                .form-group {
+                    display: inline-block;
+                    padding: 0;
+                    border: none;
+                    margin-bottom: .5rem;
+                    max-width: 100%;
+                    .form-group {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.collapsed {
+            legend .fheader:before {
+                content: "\e433";
+            }
+            .fcontainer {
+                display: none;
+            }
+        }
+        & + .form-group {
+            padding: 0 15px;
+            border: none;
+        }
+        &.coursesearchbox {
+            margin: 0 -15px;
+            padding: 0 15px;
+            .card-header {
+                margin: 0;
+                h3 {
+                    margin: 0;
+                }
+            }
+        }
+        h3:first-of-type {
+            margin-top: 0;
+            &:before {
+                display: none;
+            }
+        }
+        .formsettingheading {
+            padding: 0 0 1.5rem 0;
+            margin: 0 -15px;
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+        #page-admin-search & {
+            .form-item,
+            h3 {
+                margin: 0 0 1.5rem 0;
+            }
+        }
+        #page-question-import & {
+            &#id_fileformat .form-label-wrap {
+                display: none;
+            }
+        }
+        &#id_courseformathdr {
+            .fcontainer > .fitem {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    .sl-main {
+        #id_general,
+        #id_generalhdr {
+            .fcontainer {
+                display: block;
+            }
+        }
+    }
+    .sl-advanced {
+        .collapsible-actions {
+            position: static;
+            margin: 0;
+        }
+    }
+    .collapsible-actions {
+        display: table;
+        position: relative;
+        right: 0;
+        bottom: 100%;
+        max-width: 130px;
+        padding: .5rem .75rem;
+        border: 1px solid rgba(0, 0, 0, .125);
+        margin: 0 0 1rem 0;
+        @include media-breakpoint-up(sm) {
+            margin: 0 0 1.5rem auto;
+            h2 + & {
+                margin: -3.5rem 0 1.5rem auto;
+            }
+        }
+        .collapseexpand {
+            background-image: none;
+            padding: 0;
+            display: inline-block;
+        }
+        a:before {
+            content: "\e433";
+            text-align: center;
+            transition: transform 0.3s;
+            display: inline-block;
+            font-family: 'Glyphicons';
+            font-style: normal;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: 5px;
+            display: inline-block;
+            font-size: 1rem;
+            vertical-align: top;
+            margin-top: -3px;
+        }
+        .collapse-all {
+            background-image: none;
+            &:before {
+                content: "\e434";
+            }
+        }
+    }
+    .ftoggler {
+        position: relative;
+        padding: 0.25rem;
+    }
+    .fitemtitle {
+        position: relative;
+    }
+    .itemtitle {
+        .itemname {
+            margin-right: .5rem;
+        }
+    }
+    .form-group,
+    .form-item {
+        display: block;
+        .file-picker & {
+            border: none;
+            padding: 0 0 1rem 0;
+        }
+        &:last-child {
+            .static-form-control {
+                margin-bottom: 0;
+            }
+        }
+        &:only-child {
+            .static-form-control {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+        }
+        .form-label-wrap {
+            display: block;
+            position: relative;
+            label {
+                display: inline-block;
+                padding: 0;
+                font-size: .9rem;
+                color: $brand-primary;
+                margin-bottom: .25rem;
+            }
+            abbr[data-original-title] {
+                border-bottom: none;
+                display: none;
+                text-decoration: none;
+                font-size: 0.6rem;
+                vertical-align: top;
+                margin-left: 2px;
+            }
+        }
+        .felement,
+        .form-setting {
+            position: relative;
+            display: block;
+            #capabilitysearchui {
+                margin-bottom: 1rem;
+            }
+            &[data-fieldtype='tags'] {
+                display: table;
+                width: 100%;
+                .form-autocomplete-selection + input[type='text'] {
+                    display: table-header-group;
+                }
+            }
+        }
+        .form-group {
+            display: inline-block;
+            padding: 0;
+            margin-bottom: 0;
+            border: none;
+        }
+        .checkbox {
+            label {
+                &:last-of-type,
+                &:only-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .form-text {
+            margin-top: 0;
+        }
+        .form-check {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: .75rem;
+        }
+        .form-check-input {
+            margin: 0;
+            position: relative;
+        }
+        [data-fieldtype="group"] {
+            .form-check {
+                margin-bottom: .25rem;
+            }
+        }
+        .visibleifjs + .form-check {
+            width: auto;
+            margin: .5rem 0;
+        }
+        .static-form-control {
+            margin-bottom: 1rem;
+            padding-top: 10px;
+            display: inline-block;
+            font-size: .8rem;
+            color: $gray;
+            width: 100%;
+        }
+        .form-multicheckbox ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        &#admin-emoticons {
+            .form-group {
+                display: block;
+            }
+        }
+        &.border-0 {
+            padding: 0;
+            margin-bottom: 1.5rem;
+            .form-label-wrap {
+                position: relative;
+                label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &.form-inline {
+        display: inline-block;
+        max-width: 100%;
+        @include media-breakpoint-down(sm) {
+            display: flex;
+        }
+        .forumsearch & {
+            .form-group {
+                display: inline-block;
+            }
+        }
+    }
+    .form-group {
+        &:last-child {
+            #page-admin-search & {
+                border: none;
+                padding: 0 15px;
+                .form-label-wrap {
+                    display: none;
+                }
+            }
+        }
+    }
+    > h3 {
+        margin-top: 0;
+        &:before {
+            display: none;
+        }
+    }
+    .clearer + .form-item {
+        border-top: 1px solid rgba(0, 0, 0, .125);
+        padding-top: 20px;
+        &.border-0 {
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .fcontainer {
+        padding: 20px;
+        clear: both;
+    }
+    .form-inline {
+        textarea.form-control {
+            width: 100%;
+            height: auto;
+            min-height: 200px;
+            margin-bottom: 1.5rem;
+        }
+        .form-check-inline {
+            display: inline-block;
+        }
+    }
+    &.form-inline {
+        label {
+            +input,
+            +textarea,
+            +select {
+                margin-left: .5rem;
+                @include media-breakpoint-down(lg) {
+                    margin-left: 0;
+                }
+            }
+            &:empty,
+            &.sr-only,
+            &.accesshide {
+                +input,
+                +textarea,
+                +select {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .form-submission-wrap {
+        padding: 0 15px;
+    }
+    .fitem {
+        margin-bottom: .5rem;
+        #page-user-files & {
+            &.row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        &.advanced {
+            display: none;
+            &.show {
+                display: block;
+            }
+        }
+    }
+    .nav-tabs {
+        margin-bottom: 0;
+        .nav-item {
+            margin: 0 .25rem (-$nav-tabs-border-width) 0;
+            .nav-link {
+                padding: .5rem 1rem;
+                &:focus,
+                &:hover {
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
+    .tab-content {
+        padding: 20px 0 0 0;
+        margin-bottom: 25px;
+        fieldset:last-child {
+            margin-bottom: 0;
+        }
+    }
+    #course-category-listings {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        @include media-breakpoint-down(lg) {
+            &.columns-2,
+            &.columns-3 {
+                display: block;
+                #category-listing,
+                #course-listing,
+                #course-detail {
+                    width: 100%;
+                    margin: 0 0 1em;
+                    max-width: 100%;
+                    flex: none;
+                }
+            }
+        }
+        .listitem.collapsed {
+            > ul {
+                display: none;
+            }
+        }
+        #category-listing,
+        #course-listing {
+            flex: 1;
+            max-width: 100%;
+        }
+        .card {
+            max-width: 100%;
+        }
+        .card-header {
+            margin: 0;
+            &:before {
+                display: none;
+            }
+            h3 {
+                margin: 0;
+            }
+        }
+        .card-block {
+            margin: 0;
+            padding: 20px;
+            .listing-actions {
+                margin-bottom: 1rem;
+                max-width: 100%;
+                overflow: visible;
+            }
+            .detail-pair {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                > div {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+            ul {
+                padding-left: 0;
+                list-style: none;
+                margin-bottom: 1rem;
+            }
+            .listing-pagination-totals {
+                margin: 1rem 0;
+                text-align: center;
+            }
+            .parent-cat {
+                display: none;
+            }
+            .listitem {
+                margin-bottom: .5rem;
+                > div {
+                    .item-actions {
+                        .action-show {
+                            display: none;
+                        }
+                        .action-hide {
+                            display: inline;
+                        }
+                    }
+                }
+                &[data-visible="0"] {
+                    @extend .text-muted;
+                    > div {
+                        > a {
+                            @extend .text-muted;
+                        }
+                        .item-actions {
+                            .action-show {
+                                display: inline;
+                            }
+                            .action-hide {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.highlight {
+                    background-color: $body-bg;
+                    > div,
+                    > div:hover,
+                    &[data-selected='1'] > div {
+                        background-color: $table-bg-hover;
+                    }
+                }
+            }
+            .listitem:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .course-item-actions.item-actions i {
+            font-size: 17px;
+        }
+        .idnumber {
+            margin-right: 0.5rem;
+            color: $text-muted;
+        }
+    }
+    &#coursecat-management {
+        & + div {
+            padding: 0;
+        }
+    }
+    &#updateform,
+    &#uninstallform,
+    &#installform {
+        select {
+            height: 300px;
+        }
+        [type="submit"] {
+            white-space: normal;
+        }
+    }
+    &.logselecform [type="submit"] {
+        display: block;
+        margin: 10px 0;
+    }
+    .form-autocomplete-wrap {
+        position: relative;
+        display: inline-block;
+    }
+    input#capabilitysearch {
+        width: auto;
+    }
+    &.gradeform {
+        #id_grade {
+            background-color: #FFF;
+        }
+    }
+}
+
+.form-inline {
+    label {
+        display: inline-flex;
+    }
+}
+
+.input-group {
+    z-index: 1;
+}
+
+.label {
+    background-color: $gray-lightest;
+    color: $gray-dark;
+}
+
+input,
+select,
+textarea {
+    box-shadow: $input-box-shadow;
+    outline: 0;
+    border: $border-width solid $gray-lightest;
+    transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+    &:focus {
+        box-shadow: $input-box-shadow-focus;
+    }
+    .form-group &,
+    .form-item &,
+    .detail-pair &,
+    .card-block &,
+    .form-inline & {
+        margin: 0 .5rem .5rem 0;
+    }
+    &[type='text'],
+    &[type="url"] {
+        @include make-form-control;
+        margin: 0 .5rem .5rem 0;
+        max-width: 100%;
+        &.form-control-sm {
+            @extend .form-control-sm;
+        }
+    }
+    + label {
+        margin-right: .75rem;
+    }
+}
+
+select,
+.custom-select {
+    height: auto;
+    line-height: $input-line-height;
+    &.atto_image_alignment {
+        @include make-form-control;
+        display: inline-block;
+        width: auto;
+    }
+}
+
+.ie10 .custom-select {
+    background-size: 25px 10px;
+    background-position-x: right 5px;
+}
+
+div.singleselect {
+    max-width: 100%;
+}
+
+select,
+select.form-control,
+form select,
+form select.form-control,
+.mform .fitem .felement select,
+select.singleselect,
+select.atto_image_alignment,
+form.atto_form select {
+    max-width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='62px' height='28px' viewBox='0 0 62 28' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg%3E%3Cpolygon fill='#{$brand-primary}' points='0 0 62 0 31 28'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px);
+    padding-right: 1.75rem;
+    margin: 0 .5rem .5rem 0;
+    .dir-rtl & {
+        background-position: 8px;
+    }
+    &::-ms-expand {
+        display: none;
+    }
+    &.input {
+        &-sm {
+            font-size: $font-size-sm;
+        }
+        &-lg {
+            font-size: $font-size-lg;
+        }
+    }
+    &[multiple],
+    &[size] {
+        background: none;
+        padding: 0.25rem;
+        option {
+            margin-bottom: .25rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &:not([size]):not([multiple]) {
+        height: auto;
+    }
+    &#id_country {
+        width: 100%;
+    }
+    &#id_capability {
+        min-width: auto !important;
+    }
+}
+
+select[multiple] {
+    padding: .5rem;
+    option {
+        background-color: $gray-lightest;
+        margin-bottom: .25rem;
+        padding: .25rem .5rem;
+    }
+}
+
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+    position: relative;
+    label {
+        padding-left: 25px;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-left: -25px;
+        margin-right: .5rem;
+    }
+}
+
+input[type='text'],
+select[type='text'],
+textarea[type='text'] {
+    .atto_form &,
+    &#searchwiki {
+        display: inline-block;
+        width: auto;
+    }
+}
+
+input[type="radio"],
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 0;
+    vertical-align: -4px;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: none;
+    &:focus {
+        outline: none;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-top: -2px;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+        .path-backup .backup-section & {
+            display: block;
+        }
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $brand-primary;
+        transform: scale(0);
+    }
+    &:after {
+        border: 2px solid $gray-light;
+    }
+    &:checked:before {
+        transform: scale(0.5);
+    }
+    &:disabled:checked:before {
+        background-color: $gray-lightest;
+    }
+    &:checked:after {
+        border-color: $brand-primary;
+    }
+    &:disabled:after,
+    &:disabled:checked:after {
+        border-color: $gray-lighter;
+    }
+}
+
+.modulespecificbuttonscontainer {
+    select#id_movetocategory {
+        margin: 0;
+    }
+}
+
+input[type="checkbox"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+    position: relative;
+    vertical-align: middle;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-right: .5rem;
+    &:focus {
+        outline: none;
+    }
+    &.accesshide {
+        position: absolute;
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-top: -2px;
+        border: 2px solid $gray;
+        border-radius: 2px;
+        transition: all 0.2s ease-in-out;
+    }
+    &:checked:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 6px;
+        display: table;
+        width: 6px;
+        height: 12px;
+        border: 2px solid #fff;
+        border-top-width: 0;
+        border-left-width: 0;
+        transform: rotate(45deg);
+    }
+    &:checked:after {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+    }
+    &:disabled:after {
+        border-color: $gray-lighter;
+    }
+    &:disabled:checked:after {
+        background-color: $gray-lighter;
+        border-color: transparent;
+    }
+    table & {
+        margin-right: .5rem;
+    }
+}
+
+#page-portfolio-add {
+    .generalbox {
+        .mform {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+.editor_atto_wrap {
+    .editor_atto_content {
+        width: 100%;
+        h3 {
+            font-size: $font-size-h3;
+            margin: 0 0 .5rem;
+        }
+        h4 {
+            font-size: $font-size-h4;
+        }
+        h5 {
+            font-size: $font-size-h5;
+        }
+    }
+    .editor_atto_notification {
+        z-index: 1;
+    }
+    > .fieldset {
+        margin-bottom: 1rem;
+        font-size: $font-size-h3;
+        #feedback_subject {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}
+
+.has-danger .form-control,
+.has-danger .path-admin .roleassigntable input[type="text"],
+.path-admin .roleassigntable .has-danger input[type="text"],
+.has-danger .loginbox .loginform .form-input input[type="text"],
+.loginbox .loginform .form-input .has-danger input[type="text"],
+.has-danger .loginbox .loginform .form-input input[type="password"],
+.loginbox .loginform .form-input .has-danger input[type="password"],
+.has-danger #page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion select.urlselect,
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscussion .has-danger select.urlselect {
+    border-color: rgba(0, 0, 0, .05);
+    box-shadow: inset 0 -2px 0 0px $brand-danger;
+    &:focus {
+        border-color: $brand-danger;
+        outline: 0;
+        box-shadow: inset 0 -2px 0 0px $brand-danger;
+    }
+}
+
+a[data-passwordunmask="edit"] {
+    line-height: 45px;
+}
+
+a[data-passwordunmask="edit"] > span {
+    margin-right: 10px;
+}
+
+.fp-file {
+    position: relative;
+}
+
+.jsenabled .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile ~ label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    color: transparent;
+    position: absolute;
+    left: 15px;
+    margin: 0;
+    padding-left: 50px;
+    height: 100%;
+}
+
+.inputfile + .label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    color: $brand-primary;
+    border: 2px solid currentColor;
+    background: transparent;
+}
+
+body:not(.jsenabled) .inputfile + .label {
+    display: none;
+}
+
+.inputfile:focus + .label,
+.inputfile.has-focus + .label,
+.inputfile + .label:hover {
+    outline: none;
+    color: darken($brand-primary, 10%);
+}
+
+.inputfile + .label svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.tag,
+.statusok,
+.statuswarning,
+.statusserious,
+.statuscritical,
+.assignfeedback_editpdf_widget .label,
+.label,
+.badge {
+    form & {
+        display: inline-block;
+        padding: .25em .5em;
+        font-size: .75rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25rem;
+    }
+}
+
+.availability-field.fcontainer {
+    padding: 0;
+    .availability-inner {
+        .availability-header {
+            margin: .5rem 0;
+        }
+        .availability-inner,
+        .availability-plugincontrols {
+            float: left;
+            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-left: .625rem;
+            .form-group {
+                margin-bottom: .5rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .availability-none {
+            margin-bottom: .5rem;
+        }
+        > .clearfix.m-t-1 {
+            display: none;
+        }
+        label {
+            display: inline-block;
+        }
+        .availability-connector {
+            margin: .75rem 0;
+        }
+    }
+}
+
+.group {
+    > span {
+        display: inline-block;
+    }
+}
+
+.advancedoverride,
+.capabilitysearchui {
+    margin-bottom: 1.5rem;
+}
+
+#chooseusersubmit {
+    margin: .75rem 0 0 0;
+}
+
+.availability-eye {
+    float: left;
+    clear: left;
+}
+
+#id_availabilityconditionsjson[aria-hidden=true],
+.availability-field [aria-hidden=true] {
+    display: none;
+}
+
+#page-user-editadvanced #id_error_passwordpolicyinfo {
+    margin-top: -1.5rem;
+    display: block !important;
+}
+
+#feedback_edit_form,
+#page-admin-roles-define .topfields,
+.path-mod-assign [data-region="grade-panel"] #id_gradeheader .fcontainer {
+    margin-top: 1rem;
+    > .form-group {
+        padding: 0;
+        margin: 0 0 25px 0;
+        @include make-card;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        > .form-label-wrap,
+        > .fitemtitle {
+            @include make-card-header;
+            flex: 0 0 100%;
+            max-width: 100%;
+            label {
+                margin-bottom: 0;
+            }
+        }
+        > .form-inline,
+        > .checkbox {
+            @include make-card-block;
+        }
+        .moodle-core-dragdrop-draghandle {
+            position: absolute;
+            right: .5rem;
+            top: .75rem;
+        }
+        &.popout {
+            display: block;
+            position: fixed;
+        }
+    }
+}
+
+body:not(#page-enrol-users):not(#page-blocks-landingpage-choice) div[role="main"] > .mform,
+.editsubmissionform form {
+    > .form-group {
+        padding: 0;
+        margin: 0 0 25px 0;
+        @include make-card;
+        &:last-of-type {
+            border: none;
+            > .form-label-wrap {
+                display: none;
+            }
+            > .form-inline {
+                padding: 0;
+            }
+        }
+        > .form-label-wrap {
+            @include make-card-header;
+            label {
+                margin-bottom: 0;
+            }
+        }
+        > .form-inline,
+        > .checkbox {
+            @include make-card-block;
+        }
+    }
+}
+
+.path-mod-feedback .form-control::-webkit-input-placeholder {
+    color: transparent;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#id_changepassword {
+    display: block;
+    padding: 0;
+    .ftoggler {
+        padding: $card-spacer-y $card-spacer-x;
+    }
+    .fcontainer {
+        padding: $card-spacer-y 0;
+        > .form-group {
+            padding: 0;
+            margin: 0 0 25px 0;
+            @include make-card;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &:nth-child(2) {
+                .form-label-wrap {
+                    display: none;
+                }
+            }
+            > .form-label-wrap {
+                @include make-card-header;
+                label {
+                    margin-bottom: 0;
+                }
+            }
+            > .form-inline,
+            > .checkbox {
+                @include make-card-block;
+            }
+            .static-form-control {
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+#page-backup-restorefile,
+#page-admin-repository-areafiles {
+    .form-group:nth-child(3) {
+        border: none;
+        margin-bottom: .5rem;
+        .form-label-wrap {
+            display: none;
+        }
+        .form-inline {
+            padding: 0;
+        }
+        .static-form-control {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.availability-dialogue {
+    .moodle-dialogue-bd {
+        ul li {
+            margin-bottom: 1.5rem;
+            display: block;
+            button {
+                width: 45%;
+                float: left;
+                margin-right: 1rem;
+            }
+            label {
+                display: block;
+                vertical-align: middle;
+                line-height: 1.5;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.user-competency-course-navigation {
+    input[type=text] {
+        width: auto;
+        display: inline-block;
+    }
+}
+
+.rolesform {
+    margin-bottom: 1rem;
+}
+
+@include media-breakpoint-down(xs) {
+    .autosubmit {
+        select {
+            display: block;
+        }
+    }
+}
+
+#page-grade-edit-tree-grade {
+    div[role=main] {
+        > .generalbox {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border: 1px solid rgba(0, 0, 0, .125);
+            margin-bottom: 1rem;
+            form.mform {
+                padding: 20px;
+                .form-item,
+                .form-group {
+                    border: none;
+                    margin-bottom: 1.5rem;
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+                    .form-group {
+                        display: inline-block;
+                        padding: 0;
+                        border: none;
+                        margin-bottom: .5rem;
+                        max-width: 100%;
+                        .form-group {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#page-admin-local-landingpages-index {
+    .mform {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        > .form-group {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+div.availablecolors {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 .5rem 0;
+    label {
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 0;
+        padding: 2px;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        margin: 0 .25rem .25rem 0;
+        line-height: 24px;
+        input[type="radio"] {
+            float: none;
+            margin: 0;
+            vertical-align: middle;
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 50%;
+            height: 18px;
+            &:before,
+            &:after {
+                margin-top: 0px;
+            }
+            &:disabled {
+                opacity: 0.3;
+                &:after {
+                    border-color: #a3a3a3;
+                }
+            }
+        }
+    }
+}
+
+#page-mod-assign-editsubmission .editsubmissionform .success {
+    margin-bottom: 1rem;
+}
+
+#page-mod-assign-editsubmission .editsubmissionform .form-group {
+    border: none;
+    margin: 0;
+    display: block;
+}
+
+#page-mod-assign-editsubmission .editsubmissionform .form-group .form-label-wrap {
+    display: inline-block;
+    background: none;
+    font-weight: bold;
+    border: none;
+    width: 25%;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+#page-mod-assign-editsubmission .editsubmissionform .form-group .form-inline.felement,
+#page-mod-assign-editsubmission .editsubmissionform .form-group > .checkbox {
+    display: inline-block;
+    width: 65%;
+    margin: 0;
+    padding-top: 0;
+}
+
+#page-mod-assign-editsubmission .editsubmissionform .form-group .fdate_time_selector .fitem {
+    display: inline;
+}

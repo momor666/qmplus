@@ -1,0 +1,13 @@
+{{!
+  Display the details of a single upcoming assignment.
+  Possible values for 'statusclass' are: submitted, draft, duesoon, overdue, none
+}}
+<div class="assignment mb-1 clearfix">
+    <h6 class="assignmentname mb-0">{{name}}</h6>
+    <div class="text-primary coursename">{{coursename}}</div>
+    <div class="info my-1 clearfix">
+	    <div class="d-inline-block duestatus {{statusclass}}">{{duestatus}}</div>
+	    <div class="d-inline-block duedate {{statusclass}}">{{duedate}}</div>
+	    <a href="{{viewurl}}" class="float-right btn btn-primary viewassignment">{{#str}}view, widgettype_assignments{{/str}}</a>
+	</div>
+</div>

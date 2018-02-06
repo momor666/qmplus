@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/assessment_information/db" VERSION="20150610" COMMENT="XMLDB file for Moodle blocks/assessment_information"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_assessment_information" COMMENT="This table contains the data of the resources for courses in assessment information block">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="userid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" COMMENT="course id where resource resides" PREVIOUS="id" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="type of resourse modpage or modassignment" PREVIOUS="courseid" NEXT="table"/>
+        <FIELD NAME="mtable" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="main table of the resource in moodle database" PREVIOUS="type" NEXT="itemid"/>
+        <FIELD NAME="itemid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="primary id of resource in its main table" PREVIOUS="table" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" COMMENT="name of the resource" PREVIOUS="itemid" NEXT="url"/>
+        <FIELD NAME="url" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="name" NEXT="section"/>
+        <FIELD NAME="section" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="section in assessment information block where it should be visible eg. assessment, assignment, subheading, extra" PREVIOUS="url" NEXT="weight"/>
+        <FIELD NAME="weight" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" DEFAULT="2000" SEQUENCE="false" COMMENT="weight of resource in its respective section" PREVIOUS="section" NEXT="visible"/>
+        <FIELD NAME="visible" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="false" DEFAULT="1" SEQUENCE="false" COMMENT="visibility of resource" PREVIOUS="weight"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="assessment_information_course_ix" UNIQUE="false" FIELDS="courseid" NEXT="assessment_information_section_ix"/>
+        <INDEX NAME="assessment_information_section_ix" UNIQUE="false" FIELDS="section" PREVIOUS="assessment_information_course_ix" NEXT="assessment_information_table_ix"/>
+        <INDEX NAME="assessment_information_mtable_ix" UNIQUE="false" FIELDS="mtable" PREVIOUS="assessment_information_section_ix" NEXT="assessment_information_itemid_ix"/>
+        <INDEX NAME="assessment_information_itemid_ix" UNIQUE="false" FIELDS="itemid" PREVIOUS="assessment_information_table_ix"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

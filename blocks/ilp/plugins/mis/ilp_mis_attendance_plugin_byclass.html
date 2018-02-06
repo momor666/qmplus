@@ -1,0 +1,117 @@
+<div id="ilp_mis_attendance_plugin_byclass">
+	<form id="ilp_mis_attendance_plugin_byclass_form" action="<?php echo $CFG->wwwroot; ?>/blocks/ilp/actions/view_main.php" method="get" >
+			<label><?php echo get_string('course','block_ilp');?></label>
+			<select id="ilp_mis_attendance_plugin_byclass_course" name="mis_course_id">
+				<?php 
+				if (!empty($this->courselist)) {
+					foreach($this->courselist as $courseid => $coursename) {
+					    $selected = ($courseid == $miscourse_id) ?  "selected='selected'" : '';?>
+					    <option value="<?php echo $courseid;  ?>" <?php echo $selected; ?> ><?php echo $coursename; ?></option>
+				<?php } 
+				}?>
+			</select>
+			<label><?php echo get_string('month','block_ilp');?></label>
+			<select id="ilp_mis_attendance_plugin_byclass_month" name="mis_period_id">
+				<?php 
+				for($i =1; $i < 13;$i++) { 
+					$selected = ($i == $misperiod_id) ?  "selected='selected'": '';  
+ 			?> 
+					<option value="<?php echo date('m',strtotime("1-$i-2011")); ?>"  <?php echo $selected; ?> ><?php echo date('F',strtotime("1-$i-2011")); ?></option>
+			<?php } ?>
+			</select>
+		<?php echo $hiddenparams;?>
+		
+		<input type="submit" id="ilp_mis_attendance_plugin_byclass_submit" value="<?php echo get_string('filter','block_ilp'); ?>">
+	</form>
+
+	<div>
+			<?php 
+				echo $pluginoutput;
+		?>
+    <?php
+        if (get_config('block_ilp', 'mis_plugin_course_byclass_key'))   {
+
+        $presentcol     =   (get_config('block_ilp','mis_plugin_course_byclass_markspresentcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_markspresentcss')  :  "" ;
+        $absentcol     =   (get_config('block_ilp','mis_plugin_course_byclass_marksabsentcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_marksabsentcss')  :  "" ;
+        $unauthcol     =   (get_config('block_ilp','mis_plugin_course_byclass_marksauthabsentcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_marksauthabsentcss')  :  "" ;
+        $latecol     =   (get_config('block_ilp','mis_plugin_course_byclass_markslatecss'))  ? get_config('block_ilp','mis_plugin_course_byclass_markslatecss')  :  "" ;
+        $latexcol     =   (get_config('block_ilp','mis_plugin_course_byclass_latexcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_latexcss')  :  "" ;
+        $placementcol     =   (get_config('block_ilp','mis_plugin_course_byclass_placementcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_placementcss')  :  "" ;
+        $notifiedcol     =   (get_config('block_ilp','mis_plugin_course_byclass_notifiedcss'))  ? get_config('block_ilp','mis_plugin_course_byclass_notifiedcss')  :  "" ;
+
+    ?>
+    <div >
+        <table>
+            <thead>
+                <tr>
+                    <td rowspan="3"><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_key','block_ilp');?></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="background-color:<?php echo $presentcol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_punct','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_punct_desc','block_ilp');?></td>
+                </tr>
+                <tr>
+                    <td style="background-color:<?php echo $absentcol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_attend','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_attend_desc','block_ilp');?></td>
+                </tr>
+                <tr>
+                    <td style="background-color:<?php echo $unauthcol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_unauth','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_unauth_desc','block_ilp');?></td>
+                </tr>
+                <tr>
+                    <td style="background-color:<?php echo $latecol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_late','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_late_desc','block_ilp');?></td>
+                </tr>
+                <?php if (get_config('block_ilp', 'mis_plugin_course_byclass_latexfield')) {?>
+                <tr>
+                    <td style="background-color:<?php echo $latexcol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_latex','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_latex_desc','block_ilp');?></td>
+                </tr>
+                <?php }
+
+                 if (get_config('block_ilp', 'mis_plugin_course_byclass_notifiedfield')) {
+                 ?>
+                <tr>
+                    <td style="background-color:<?php echo $notifiedcol?>">&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_notified','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_notified_desc','block_ilp');?></td>
+                </tr>
+                <?php }
+
+                 if (get_config('block_ilp', 'mis_plugin_course_byclass_placementfield')) {
+                 ?>
+                <tr style="background-color: <?php echo $placementcol?>">
+                    <td>&nbsp</td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_placement','block_ilp');?></td>
+                    <td><?php echo get_string('ilp_mis_attendance_plugin_byclass_disp_placement_desc','block_ilp');?></td>
+                </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+        <?php
+         }
+        ?>
+    </div>
+</div>
+<?php 
+
+$jsmodule = array(
+    'name'     	=> 'ilp_mis_attendance_plugin_byclass',
+    'fullpath' 	=> '/blocks/ilp/plugins/mis/ilp_mis_attendance_plugin_byclass.js',
+	'requires'  	=> array('event','dom','node','io-form')
+);
+
+$PAGE->requires->js_init_call('M.ilp_mis_attendance_plugin_byclass.init', null, true, $jsmodule);
+
+
+?>

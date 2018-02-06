@@ -1,0 +1,236 @@
+.atto_qmulicons_map ul {
+    padding: 0;
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.atto_qmulicons_map li div {
+    display: table-cell;
+    padding: 0 1em;
+}
+
+
+/* cpied over from theme/qmul/style/course.css
+ */
+.qmplus_attoicon {
+    height: 35px;
+}
+
+li.modassignment {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-assignment]]) no-repeat;
+}
+
+li.modbook {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-book]]) no-repeat;
+}
+
+li.modpage {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-page]]) no-repeat;
+}
+
+li.modsubmission {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-submission]]) no-repeat;
+}
+
+li.modurl {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-url]]) no-repeat;
+}
+
+li.modpdf {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-pdf]]) no-repeat;
+}
+
+li.moddoc {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-doc]]) no-repeat;
+}
+
+li.modzip {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-zip]]) no-repeat;
+}
+
+li.modquiz {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-quiz]]) no-repeat;
+}
+
+li.modforum {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-forum]]) no-repeat;
+}
+
+li.modlightbox {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-lightbox]]) no-repeat;
+}
+
+li.modppt {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-ppt]]) no-repeat;
+}
+
+li.modimage {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-image]]) no-repeat;
+}
+
+li.modexcel {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-excel]]) no-repeat;
+}
+
+li.modaudio {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-audio]]) no-repeat;
+}
+
+li.modvideo {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-video]]) no-repeat;
+}
+
+li.modscorm {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-scorm]]) no-repeat;
+}
+
+li.modempty {
+    width: 32px height: 32px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: none;
+}
+
+li.modportfolio {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|eportfolio]]) no-repeat;
+}
+
+li.modfolder {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-folder]]) no-repeat;
+}
+
+li.modwimba {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-wimba]]) no-repeat;
+}
+
+li.modquestionmark {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-questionmark]]) no-repeat;
+}
+
+li.modmaple {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-maple]]) no-repeat;
+}
+
+li.modouwiki {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-ouwiki]]) no-repeat;
+}
+
+li.modoublog {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-oublog]]) no-repeat;
+}
+
+li.modturnitin {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-turnitin]]) no-repeat;
+}
+
+li.modcertificate {
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: url([[pix:theme|bg-certificate]]) no-repeat;
+}
+

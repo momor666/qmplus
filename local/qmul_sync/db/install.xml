@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="enrol/qmul_sync/db" VERSION="20150129" COMMENT="XMLDB file for Moodle enrol/qmul_sync"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_qmul_sync_users" COMMENT="sync users from CSV">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="last_modified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="last_present" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="username" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle username"/>
+        <FIELD NAME="firstname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="lastname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="email" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="idnumber" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="usersource" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="department_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="department_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="local_status" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="programme_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="programme_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="development_year" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="route_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="route_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="location_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="initials" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_qmul_sync_enrolments" COMMENT="sync enrolments from CSV">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="last_modified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="last_present" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="user_id" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="sync user ID"/>
+        <FIELD NAME="course_id" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="sync course ID"/>
+        <FIELD NAME="role_name" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="sync role name"/>
+        <FIELD NAME="module_code" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="sync role name"/>
+        <FIELD NAME="stuprog_code" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="sync role name"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_qmul_sync_courses" COMMENT="sync courses from CSV">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="last_modified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="last_present" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course_id" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="SITS course ID"/>
+        <FIELD NAME="course_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course_short_name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="module_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="module_desc" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="scheme_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="module_level" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="module_credits" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="convenor" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="convenor_email" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="department_code" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course_category" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="academic_year" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="period" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="assessment_pattern" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_qmul_sync_mappings" COMMENT="sync mapping names from CSV">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="last_modified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="last_present" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="description" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_qmul_sync_course_map" COMMENT="sync mapping id => course code from CSV">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="last_modified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="last_present" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="qmpluscourse" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="mappingid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

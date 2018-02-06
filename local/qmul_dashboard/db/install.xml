@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/qmul_dashboard/db" VERSION="20150129" COMMENT="XMLDB file for Moodle local/qmul_dashboard"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="qmul_dashboard_settings" COMMENT="dahsboard visibility settings">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="category" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle course category id"/>
+        <FIELD NAME="itemname" TYPE="char" NOTNULL="true" LENGTH="255" SEQUENCE="false" COMMENT="Name of hidden element"/>
+        <FIELD NAME="itemtype" TYPE="char" NOTNULL="true" LENGTH="255" SEQUENCE="false" COMMENT="Type of hidden element"/>
+        <FIELD NAME="userid"  TYPE="int" NOTNULL="true" LENGTH="10" SEQUENCE="false" COMMENT="User that added the setting"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="category" TYPE="foreign" FIELDS="category" REFTABLE="course_categories" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

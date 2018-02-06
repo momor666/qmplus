@@ -1,0 +1,1130 @@
+//
+// this needs reviewing
+// I have no idea what this is about
+//
+
+@mixin settings-dropdown(){ // general style for settings dropdown menu in edit moede ("cog" icon)
+    .dropdown{
+    display: inline-block;
+    background: $brand-secondary;
+    @include border-radius($border-radius);
+    @include transition(background .25s ease-out);
+    // padding-right: 0.8rem;
+    // margin-bottom: 1rem;
+    &:hover{
+      background: darken($brand-secondary, 5%);
+    }
+    &:before{
+      bottom: -4px;
+      right: 50%;
+      transform: translateX(50%);
+      @include transition(border-color .15s ease-out);
+    }
+    &.open{
+      &:before{
+        border-top: 5px solid $brand-secondary;
+      }
+    }
+  }
+  .dropdown-toggle{
+    display: inline-block;
+    color: $btn-text-color;
+    font-size: 0;
+    &:hover{
+      color: $btn-text-color;
+    }
+    &:after{
+      display: none;
+    }
+    &:before{
+      content: $setting; //settings icon
+      font-family: bloom;
+      font-size: 1rem;
+      color: $btn-text-color;
+      display: inline-block;
+      width: 24px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+  .dropdown-menu{
+    background: #fff;
+  }
+}
+
+@mixin bloom-icon-insert( $icon, $color, $boxSize, $fontSize){ // inserts a bloom icon (for $icon view bloom icon font variables in variables.scss)
+  font-family: bloom;
+  content: $icon;
+  color: $color;
+  width: $boxSize;
+  line-height: $boxSize;
+  font-size: $fontSize;
+  display: inline-block;
+  text-align: center;
+}
+
+.path-course{
+  // ADJUSTMENNTS TO ACTIVITIES DISPLAY
+  *:target {
+      padding-top: 0 !important;
+      margin-top: 1.25rem !important;
+  }
+
+  .completionprogress {
+    margin: 10px 5px 0 0;
+  }
+
+  .course-content ul.ctopics #section-0 .content // removes extra padding and margins
+  //.content ul
+  {
+    padding: 0;
+    margin: 0;
+  }
+
+  .right.side{
+    margin: 0 0 1.25rem 0;
+    padding: 0 !important;
+    @include settings-dropdown();
+    width: auto;
+  }
+
+  .left.side{
+    width: auto;
+    padding: 0 !important;
+    margin: 0;
+    .icon.spacer{
+      display: none;
+    }
+    .section-handle{
+      &:before{ // replaces draghandle with icon from bloom icon font
+        @include bloom-icon-insert( $drag, $brand-secondary, 24px, $font-size-lg);
+        margin-right: 0.5rem;
+      }
+      img{
+        display: none; // hides default drag-handle icon
+      }
+    }
+  }
+
+  .ctopics .tcsection.main{
+    margin: 0;
+    padding: 0 1.25rem;
+    @include media-breakpoint-down(xs){
+      .content{
+        margin:0;
+      }
+    }
+    &#toggle-all{
+      .sectionbody h4{
+        text-align: center;
+        padding: 1.25rem 0;
+      }
+      .on, .off{
+        background: $brand-secondary;
+        @include border-radius($border-radius);
+        padding: 0.8rem 1.25rem;
+        color: $btn-text-color;
+        margin: 1rem;
+        @include transition(background .3s ease-out);
+        &:hover{
+          background: darken($brand-secondary, 10%);
+        }
+        &:before{
+          content: $fa-var-chevron-down;
+          font-family: FontAwesome;
+          display: inline-block;
+          font-size: $font-size-h4;
+          margin-right: 10px;
+          @include transition(all .15s ease);
+        }
+        &.off{
+          &:before{
+            content: $fa-var-chevron-up;
+          }
+        }
+        @include media-breakpoint-down(xs){
+          display: inline-block;
+          width: auto;
+          font-size: 1rem;
+          margin: 0 1px;
+        }
+      }
+    }
+    &#topcoll-display-instructions{
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  .course-content{
+    #intro{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 1.25rem;
+      .editinglink{
+        order: -1;
+        a[title="Edit summary"]{
+          display: inline-block;
+          background: $brand-secondary;
+          @include border-radius($border-radius);
+          @include transition(background .25s ease-out);
+          margin-right: 1rem;
+          &:hover{
+            background: darken($brand-secondary, 5%);
+          }
+          &:before{
+            @include bloom-icon-insert( $setting, $btn-text-color, 24px, $font-size-base);
+          }
+          img{
+            display: none;
+          }
+        }
+      }
+    }
+    .forumaddnew{
+      float: right;
+      margin-bottom: 1.25rem;
+      button{
+        @extend .btn-primary;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        margin: 0;
+        &:before{
+          content: $fa-var-plus;
+  				font-family:FontAwesome;
+  				margin-right: 5px;
+        }
+      }
+    }
+    .forumpost{
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      background: $blocks-blue;
+      @include border-radius($border-radius);
+      border: none;
+      &.firstpost{
+        clear:both;
+      }
+    }
+    .current::before{
+      display: none;
+    }
+    ul{
+      &.topics li[id^="section-"], //topics course view
+      &.weeks li[id^="section-"], // weeks course view
+      &.gtopics li[id^="section-"]{ // grid course view
+      padding: 1.25rem;
+      .side{
+       width: auto;
+      }
+      .sectionname{
+       margin-bottom: 1.25rem;
+       border-bottom: none;
+      }
+      ul.section{
+       margin: 0;
+      }
+      .content{
+       margin: 0;
+       clear: both;
+       .section {
+         margin-bottom: 0;
+       }
+      }
+      }
+      &.gtopics-0 #section-0{ // grid course view general section
+      background: $blocks-blue;
+      @include border-radius($border-radius);
+      .content{
+       position: relative;
+       .activity{
+         @include transition(background .3s ease-out);
+         @include border-radius($border-radius);
+         &:hover{
+           background: darken($blocks-blue, 5%);
+         }
+       }
+      }
+      .sectionname{
+       display: inline-block;
+       margin-bottom: 1.25rem;
+      }
+      .summary{
+       position: absolute;
+       right: 0;
+       display: inline-block;
+       a[title="Edit summary"]{
+         display: inline-block;
+         background: $brand-secondary;
+         @include border-radius($border-radius);
+         @include transition(background .25s ease-out);
+         &:hover{
+           background: darken($brand-secondary, 5%);
+         }
+         &:before{
+           @include bloom-icon-insert( $setting, $btn-text-color, 24px, $font-size-base);
+         }
+         img{
+           display: none;
+         }
+       }
+      }
+      .section.img-text{
+       margin: 0;
+       clear:both;
+      }
+      }
+      &.ctopics li[id^="section-"]:not(#section-0){ // collapsible topics
+        margin: 0 0 1.25rem 0;
+        padding: 0;
+        a[title="Edit section"]{
+         img{
+           display: none;
+         }
+        }
+        .left.side{
+         display: none;
+        }
+        .right.side{
+         display: none;
+        }
+        .content{
+         margin: 0;
+         .sectionhead{
+           .the_toggle{
+             margin:0;
+             padding: 1.25rem;
+             background: $bloom-courses-color;
+             @include border-radius($border-radius);
+             color: $btn-text-color;
+             @include transition(background .3s ease-out);
+             &:hover{
+               background: darken($bloom-courses-color, 5%);
+             }
+             &:before{
+               content: $fa-var-chevron-down;
+               font-family: FontAwesome;
+               display: inline-block;
+               font-size: $font-size-h4;
+               margin-right: 10px;
+               @include transition(all .15s ease);
+             }
+             .section-title{
+               display: inline-block;
+             }
+             &.toggle_open{
+               &:before{
+                 transform: rotate(-180deg);
+               }
+             }
+           }
+         }
+         .sectionbody{
+           padding: 1.25rem;
+           background: $blocks-blue;
+           @include border-radius($border-radius);
+           ul.section{
+             margin: 0 0 1.25rem 0;
+           }
+         }
+        }
+        @at-root .path-course.editing .course-content ul.ctopics li[id^="section-"]:not(#section-0){
+         padding: 1.25rem;
+         border: $border-width solid darken($blocks-blue, 10%);
+         background: $body-bg;
+         .left.side{
+           display: block;
+           width: auto;
+           .cps_centre{
+             display: none;
+           }
+           .section-handle::before{
+             margin:0;
+           }
+         }
+         .right.side{
+           display: block;
+           margin: 0;
+           width: auto;
+         }
+         .content{
+           margin: 3rem 0 0 0;
+         }
+        }
+      }
+      li.section.main{
+        border-bottom: none;
+      }
+      &.flexsections-level-0{
+        .mdl-right{ // add subsection button
+          .addsection{
+            @extend .btn;
+            @extend .btn-primary;
+            margin: 0;
+            // color: $btn-text-color;
+            &:before{
+              @include bloom-icon-insert( $subsection, $btn-text-color, $font-size-base, $font-size-base);
+            }
+            .addsection-text{
+              color: $btn-text-color;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+            img{
+              display: none;
+            }
+          }
+        }
+        @at-root .path-course.editing .course-content ul.flexsections-level-0 #section-0{
+          border: $border-width solid darken($blocks-blue, 10%) !important;
+          padding: 1.25rem;
+          .content ul.section{
+            @include border-radius(0);
+          }
+        }
+        #section-0{ // this section contains the whole course
+          background: $body-bg;
+          padding: 0;
+          > .controls{
+            background: $blocks-blue;
+            padding: 1.25rem 1.25rem 0;
+            @include border-top-radius($border-radius);
+            a.settings{
+              display: inline-block;
+              background: $brand-secondary;
+              @include border-radius($border-radius);
+              &:before{
+                @include bloom-icon-insert( $setting, $btn-text-color, 24px, $font-size-base);
+              }
+              img{
+                width: 0;
+                padding: 0;
+                margin: 0;
+              }
+            }
+          }
+          .content{
+            .addresourcemodchooser{
+              .section-modchooser{
+                background: $blocks-blue;
+                @include border-radius($border-radius);
+                padding-bottom: 1.25rem;
+                padding-right: 1.25rem;
+                margin-bottom: 1.25rem;
+              }
+              a{
+                color: $btn-text-color;
+              }
+            }
+            ul.section{ // corresponds to #section-0 in the rest of the course formats
+              margin: 0;
+              padding: 1.25rem;
+              @include border-radius($border-radius);
+            }
+          }
+        }
+        ul.flexsections{
+          li[id^="section-"]:not(#section-0){
+            margin: 1.25rem 0 0 0;
+            background: $blocks-blue;
+            padding: 1.25rem;
+            border: $border-width solid darken($blocks-blue, 10%);
+            border-top: 5px solid $bloom-courses-color !important;
+            @include border-top-radius(0);
+            &:target{
+              padding-top: 1.25rem !important;
+            }
+            .controls{
+              margin-bottom: 1.25rem;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              a, span{
+                position: relative;
+                display: inline-block;
+                background: $brand-secondary;
+                @include border-radius($border-radius);
+                margin-left: 10px;
+                &:before{
+                  @include bloom-icon-insert( "", $btn-text-color, 24px, $font-size-base);
+                }
+                &.settings{
+                  order: 10;
+                  &:before{
+                    content: $setting;
+                  }
+                }
+                &.delete{
+                  order: 11;
+                  background: transparent;
+                  &:before{
+                    content: $cross;
+                    color: $brand-secondary;
+                  }
+                }
+                &.move{
+                  order: 0;
+                  &:before{
+                    content: $drag;
+                  }
+                }
+                &.show{
+                  order: 2;
+                  &:before{
+                    content: $hide;
+                  }
+                }
+                &.hide{
+                  order: 2;
+                  &:before{
+                    content: $show;
+                  }
+                }
+                &.mergeup{
+                  order: 1;
+                  &:before{
+                    content: $merge;
+                  }
+                }
+                &.marker{
+                  order: 3;
+                  &:before{
+                    content: $unpinned;
+                  }
+                }
+                &.marked{
+                  order: 3;
+                  &:before{
+                    content: $pinned;
+                  }
+                }
+                img{
+                  display: none;
+                  // position: absolute;
+                  // opacity: 0;
+                  // padding: 0.3rem;
+                  // margin: 0;
+                  // top: 0;
+                  // left: 0;
+                }
+              }
+            }
+            .content{
+              .addresourcemodchooser{
+                .section-modchooser{
+                  background: $blocks-blue;
+                  @include border-radius($border-radius);
+                  padding-bottom: 0;
+                  padding-right: 0;
+                }
+              }
+              ul{
+                &.section{
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Grid course view icons
+  //
+  &.zoomIn{
+    #gridiconcontainer{
+      ul.gridicons li{
+        width: 25%;
+        @media (max-width: 1200px){
+          width: 33.333%;
+          background: red;
+        }
+        @media (max-width: 920px){
+          width: 50%;
+        }
+      }
+    }
+  }
+  #gridiconcontainer{
+    margin-bottom: 1.25rem;
+    ul.gridicons{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li{
+        padding: 0.6rem;
+        // min-width: 240px;
+        // max-width: 33.333%;
+        width: 33.333%;
+        opacity: 1;
+        display: inline-block;
+        @include border-radius($border-radius);
+        @media (max-width: 1220px){
+          width: 50%;
+          // max-width: 50%;
+        }
+        @media (max-width: 991px){
+          width: 33.333%;
+          // max-width: 100%;
+        }
+        @media (max-width: 920px){
+          width: 50%;
+        }
+        @media (max-width: 580px){
+          width: 100%;
+        }
+        &:hover{
+          border:none;
+          .image_holder{
+            box-shadow: none;
+          }
+        }
+        .gridicon_link{
+          padding: 0.6rem;
+          display: block;
+          position: relative;
+          border: $border-width solid transparent;
+          @include border-radius($border-radius);
+          @include transition(background .25s ease-out);
+          &:hover{
+            background: darken($blocks-blue, 5%);
+            .image_holder{
+              background-color: $bloom-courses-color;
+              border: none;
+              img{
+                opacity: 1;
+              }
+            }
+          }
+        }
+        &.currenticon{
+          background: transparent;
+          .gridicon_link{
+            background: $blocks-blue;
+            border-color: darken($blocks-blue, 10%);
+            @include transition(border-color .2s ease);
+          }
+          .image_holder{
+            box-shadow: none;
+          }
+        }
+        &.currentselected{
+          background: transparent;
+          .gridicon_link{
+            border-color: transparent;
+            background: darken($blocks-blue, 5%);
+          }
+          .image_holder{
+            background: $bloom-courses-color;
+          }
+        }
+        .image_holder{
+          width: auto;
+          height: 160px;
+          background: darken($bloom-courses-color, 10%);
+          border: none;
+          @include border-radius($border-radius);
+          @include transition(background-color .25s ease-out);
+          img{
+            min-width: 100%;
+            min-height: 160px;
+            height: auto !important;
+            opacity: 0.7;
+            @include transition(opacity .25s ease-out);
+            @include border-radius($border-radius);
+          }
+        }
+
+        img.new_activity{
+          width: 0;
+          height: 0;
+          margin: 0;
+          ~ .image_holder{
+            &:before{
+              @include bloom-icon-insert( $notifications, $btn-text-color, 24px, $font-size-lg);
+              position: absolute;
+              z-index: 1;
+              top: 1.25rem;
+              right: 1.25rem;
+              background: $bloom-accent-color;
+              opacity: 1 !important;
+              @include border-radius($border-radius);
+            }
+          }
+        }
+
+        p.icon_content{
+          width: calc(100% - 1.2rem);
+          position: absolute;
+          z-index: 1;
+          bottom: 0.6rem;
+          height: auto;
+          padding: 1rem;
+          font-size: $font-size-lg;
+          font-weight: 400;
+          background: rgba(0, 0, 0, 0.4);
+          color: $btn-text-color;
+          @include border-bottom-radius($border-radius);
+          text-overflow: ellipsis;
+        }
+
+        a[title="Set or change image"]{
+          position: relative;
+          @extend .btn;
+          @extend .btn-secondary;
+          margin: 0.6rem 0 0 0.6rem;
+          &:before{
+            @include bloom-icon-insert( $setting, inherit, $font-size-base, inherit);
+            margin-right: 5px;
+            vertical-align: text-bottom;
+          }
+          img{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  // END Grid course view icons
+
+  // Grid course view modal
+  //
+  #gridshadebox_content{
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border: $border-width solid darken($blocks-blue, 10%);
+    @include border-radius($border-radius);
+    &.absolute{ // section popout
+      border: none;
+      background: $bloom-courses-color;
+      top: 20% !important;
+      padding: 5px 0;
+      min-height: 80px;
+      margin: 0;
+      @include border-radius(0);
+      &:before{
+        @include bloom-icon-insert( $cross, $brand-secondary, 32px, $font-size-h3);
+        position: absolute;
+        right: 0.6rem;
+        top: 0.8rem;
+        opacity: 0.5;
+      }
+      #gridshadebox_close{
+        top: 0.8rem;
+        right: 0.6rem;
+        opacity: 0;
+      }
+      .gtopics{
+        .content{
+          padding: 1.25rem;
+          .activity{
+            @include transition(background .3s ease-out);
+            @include border-radius($border-radius);
+            &:hover{
+              background: darken($blocks-blue, 5%);
+            }
+          }
+        }
+        li[id^="section-"]{
+          margin-bottom: 0;
+        }
+      }
+      .gridshadebox_area{
+        background: $bloom-courses-color;
+        &:before{
+          font-family: FontAwesome;
+          color: $btn-text-color;
+          font-size: $font-size-h1;
+          text-align: center;
+          width: 100%;
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .gridshadebox_left_area{
+        @include border-left-radius($border-radius);
+        &:before{
+          content: $fa-var-chevron-left;
+        }
+      }
+      .gridshadebox_right_area{
+        @include border-right-radius($border-radius);
+        &:before{
+          content: $fa-var-chevron-right;
+        }
+      }
+      .gridshadebox_arrow{
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+      }
+      .sectionname{
+        margin-bottom: 1.25rem;
+      }
+    }
+    .gtopics{
+      margin: 0;
+      li[id^="section-"]{
+        margin-bottom: 1.25rem;
+      }
+      .summary{
+        img{
+          display: none;
+        }
+      }
+    }
+
+    .activity{
+      border-bottom: none;
+    }
+  }
+  // END Grid course view modal
+
+  .section{
+    background: $blocks-blue;
+    @include border-radius($border-radius);
+    .summary{
+      a[title="Edit section"]{
+        // margin-left: -40px;
+        display: inline-block;
+        background: $brand-secondary;
+        @include border-radius($border-radius);
+        @include transition(background .25s ease-out);
+        &:hover{
+          background: darken($brand-secondary, 5%);
+        }
+        &:before{
+          @include bloom-icon-insert( $setting, $btn-text-color, 24px, $font-size-base);
+        }
+        img{
+          display: none;
+        }
+      }
+    }
+    .label .contentwithoutlink{
+      padding-right: 0;
+    }
+    li.activity{
+      padding: 0 !important;
+      > div{
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      span > a{
+        position: static;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .commands, .autocompletion{
+        vertical-align: middle;
+        display: inline-block;
+      }
+      .editing_move{
+        position: static;
+        display: inline-block;
+        padding: 0;
+        vertical-align: text-top;
+        &:before{ // replaces draghandle with icon from bloom icon font
+          @include bloom-icon-insert( $drag, $brand-secondary, 24px, $font-size-lg);
+          line-height: 32px;
+          margin-right: 0.5rem;
+        }
+        img.iconsmall{
+          // vertical-align: text-top;
+          // margin: 3px;
+          display: none;
+        }
+      }
+      .mod-indent-outer{
+        padding-left: 0 !important;
+        display: inline-block;
+        flex-grow: 2;
+        width: 100%;
+
+        .mod-indent ~ div{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .activityinstance{
+          display: inline-block !important;
+          flex-grow: 2;
+          @at-root body.editing .section .activity .activityinstance{
+            padding-right: 0;
+          }
+          .inplaceeditable.inplaceeditable-text{
+            display: inline-block;
+            a{
+              color: $brand-primary;
+              display: inline-block;
+              &:hover{
+                color: $brand-primary;
+              }
+              img.activityicon{
+                vertical-align: top;
+                width: 32px;
+                height: 32px;
+              }
+            }
+          }
+          .instancename{
+            font-size: $font-size-h4;
+            font-weight: 900;
+            padding: 0 0.5rem;
+          }
+
+          // edit field for activity name
+          span.editinstructions{
+            position: absolute;
+            top: 0;
+            margin-top: -4rem;
+            line-height: $font-size-base;
+            font-size: $font-size-sm;
+            padding: 0.5rem;
+            padding-left: 3rem;
+            background-color: $state-info-bg;
+            color: $state-info-text;
+            text-decoration: none;
+            z-index: 9999;
+            // @include box-shadow(2px 2px 5px 1px #ccc);
+            border: 1px solid $state-info-border;
+          }
+        }
+        .availabilityinfo{
+          margin-left: 0;
+          display: inline-block;
+          width: 100%;
+          > ul{
+            padding-left: 1.25rem;
+          }
+        }
+      }
+      .actions{
+        margin-left: 1.25rem;
+        position: static;
+        display: inline-block;
+        text-align: right;
+        padding-top: 5px;
+        @at-root .path-course.editing{
+          li.activity .actions{  // adjustment to width in editing mode
+            min-width: 100px;
+            @include settings-dropdown();
+            .menubar a.menu-action.dropdown-item{
+              display: block;
+              margin-left: 0;
+            }
+          }
+        }
+        .menubar a.menu-action{
+          vertical-align: middle;
+          display: inline-block;
+          margin-left: 5px;
+          &:before{
+            @include bloom-icon-insert( "", $brand-secondary, $font-size-h3, $font-size-h3);
+            vertical-align: bottom;
+          }
+          &.editing_groupsnone{
+            &:before{
+              content: $profile;
+            }
+          }
+          &.editing_groupsseparate{
+            &:before{
+              content: $groups-separate;
+            }
+          }
+          &.editing_groupsvisible{
+            &:before{
+              content: $groups;
+            }
+          }
+          img{
+            position: absolute;
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+      .contentwithoutlink{
+        min-width: 250px;
+        ~ span.actions{
+          width: 100%;
+          order: -1;
+          margin-bottom: 1rem;
+        }
+      }
+      input[id^="id_inplacevalue"]{
+          display: inline-block;
+          height: 3rem !important;
+          padding: 1.3rem;
+          font-size: $font-size-lg;
+          vertical-align: middle;
+          @include bloom-input-field($bloom-accent-color);
+      }
+    }
+  }
+  .section-modchooser-link{ // "add activity" button styling
+    a{
+      @extend .btn;
+      @include bloom-btn($bloom-accent-color, $btn-text-color, $font-size-base);
+      text-decoration: none;
+      vertical-align: middle;
+      margin: 1.25rem 0 0 0 !important;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+      &:active, &:focus{
+        outline: none;
+      }
+      &:before{
+        font-family: FontAwesome;
+        content: $fa-var-plus;
+        margin-right: 5px;
+        font-weight: normal;
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+
+  #section-0{
+    padding: 1.25rem;
+    margin: 0 0 1.25rem 0;
+  }
+  li[class^="section"], li[id^="section"], .section{ //removes random margins from course sections
+    margin: 0 0 1.25rem 0;
+  }
+
+}
+
+.quickeditlink{
+  display: inline-block;
+  padding: 0.3rem;
+  margin-left: 10px;
+  @include border-radius($border-radius);
+  &:active, &:focus{
+    outline: none;
+  }
+  .quickediticon{
+    display: block;
+    width: 24px;
+    height: 24px;
+    &:before{
+      @include bloom-icon-insert( $activity, $brand-secondary, 24px, $font-size-h3);
+    }
+    img{
+      display: none;
+    }
+  }
+}
+
+.editing .section li.activity,
+.path-course .section li.activity{
+  background: transparent;
+  @include border-radius($border-radius);
+  @include transition(background .25s ease-out);
+  &:hover, &.action-menu-shown{
+    background: darken($blocks-blue, 5%);
+  }
+}
+
+.path-mod{
+  #region-main{
+    h2 .iconlarge{
+      width: $font-size-h1;
+      height: $font-size-h1;
+    }
+  }
+}
+
+#page-course-search{
+  .course-search-result{
+    .coursebox.odd, .coursebox.even{
+      background-color: $blocks-blue;
+      border-radius: $border-radius;
+      padding: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .coursename{
+      &:hover, &:active, &:focus{
+        .highlight{
+          text-decoration: underline;
+          color: $link-hover-color !important;
+          &:after{
+            opacity: .2;
+          }
+        }
+      }
+      a{
+        background-image: none;
+        padding-left: 0;
+      }
+      .highlight{
+        position: relative;
+        text-decoration: $link-decoration;
+        padding: 0.3rem 0.5rem;
+        color: $body-color !important;
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: $border-radius-sm;
+          background-color: $bloom-accent-color;
+          width: 100%;
+          height: 100%;
+          opacity: .4;
+          @include transition(all .25s ease-out);
+        }
+      }
+    }
+  }
+  div[role="main"]{
+    .coursesearchbox{
+  		width: 100%;
+  		height: auto;
+  		#coursesearchbox{
+  			padding:0.5rem;
+        margin-left: 1rem;
+  			border-radius: .25rem 0 0 .25rem;
+  			@include bloom-input-field($bloom-accent-color);
+  			& + button{
+  				@include bloom-btn($bloom-accent-color, $btn-text-color, $font-size-base);
+  				height:3rem;
+  				border:none;
+  				border-radius: $border-radius;
+  			}
+  		}
+  	}
+  }
+}
+
+//collapsted format
+#page-course-edit #id_courseformathdr .fcontainer{
+  > .fitem.fitem_fcolourtext,
+  > .fitem.form-group:nth-of-type(12)
+  > .fitem.form-group:nth-of-type(13),
+  > .fitem.form-group:nth-of-type(14){
+    display: none;
+  }
+}
+
+
+//TEMP
+//ACTIVITIES
+@include media-breakpoint-down(xs) {
+  .glossarydisplay table{
+    td:nth-child(2){
+      display: none;
+    }
+  }
+}

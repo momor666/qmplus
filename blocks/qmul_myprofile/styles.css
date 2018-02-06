@@ -1,0 +1,8 @@
+.block_qmul_myprofile div.content{padding: 0 5px !important;}
+.block_qmul_myprofile div.picture {padding: 0 0 10px;}
+.block_qmul_myprofile div.picture a{display: block;height: 100px;margin: 0 auto;width: 100px;}
+.block_qmul_myprofile a img.profilepicture { height:100px; width:100px; float:none}
+.block_qmul_myprofile .fullname {font-size: 1.5em;font-weight: bold;padding: 5px 0;text-align: center;}
+.block_qmul_myprofile span.title {font-weight:bold;}
+.block_qmul_myprofile .myprofileitem.edit {text-align: right;}
+.block_qmul_myprofile div.smart {padding: 5px 0;font-weight: bold;text-align:center;}

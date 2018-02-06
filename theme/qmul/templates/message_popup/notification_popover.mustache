@@ -1,0 +1,105 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template message_output_popup/notification_popover
+
+    This template will render the notification popover for the navigation bar.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * All data attributes are required
+
+    Context variables required for this template:
+    * userid the logged in user id
+    * urls The URLs for the popover
+
+    Example context (json):
+    {
+        "userid": 3,
+        "urls": {
+            "preferences": "http://www.moodle.com"
+        }
+    }
+
+}}
+{{< core/popover_region }}
+    {{$classes}}popover-region-notifications{{/classes}}
+    {{$attributes}}id="nav-notification-popover-container" data-userid="{{userid}}"{{/attributes}}
+
+    {{$togglelabel}}{{#str}} shownotificationwindownonew, message {{/str}}{{/togglelabel}}
+    {{$togglecontent}}
+        <svg width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-1369.000000, -25.000000)" fill="#FFFFFF">
+                    <title>{{#str}}notifications, message{{/str}}</title>
+                    <g>
+                        <path d="M1378.46429,43.9285714 C1378.46429,43.8095232 1378.40476,43.75 1378.28571,43.75 C1377.84672,43.75 1377.46912,43.5918915 1377.1529,43.2756696 C1376.83668,42.9594478 1376.67857,42.5818474 1376.67857,42.1428571 C1376.67857,42.0238089 1376.61905,41.9642857 1376.5,41.9642857 C1376.38095,41.9642857 1376.32143,42.0238089 1376.32143,42.1428571 C1376.32143,42.6860146 1376.51302,43.1491796 1376.89621,43.5323661 C1377.27939,43.9155525 1377.74256,44.1071429 1378.28571,44.1071429 C1378.40476,44.1071429 1378.46429,44.0476196 1378.46429,43.9285714 Z M1387.57143,40.7142857 C1387.57143,41.1011924 1387.43006,41.4360105 1387.14732,41.71875 C1386.86458,42.0014895 1386.52976,42.1428571 1386.14286,42.1428571 L1381.14286,42.1428571 C1381.14286,42.9315516 1380.86384,43.6049079 1380.3058,44.1629464 C1379.74777,44.7209849 1379.07441,45 1378.28571,45 C1377.49702,45 1376.82366,44.7209849 1376.26562,44.1629464 C1375.70759,43.6049079 1375.42857,42.9315516 1375.42857,42.1428571 L1370.42857,42.1428571 C1370.04166,42.1428571 1369.70685,42.0014895 1369.42411,41.71875 C1369.14137,41.4360105 1369,41.1011924 1369,40.7142857 C1369.37203,40.4017842 1369.71056,40.0744065 1370.01562,39.7321429 C1370.32069,39.3898792 1370.6369,38.9453152 1370.96429,38.3984375 C1371.29167,37.8515598 1371.56882,37.2619079 1371.79576,36.6294643 C1372.02269,35.9970206 1372.2087,35.2306593 1372.35379,34.3303571 C1372.49888,33.430055 1372.57143,32.4628028 1372.57143,31.4285714 C1372.57143,30.2976134 1373.00669,29.2466566 1373.87723,28.2756696 C1374.74777,27.3046826 1375.88987,26.7150308 1377.30357,26.5066964 C1377.24405,26.3653267 1377.21429,26.2202388 1377.21429,26.0714286 C1377.21429,25.773808 1377.31845,25.5208344 1377.52679,25.3125 C1377.73512,25.1041656 1377.98809,25 1378.28571,25 C1378.58333,25 1378.83631,25.1041656 1379.04464,25.3125 C1379.25298,25.5208344 1379.35714,25.773808 1379.35714,26.0714286 C1379.35714,26.2202388 1379.32738,26.3653267 1379.26786,26.5066964 C1380.68155,26.7150308 1381.82366,27.3046826 1382.6942,28.2756696 C1383.56474,29.2466566 1384,30.2976134 1384,31.4285714 C1384,32.4628028 1384.07254,33.430055 1384.21763,34.3303571 C1384.36272,35.2306593 1384.54873,35.9970206 1384.77567,36.6294643 C1385.00261,37.2619079 1385.27976,37.8515598 1385.60714,38.3984375 C1385.93453,38.9453152 1386.25074,39.3898792 1386.5558,39.7321429 C1386.86086,40.0744065 1387.1994,40.4017842 1387.57143,40.7142857 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <div class="count-container badge badge-danger hidden" data-region="count-container"></div>
+    {{/togglecontent}}
+
+    {{$containerlabel}}{{#str}} notificationwindow, message {{/str}}{{/containerlabel}}
+
+    {{$headertext}}{{#str}} notifications, message {{/str}}{{/headertext}}
+    {{$headeractions}}
+        {{< core/hover_tooltip }}
+            {{$anchor}}
+                <a class="mark-all-read-button"
+                    href="#"
+                    title="{{#str}} markallread {{/str}}"
+                    data-action="mark-all-read"
+                    role="button">
+                    <span class="normal-icon">{{#pix}} t/markasread, core, {{#str}} markallread {{/str}} {{/pix}}</span>
+                    {{> core/loading }}
+                </a>
+            {{/anchor}}
+            {{$tooltip}}{{#str}} markallread {{/str}}{{/tooltip}}
+        {{/ core/hover_tooltip }}
+        {{< core/hover_tooltip }}
+            {{$anchor}}
+                <a href="{{{urls.preferences}}}"
+                    title="{{#str}} notificationpreferences, message {{/str}}">
+                    {{#pix}} i/settings, core, {{#str}} notificationpreferences, message {{/str}} {{/pix}}
+                </a>
+            {{/anchor}}
+            {{$tooltip}}{{#str}} notificationpreferences, message {{/str}}{{/tooltip}}
+        {{/ core/hover_tooltip }}
+    {{/headeractions}}
+
+    {{$content}}
+        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">{{#str}} nonotifications, message {{/str}}</div>
+    {{/content}}
+{{/ core/popover_region }}
+{{#js}}
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+{{/js}}

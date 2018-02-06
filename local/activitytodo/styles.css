@@ -1,0 +1,38 @@
+.activitytodo-item {
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 5px 5px 5px 25px;
+    background-image: url([[pix:core|i/move_2d]]);
+    background-repeat: no-repeat;
+    background-position: 5px 10px;
+    cursor: move;
+}
+
+.activitytodo-item .activitytodo-notecontent {
+    display: none;
+}
+
+textarea.activitytodo-editnote {
+    width: 98%;
+    min-height: 200px;
+}
+
+.activitytodo-showduedate {
+    max-width: 70%;
+}
+.activitytodo-showduedate input[type=text] {
+    max-width: 90%;
+    width: auto;
+    display: inline-block;
+}
+
+#page-local-activitytodo .ui-datepicker {
+    min-width: 180px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.activitytodo-overdue {
+    background-color: #f4aba6;
+}

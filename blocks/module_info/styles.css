@@ -1,0 +1,312 @@
+/****************************************************************
+
+File:       block/module_info/style.css
+
+Purpose:    Cascading style sheet
+
+****************************************************************/
+
+/**********************************
+General display rules
+**********************************/
+
+.block_module_info{
+    font-size: 12px;
+}
+
+.block_module_info p{
+    line-height: 1em;
+}
+
+.block_module_info .collapsibleregioncaption img {
+    height: auto;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.block_module_info div.collapsibleregion {
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+    min-height: 0;
+    padding-top: 0;
+}
+
+.block_module_info #modinfo-viewlet-staffdir_inner{
+    background-color: #fff;
+    padding: 5px;
+}
+
+.block_module_info .staffdir-html-heading .mform #fitem_id_terms .fitemtitle{
+    text-align: left;
+    width: 100%;
+}
+
+.block_module_info .staffdir-html-heading .mform #fitem_id_terms{
+    margin-bottom: 0;
+}
+
+.block_module_info .staffdir-html-heading .mform #fitem_id_terms .ftext{
+    margin-left: 0;
+}
+
+.block_module_info .staffdir-html-heading .mform #fitem_id_submitbutton{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.block_module_info .staffdir-html-heading .mform #fitem_id_submitbutton .fsubmit{
+    margin-left: 0;
+}
+
+.block_module_info .staffdir-html-heading .mform #id_submitbutton{
+    margin: 0;
+}
+
+/**********************************
+Module code, level, &c.
+**********************************/
+.block_module_info p.module_specific {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #dad0e1;
+    margin-bottom: 5px;
+}
+
+/**********************************
+Settings
+**********************************/
+.mform .collapsible{
+    position: relative;
+}
+.mform .section-settings-wrap {
+    position: absolute;
+    margin-left: 265px;
+    top: 5px;
+}
+@-moz-document url-prefix() {
+    .mform .section-settings-wrap {
+        top: -55px;
+    }
+}
+.mform .section-settings-wrap .fitemtitle{
+    display: none!important;
+}
+.mform .section-settings-wrap .title-override, .section-settings-wrap .section-hide{
+    float: left;
+
+}
+.mform .section-settings-wrap .title-override{
+    margin-right: 25px;
+}
+.mform .section-settings-wrap .felement{
+    margin-left: 0!important;
+}
+.mform .section-desc{
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.mform .courseinfo-warning{
+    position: relative;
+}
+.mform .courseinfo-warning span{
+    position: absolute;
+    left: 240px;
+    top:36px;
+    z-index: 9999;
+}
+.mform .courseinfo-warning span a{
+    background: url('/blocks/module_info/pix/warning.svg');
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    line-height: 0;
+    font-size: 0;
+}
+.mform #fgroup_id_block_title .fgroup.error, #fgroup_id_section_otherinfo .fgroup.error {
+    border:none;
+}
+.mform #fgroup_id_section_otherinfo .fgroup.error br{
+    display: none;
+}
+.mform #fgroup_id_section_otherinfo .fgroup.error span.error{
+    margin-top: 0;
+}
+.mform .display-settings-wrap .fitem{
+    display: inline-block;
+}
+.mform .display-settings-wrap .fitem.femptylabel .fitemtitle{
+    display: none!important;
+}
+.mform .display-settings-wrap .fitem.femptylabel .felement{
+    margin-left: 10px;
+}
+.mform input#id_config_module_convenor_override{
+    text-transform: lowercase!important;
+}
+@media (max-width: 1199px){
+    .mform .section-settings-wrap{
+        width: 100%;
+        position: static;
+        margin: 0;
+    }
+}
+@media (max-width: 385px){
+    .mform .section-settings-wrap .section-hide{
+        margin-left: 0;
+        clear: both;
+    }
+    .mform .section-settings-wrap .section-hide .felement.fcheckbox{
+        padding: 4px!important;
+    }
+    .mform .section-settings-wrap {
+        width: 100%;
+    }
+}
+/**********************************
+Section headings
+**********************************/
+.block_module_info .collapsibleregion .collapsibleregioncaption {
+    background-color: #444;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    height: 30px;
+    line-height: 1.8em;
+    margin-bottom: 0px;
+}
+
+.block_module_info .collapsibleregioncaption a {
+    color: #FFF;
+}
+
+.block_module_info .collapsibleregioninner {
+    padding-top: 5px;
+    padding-left: 5px;
+
+}
+
+.block_module_info .additional-teachers-heading .collapsibleregioncaption {
+    background-color: #cbc0d9;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 5px;
+    height: 20px;
+    color: black;
+    padding: 4px 0px 3px 5px;
+}
+
+.block_module_info .additional-teachers-heading .collapsibleregioncaption a {
+    color: #444;
+}
+
+.block_module_info .additional-teachers-heading .collapsibleregioncaption img {
+    margin-top: -5px;
+}
+/**********************************
+Section contents
+**********************************/
+.block_module_info div#schedule-pane, div#documents-pane, div#modinfo-viewlet-teaching_inner {
+    background-color: #FFFFFF;
+    padding-left: 5px;
+}
+
+.block_module_info div.generalbox {
+    border: 0px;
+}
+/**********************************
+Teaching sections
+**********************************/
+.block_module_info h2.convenor-heading, h2.additional-teachers-heading, h2.session-heading {
+    background-color: #cbc0d9;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 5px;
+    padding: 4px 0px 3px 5px;
+}
+
+.block_module_info .additional-teachers-heading{
+    margin-top: 5px;
+}
+
+.block_module_info div#convenor-pane, div#additional-teachers, div#schedule-pane {
+    padding-top: 5px;
+}
+
+.block_module_info div.session-details {
+    margin-top: 5px;
+    border-bottom: 7px solid #fff;
+}
+
+.block_module_info img.convenor-profile-pic, img.additional-teacher-profile-pic {
+    border-top: 5px solid #fff;
+}
+
+.block_module_info .staff-wrap{
+    padding-bottom: 5px;
+}
+
+.block_module_info div.convenor-url, div.smart-link {
+    background: url('/blocks/module_info/pix/weblink.png') no-repeat left;
+    padding-left: 20px;
+    line-height: 25px;
+}
+
+.block_module_info div.smart-link {
+    margin-bottom: 4px;
+}
+
+.block_module_info .staff-image a{
+    margin-right: 10px;
+}
+
+/**********************************
+Documents
+**********************************/
+.block_module_info .ygtvln, .ygtvtn {
+    display: none;
+}
+
+.block_module_info .ygtvcell {
+    padding-top: 3px;
+}
+
+.block_module_info div#documents-pane img.icon {
+    display: none;
+}
+
+.block_module_info div#documents-pane a {
+    display: block;
+    background: url(/blocks/module_info/pix/doclink.png) no-repeat left;
+    padding-left: 20px;
+    line-height: 20px;
+}
+
+/**********************************
+New theme
+**********************************/
+.section-settings-wrap .section-hide{
+    margin-top: 12px;
+}
+form fieldset.collapsible .form-group:last-child{
+    /*margin-top: -3.5px;*/
+}
+
+form .form-inline .form-check-inline{
+    vertical-align: middle;
+}
+.section-settings-wrap .title-override .form-group .form-label-wrap{
+    display: none;
+}
+
+.block_module_info div#schedule-pane{
+    padding:0px
+}
+.block_module_info #modinfo-viewlet-staffdir_inner{
+    padding-left:20px;
+}

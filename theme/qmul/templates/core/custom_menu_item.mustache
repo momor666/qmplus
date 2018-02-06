@@ -1,0 +1,22 @@
+{{^divider}}
+{{#haschildren}}
+<div class="nav-item dropdown">
+    <a class="d-block nav-link dropdown-toggle text-white py-2" data-toggle="dropdown" data-parent="#custommenu" aria-expanded="false">
+        {{{text}}}
+    </a>
+    <div class="submenu dropdown-menu text-white">
+        {{#children}}
+            {{^divider}}
+                <a class="dropdown-item d-block" href="{{{url}}}" {{#title}}title="{{{title}}}"{{/title}}>{{{text}}}</a>
+            {{/divider}}
+            {{#divider}}
+                <hr>
+            {{/divider}}
+        {{/children}}
+    </div>
+</div>
+{{/haschildren}}
+{{^haschildren}}
+<div class="nav-item"><a class="d-block nav-link text-white py-2" href="{{{url}}}" {{#title}}title="{{{title}}}"{{/title}}>{{{text}}}</a></div>
+{{/haschildren}}
+{{/divider}}

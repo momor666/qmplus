@@ -1,0 +1,148 @@
+$event-type-course: $bloom-courses-color;
+$event-type-group: $brand-secondary;
+$event-type-user: $bloom-user-color;
+$event-type-global: $brand-primary;
+
+.block_calendar_agenda{
+	a{
+		color: $brand-secondary;
+	}
+	.content{
+		.event{
+			overflow: hidden;
+			.date{
+				padding: 0.5rem 1.5rem;
+				display: inline-block;
+				width: 70px;
+				a{
+					text-decoration: none;
+					text-align: center;
+				}
+				.month{
+					line-height: 1.1;
+					font-size: 1.25rem
+				}
+				.day{
+					line-height: 1.1;
+					font-size: 2rem;
+					font-weight: 900;
+				}
+			}
+			&.type_course{
+				border-left:5px solid $event-type-course;
+			}
+			&.type_group{
+				border-left:5px solid $event-type-group;
+			}
+			&.type_user{
+				border-left:5px solid $event-type-user;
+			}
+			&.type_site{
+				border-left:5px solid $event-type-global;
+			}
+		}
+	}
+	.event_name{
+		padding: 0;
+		display: inline-block;
+		width: calc(100% - 70px);
+		vertical-align: top;
+		.course{
+			width: 100%;
+			a{
+				display: inline-block;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				width: 100%;
+			}
+		}
+		&> a, .time{
+			font-size: $font-size-lg;
+		}
+	}
+	hr{
+		width: 85%;
+		border-top: 3px solid rgba(255, 255, 255, 1);
+	}
+	.calendar_agenda_gotocal,
+	.calendar_agenda_newevent{
+		padding: 0;
+		border: 3px solid $btn-secondary-border;
+		> a.btn{
+			@include border-radius(0);
+			display: block;
+			width: 120px;
+			margin: 0;
+		}
+	}
+	.calendar_agenda_gotocal{		
+		border-right:none;
+		@include border-left-radius($border-radius);
+		> a.btn{
+			@extend .btn-secondary;
+		}
+	}
+	.calendar_agenda_newevent{
+		border-left:none;
+		@include border-right-radius($border-radius);
+		> a.btn{
+			@extend .btn-outline-secondary;
+			&:before{
+				font-family: fontAwesome;
+				content: $fa-var-plus;
+				margin-right: 3px;
+				font-weight: 100;
+				font-size: 1rem;				
+				font-size: .8rem;				
+			}
+		}
+	}
+}
+
+.block_calendar_agenda .footer{
+	padding: 1.25rem 0 0 0;
+	text-align: center;
+}
+
+.calendar_filters{
+	li.calendar_event{
+		display: inline-block;
+		width: 50%;
+		//margin-right: 1.5rem;
+		a:hover{
+			span.show-event{
+				opacity: 1;
+			}
+		}
+	}
+	span{
+		&[class^="calendar_event_"]{
+			width: 14px;
+			height: 14px;
+			display: inline-block;
+			@include border-radius(50%);
+			vertical-align: middle;
+			margin-right: 1%;
+			&.show-event{
+				opacity: 0.4;
+				@include transition(all .25s ease-out);
+			}
+			img{
+				display: none;
+			}
+		}
+		&.calendar_event_global{
+			background-color: $event-type-global;
+		}
+		&.calendar_event_course{
+			background-color: $event-type-course;
+		}
+		&.calendar_event_user{
+			background-color: $event-type-user;
+		}
+		&.calendar_event_group{
+			background-color: $event-type-group;
+		}
+	}
+}

@@ -1,0 +1,230 @@
+#frontpage-course-list,
+#frontpage-category-names,
+#site-news-forum,
+#frontpage-category-combo {
+    clear: both;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $gray-lighter;
+    @include clearfix();
+}
+
+.frontpagecontent {
+    .loginblock {
+        background: $brand-primary;
+        background-image: linear-gradient(-208deg, #005A9A 38%, #00406D 95%);
+        position: relative;
+        height: 340px;
+        padding-left: 60%;
+        padding-top: 4rem;
+        color: #fff;
+        .background {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 55%;
+            background-image: url([[pix:theme|loginbg]]);
+            background-size: cover;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+        @include media-breakpoint-down(md) {
+            padding-left: 45%;
+            .background {
+                width: 45%
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            padding-left: 45%;
+            .background {
+                width: 35%
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            padding-left: 1rem;
+            .background {
+                display: none;
+            }
+        }
+        h2 {
+            text-transform: uppercase;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1;
+            margin: 0;
+        }
+        h3 {
+            text-transform: none;
+            font-size: 3.5rem;
+            font-weight: lighter;
+            line-height: 1;
+            margin: 0;
+        }
+        a.login {
+            color: $brand-primary;
+            background: #fff;
+            border-radius: 2.5rem;
+            padding: .25rem 6rem .25rem 3rem;
+            background-image: url([[pix:theme|arrowright-blue]]);
+            background-repeat: no-repeat;
+            background-size: 12px 21px;
+            background-position: calc(100% - 0.75rem) center;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1.5rem;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: .25rem;
+                left: .25rem;
+                height: 35px;
+                width: 35px;
+                background-image: url([[pix:theme|loginkey]]);
+                background-size: 35px;
+                background-repeat: no-repeat;
+                background-position: top left;
+                transition: left 0.2s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    left: calc(100% - 39px);
+                }
+            }
+        }
+    }
+}
+
+.frontblock {
+    min-height: 200px;
+    > a {
+        h4 {
+            bottom: 1rem;
+        }
+        &:before {
+            bottom: 2rem;
+        }
+    }
+}
+
+.footblock {
+    min-height: 100px;
+    > a {
+        h4 {
+            bottom: 1.5rem;
+        }
+        &:before {
+            bottom: 2.5rem;
+        }
+    }
+}
+
+.frontblock,
+.footblock {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    > a {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        padding: 1rem;
+        color: #fff;
+        transition: transform 0.2s ease;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        &:before {
+            position: absolute;
+            right: 1rem;
+            content: '';
+            display: block;
+            background-image: url([[pix:theme|arrow]]);
+            width: 20px;
+            height: 10px;
+            background-repeat: no-repeat;
+            transform: rotate(-90deg);
+            z-index: 2;
+        }
+        h4 {
+            font-size: 1.875rem;
+            position: absolute;
+            left: 1rem;
+            z-index: 2;
+            line-height: 1;
+        }
+        i {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 0.25rem;
+            position: relative;
+            top: 0.25rem;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    &.browseallmodules {
+        @include media-breakpoint-up(md) {
+            min-height: 340px;
+        }
+        a:after {
+            background: linear-gradient(45deg, rgba($brand-danger,1) 0%,rgba($brand-danger,0.7) 100%);
+        }
+    }
+    &.helpsupport {
+        i {
+            background-image: url([[pix:theme|icons/helpsupport]]);
+        }
+        a:after {
+            background: linear-gradient(45deg, rgba($brand-success,1) 0%,rgba($brand-success,0.7) 100%);
+        }
+    }
+    &.qmplusmedia {
+        i {
+            background-image: url([[pix:theme|icons/qmplusmedia]]);
+        }
+        a:after {
+            background: linear-gradient(45deg, rgba($brand-info,1) 0%,rgba($brand-info,0.7) 100%);
+        }
+    }
+    &.qmplushub {
+        i {
+            background-image: url([[pix:theme|icons/qmplushub]]);
+            width: 32px;
+            height: 32px;
+        }
+        a:after {
+            background: linear-gradient(45deg, rgba($brand-purple,1) 0%,rgba($brand-purple,0.7) 100%);
+        }
+    }
+    &.qmplusarchive {
+        i {
+            background-image: url([[pix:theme|icons/qmplusarchive]]);
+            width: 26px;
+            width: 26px;
+        }
+        a:after {
+            background: linear-gradient(45deg, rgba($brand-warning,1) 0%,rgba($brand-warning,0.7) 100%);
+        }
+    }
+}
+
+/* Course categories */

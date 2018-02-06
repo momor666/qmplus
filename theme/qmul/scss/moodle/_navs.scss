@@ -1,0 +1,384 @@
+.navbar {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    .navbar-header {
+        float: left;
+    }
+    .recentcourses {
+        padding: 1.1rem 0.5rem 0;
+        button {
+            padding: 0.5rem 1.8rem 0.5rem 0.5rem;
+            color: #ffffff;
+            background-color: transparent;
+            background-image: url([[pix:theme|arrow]]);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 6px) center;
+            background-size: 16px 9px;
+            box-shadow: none;
+            border-color: rgba(#fff, 0.2);
+            border-radius: 0.25rem;
+            &:focus,
+            &:hover {
+                background-color: darken($brand-primary, 10%);
+                box-shadow: none;
+                background-image: url([[pix:theme|arrow]]);
+                background-repeat: no-repeat;
+                background-position: calc(100% - 6px) center;
+                background-size: 16px 9px;
+                border-color: darken($brand-primary, 10%);
+            }
+        }
+        .show {
+            button {
+                background-color: darken($brand-primary, 10%);
+                box-shadow: none;
+                background-image: url([[pix:theme|arrow]]);
+                background-repeat: no-repeat;
+                background-position: calc(100% - 6px) center;
+                background-size: 16px 9px;
+                border-color: darken($brand-primary, 10%);
+            }
+        }
+        .dropdown-menu {
+            left: auto;
+            right: 0.5rem;
+            border-radius: 0;
+            white-space: nowrap;
+            top: 65%;
+            background-color: darken($brand-primary, 10%);
+            border: none;
+            @include media-breakpoint-down(sm) {
+                white-space: normal;
+            }
+            a {
+                display: block;
+                padding: 0.1rem 0.5rem;
+                color: #fff;
+                &:hover {
+                    background-color: darken($brand-primary, 15%);
+                }
+            }
+        }
+    }
+    .zoomcontent,
+    a.login {
+        margin-left: 0.35rem;
+    }
+    .usermenu {
+        span.login {
+            display: block;
+            margin-top: 0.75rem;
+        }
+    }
+    .menuholder {
+        float: left;
+        width: calc(100% + 30px);
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            display: table;
+            float: left;
+            width: auto;
+            text-align: left;
+            li {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            clear: both;
+            width: 100%;
+            text-align: left;
+            border-top: 1px solid $gray-lighter;
+            background: #ffffff;
+            li {
+                width: 100%;
+                &:first-child {
+                    margin-top: 15px;
+                }
+                &:last-child {
+                    margin-bottom: 15px;
+                }
+            }
+            .dropdown-menu {
+                position: relative;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                margin-bottom: 5px;
+                a {
+                    padding: 10px 25px;
+                }
+            }
+        }
+        @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+        li {
+            list-style: none;
+        }
+        .nav-link {
+            font-size: 1rem;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            transition: all 0.1s ease-in-out;
+            color: $text-color;
+            border-radius: $border-radius;
+            background: #ffffff;
+            &:hover {
+                color: #ffffff;
+                background: $brand-inverse;
+            }
+        }
+    }
+    &-brand {
+        font-size: 24px;
+    }
+    .logininfo {
+        position: relative;
+        color: $navbar-inverse-color;
+        margin-left: 0.5rem;
+        a.backpackbutton {
+            line-height: 26px;
+            position: relative;
+            display: block;
+            height: 100%;
+            padding: 0.5rem;
+            text-align: center;
+            opacity: 1;
+            color: #ffffff;
+            background: rgba(255,255,255,0.2);
+            transition: none;
+            &.hidden {
+                opacity: 0;
+            }
+            svg {
+                position: relative;
+                top: 15px;
+                width: 25px;
+                height: 25px;
+                margin: 0 4px;
+            }
+        }
+        .closebutton {
+            font-size: 0.6rem;
+            font-weight: bold;
+            line-height: 1.8;
+            position: absolute;
+            top: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            height: 100%;
+            padding: 0.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: rgba(255,255,255,0.2);
+            transition: none;
+            svg {
+                position: relative;
+                top: 0.8rem;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+    .search {
+        position: relative;
+        svg {
+            position: relative;
+            top: 0px;
+        }
+        .closebutton {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem 0.2rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: $brand-primary;
+            transition: none;
+            svg {
+                top: -5px;
+            }
+        }
+    }
+    .navbar-header {
+        display: flex;
+        height: $navbar-height;
+        align-items: center;
+        .navbar-brand {
+            display: block;
+            float: left;
+            height: auto;
+            vertical-align: middle;
+            img {
+                max-width: 200px;
+                max-height: 40px;
+            }
+        }
+    }
+    .navbar-right {
+        float: right;
+    }
+    &[role=header],
+    &[role=navigation] {
+        margin-bottom: 0;
+        > .container-fluid {
+            position: relative;
+        }
+    }
+    &[role=header] {
+        // max-height: $navbar-height;
+        z-index: 101;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 1);
+        .container-fluid {
+            width: 100%;
+        }
+    }
+    &[role=navigation] {
+        body:not(.pagelayout-login):not(.pagelayout-course):not(.pagelayout-incourse) & {
+            margin: 23px 0;
+            + .pageheader {
+                margin-top: -23px;
+                padding-top: 0.1px;
+            }
+        }
+    }
+}
+
+.nav-justified {
+    padding: 10px 0 0 0;
+    // Ok to show tabs on medium screens
+
+    @include media-breakpoint-up(md) {
+        border: 0;
+        border-radius: 0;
+        > li {
+            display: table-cell;
+            width: 1%;
+            > a {
+                margin-bottom: 0;
+            }
+        }
+    }
+    // Reset tabs to collapsed on $screen-sm-min sizes.
+    @include media-breakpoint-up(sm) {
+        > li {
+            display: block;
+            float: none;
+            width: 100%;
+            > a {
+                margin-bottom: 5px;
+                text-align: center;
+            }
+        }
+    }
+    > li > a {
+        margin-right: 1px;
+        padding-right: 4px;
+        padding-left: 4px;
+        white-space: nowrap;
+    }
+}
+
+.dropdown {
+    &-submenu {
+        > a {
+            &:after {
+                margin-top: 4px;
+                margin-right: -7px;
+            }
+        }
+    }
+    &.show {
+        a.nav-link {
+            color: #ffffff;
+            background: $brand-inverse;
+        }
+    }
+}
+
+.navbar-nav {
+    .show {
+        .dropdown-menu {
+            text-align: center;
+            > li > a {
+                padding: 5px 15px;
+            }
+        }
+    }
+    @media (min-width: 34em) {
+        float: left;
+        margin: 0;
+        > li {
+            float: left;
+            > a {
+                padding-top: $navbar-padding-y;
+                padding-bottom: $navbar-padding-y;
+            }
+        }
+    }
+}
+
+.navbar-default {
+    .navbar-nav {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .navbar-nav > .open > a,
+    .navbar-nav > .active > a {
+        border-bottom: 3px solid $navbar-light-active-color;
+    }
+}
+
+.moodle-actionmenu[data-enhanced].show .menu {
+    @media (max-width: 34.1em) {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.nav.menubar {
+    display: flex;
+    width: auto;
+    height: $navbar-height;
+    margin-right: 0;
+
+    align-items: center;
+    span.dropdown {
+        display: block;
+    }
+    > li {
+        float: left;
+        width: auto;
+        padding: 10px;
+        text-align: right;
+        select {
+            color: #ffffff;
+        }
+    }
+}
+
+.jsenabled {
+    .user-menu.moodle-actionmenu[data-enhance] {
+        .toggle-display {
+            display: block;
+        }
+    }
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-item.show .nav-link,
+.nav-pills .nav-item.atto_menu.open .nav-link {
+    &:hover {
+        color: #fff;
+    }
+}

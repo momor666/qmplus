@@ -1,0 +1,167 @@
+//ELEMENTS
+// For inserting icons from bloom-icons font
+
+// bloom-icon-insert needs to be revised
+
+@mixin bloom-icon-insert( $icon, $color:$btn-text-color, $boxSize:$font-size-base, $fontSize:inherit){
+  font-family: bloom;
+  content: $icon;
+  color: $color;
+  width: $boxSize;
+  line-height: $boxSize;
+  font-size: $fontSize;
+  display: inline-block;
+  text-align: center;
+  font-weight: normal;
+  text-transform: none;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+}
+
+@mixin btn-icon($icon, $font:bloom){
+  position: relative;
+  padding-left:2.5rem;
+  &:before{
+    left: 1.3rem;
+    top: .8rem;
+    position:absolute;
+    font-family: $font;
+    content: $icon;  
+    font-weight: normal;
+    text-transform: none;
+  }
+}
+
+// General style for settings dropdown menu in edit moede ("cog" icon)
+@mixin settings-dropdown(){
+    span.dropdown{
+    display: inline-block;
+    background: $brand-secondary;
+    @include border-radius($border-radius);
+    @include transition(background .25s ease-out);
+    &:hover{
+      background: darken($brand-secondary, 5%);
+    }
+    &:before{
+      bottom: -4px;
+      right: 50%;
+      transform: translateX(50%);
+      @include transition(border-color .15s ease-out);
+    }
+    &.open{
+      &:before{
+        border-top: 5px solid $brand-secondary;
+      }
+    }
+  }
+  .dropdown-toggle{
+    display: inline-block;
+    color: $btn-text-color;
+    font-size: 0;
+    &:hover{
+      color: $btn-text-color;
+    }
+    &:after{
+      display: none;
+    }
+    &:before{
+      content: $setting; //settings icon
+      font-family: bloom;
+      font-size: 1rem;
+      color: $btn-text-color;
+      display: inline-block;
+      width: 24px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+  .dropdown-menu{
+    background: #fff;
+  }
+}
+
+//navigation, tab labels, block header
+@mixin bloom-label($size, $text-weight, $text-color){
+	font-weight: $text-weight;
+  font-size: $size;
+	color: $text-color;
+ 	text-transform: uppercase;
+ 	letter-spacing: 0.5px;
+  text-align: center;
+}
+
+
+//button with hover
+ @mixin bloom-btn($backgroundColor, $textColor, $fontSize){
+  border:none;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $textColor;
+  font-size: $fontSize;
+  text-align: center;
+  letter-spacing: 1px;
+  background-color:$backgroundColor;
+  @include transition(background-color .2s ease-out);
+  &:active, &:focus, &:hover{
+    outline: none !important;
+    background-color: darken($backgroundColor, 10%);
+  }
+}
+
+// Input fields
+@mixin bloom-input-field($border-active: $bloom-accent-color, $border-color: $input-border-color){
+  border-radius: $input-border-radius;
+  padding: $input-padding-x-sm;
+  @if $border-color != "none" {
+    border: 1px solid $border-color;
+  }
+  &:active, &:focus{
+    border: 3px solid $border-active; //$border-properties-active;  
+    outline: none;
+  }
+}
+
+
+//ATTRIBUTE MIXINS
+@mixin gradient-vertical($start-color, $end-color) {
+  background: $brand-secondary; // old browsers
+  background: -webkit-linear-gradient(top, $start-color, $end-color);  // Safari 5.1-6, Chrome 10+
+  background: -o-linear-gradient(top, $start-color, $end-color);  // Opera 12
+  background: linear-gradient(to bottom, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}

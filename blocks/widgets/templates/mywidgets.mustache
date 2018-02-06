@@ -1,0 +1,12 @@
+{{!
+  Used for rendering the content of the 'My widgets' tab of the block.
+  For details of the data expected, see the 'widgets' section of the main.mustache file
+}}
+<div class="widgets row">
+    {{#widgets}}
+        {{>block_widgets/widget}}
+    {{/widgets}}
+</div>
+<div class="nowidgets {{^widgets}}show{{/widgets}}">
+    {{#str}}nowidgets, block_widgets{{/str}}
+</div>

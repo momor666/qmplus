@@ -1,0 +1,7 @@
+/** General display rules **/
+
+.block_quickscan .singlebutton {text-align: center;}
+.block_quickscan .footer {margin-top: 1em;}
+.block_quickscan .footer p {margin-bottom: 0;}
+
+#page-blocks-quickscan-launchtest .singlebutton {font-size:20px; font-weight:bold; text-align: center;}

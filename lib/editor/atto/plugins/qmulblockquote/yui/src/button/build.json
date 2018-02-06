@@ -1,0 +1,10 @@
+{
+  "name": "moodle-atto_qmulblockquote-button",
+  "builds": {
+    "moodle-atto_qmulblockquote-button": {
+      "jsfiles": [
+        "button.js"
+      ]
+    }
+  }
+}

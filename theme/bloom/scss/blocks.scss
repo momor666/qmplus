@@ -1,0 +1,199 @@
+// blocks style
+//
+.card-title{
+	@include bloom-label($font-size-h6, 900, $brand-secondary);
+	border-bottom: 3px solid $brand-secondary;
+	text-align: left;
+	padding: 0 1.25rem 0.4rem 0;
+	display: inline-block;
+	margin-bottom: 1.25rem;
+}
+
+// adjustment to listed elements in blocks (e.g activities block on course page)
+.column.c1{
+	margin-bottom: 10px;
+	img.icon{
+		width: 24px;
+    	height: 100%;
+	}
+}
+
+// block settings dropdown menu in editing mode and block drag'n'drop handle
+//
+.block-control-actions{
+	.dropdown{
+		background: $brand-secondary;
+		@include transition(background .25s ease-out);
+		&:hover{
+			background: darken($brand-secondary, 5%);
+		}
+		&:before{
+			bottom: -4px;
+			right: 50%;
+			transform: translateX(50%);
+			@include transition(border-color .15s ease-out);
+		}
+		&.open{
+			&:before{
+				border-top: 5px solid $brand-secondary;
+			}
+		}
+		>a.dropdown-toggle{
+			display: block;
+			&:before{
+				content: $setting;
+				font-family: bloom;
+				color: $btn-text-color;
+				display: inline-block;
+				width: 24px;
+				line-height: 24px;
+				text-align: center;
+			}
+			img{
+				display: none;
+			}
+			&:after{
+				display: none; // hide dropdown arrow
+			}
+		}
+	}
+	.moodle-core-dragdrop-draghandle{
+		width: 24px;
+		height: 24px;
+		text-align: center;
+		display: inline-block;
+		vertical-align: top;
+		&:before{
+			content: $drag;
+			font-family: bloom;
+			color:$brand-secondary;
+			display: inline-block;
+			width: 24px;
+			line-height: 24px;
+			font-size: 1.25rem;
+			text-align: center;
+		}
+		img{ // hides default dragdrop arrow icon
+			display: none;
+		}
+	}
+}
+
+
+//navigation block
+.block_navigation ul.block_tree{
+	.tree_item{		
+		&.root_node{
+			font-size: 1.2rem;
+		}
+	}
+	.depth_1>.tree_item.branch:before{ //dashboard link isn't collapsible
+		content: '';
+		margin-left: 0;
+	}
+}
+//admin block
+.block_settings ul.block_tree{ 	
+	.tree_item{
+		&.navigation_node{
+			font-size: 1.2rem;
+		}
+	}	
+}
+
+.contains_branch ul[role="group"]{
+	.leaf, .branch{
+		@include transition(background .25s ease);
+		&:hover{
+			background: darken($blocks-gray, 5%);
+		}
+	}
+}
+
+//common classnames
+.block_settings,
+.block_navigation{
+	ul.block_tree{
+		hr{
+			display: none;
+		}
+		.tree_item{
+		 	padding: 0.5rem 1.25rem;		
+		 	&.branch{
+				background-image: none;
+				margin: 0;
+				&:before{
+					margin-left: -10px;
+					margin-right: 10px;
+					font-size: 1.25rem;
+					display: inline-block;
+					content: $fa-var-caret-right;
+					font-family: FontAwesome;
+					@include transition(all .1s ease);
+				}
+				&[aria-expanded="true"]{
+					&:before{
+						transform: rotate(90deg);
+					}
+				}
+				&:active, &:focus{
+				 	outline: none;
+			 	}
+			}
+		}
+		p.hasicon{
+			margin-left: 10px;
+			img{
+				margin-right:7px; 
+			}
+		}
+		.active_tree_node{
+			font-weight: normal;
+			a{
+				color: lighten($body-color, 15%);
+				pointer-events: none;
+	  			cursor: default;
+	  			&:hover{
+	  				text-decoration: none;
+	  			}
+			}
+		}
+	}
+}
+
+
+aside{
+  	.block{	  	
+	    border: none;
+	    @include border-radius($border-radius);
+    	.card-block{      
+			.footer{
+				margin-top: 1.25rem;
+			}
+		}
+  	}
+  	&#block-region-side-pre{
+  		.block{
+  			background: $blocks-gray;
+  		}
+  	}
+}
+
+.block_calendar_upcoming{
+	background-color: $blocks-gray;
+}
+
+.card-block{
+	#info_panel_tabs ~ .footer{
+		margin: 0;
+	}
+}
+
+
+// editing mode
+.editing #region-main .block{
+	.card-block{
+		border: $border-width solid darken($blocks-blue, 5%);
+		padding: 1rem;
+	}
+}

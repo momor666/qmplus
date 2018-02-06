@@ -1,0 +1,67 @@
+#page-footer {
+    margin-top: 1em;
+    padding: 1em 0;
+    background: $brand-primary;
+    color: #fff;
+    .copy {
+        align-self: center;
+        margin-bottom: 0;
+        text-align: center;
+        @media(min-width: 34em) {
+            text-align: left;
+        }
+    }
+    .footnote {
+        clear: both;
+        padding-top: 10px;
+        text-align: left;
+        a {
+            color: #fff;
+            &:hover {
+                color: rgba(255,255,255,0.6);
+            }
+        }
+        h3 {
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+        h5 {
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            margin-left: 0.5rem;
+        }
+        ul {
+            padding-left: 0.5rem;
+            li {
+                padding-left: 1.2rem;
+                list-style: none;
+                background-image: url([[pix:theme|arrowright-small]]);
+                background-repeat: no-repeat;
+                background-position: 0px center;
+                transition: all 0.3s linear;
+                &:hover {
+                    background-position: 5px center;
+                }
+            }
+        }
+    }
+    .socialicons {
+        text-align: right;
+        .socials {
+            margin-bottom: 0;
+            padding-right: 1rem;
+        }
+    }
+    .logo img {
+        height: 3rem;
+        position: relative;
+        top: 6px;
+    }
+    .usertour {
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+}

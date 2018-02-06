@@ -1,0 +1,105 @@
+/* responsive.less */
+
+@include media-breakpoint-up(md) {
+    .file-picker {
+        .fp-repo-items {
+            width: 100%;
+            float: none;
+            .fp-navbar {
+                border-top: 1px solid rgb(187, 187, 187);
+            }
+        }
+        .fp-repo-area {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            overflow-y: auto;
+            float: none;
+            border: 0px;
+        }
+        .fp-login-form .fp-login-input label {
+            text-align: left;
+        }
+        .fp-content {
+            .mdl-right {
+                text-align: left;
+            }
+            form td {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .fp-content-center {
+        display: block;
+        vertical-align: top;
+    }
+    .activityinstance {
+        display: block;
+    }
+    .editing .course-content .section .activity {
+        margin-bottom: 0.2em;
+        padding-bottom: 0.2em;
+        border-bottom: thin solid $table-border-color;
+    }
+    .course-content .section .activity .commands {
+        text-align: right;
+    }
+    /** Handles display of the activity chooser on small screens **/
+    .jsenabled .choosercontainer #chooseform .alloptions {
+        max-width: 100%;
+    }
+    .que {
+        .info {
+            float: none;
+            width: auto;
+        }
+        .content {
+            margin: 0;
+        }
+    }
+    .path-mod-choice {
+        .anonymous {
+            width: 100%;
+        }
+        .horizontal  .choices .option {
+            display: block;
+        }
+    }
+    .path-mod-forum {
+        .forumsearch #search {
+            width: 120px;
+        }
+        .forumheaderlist .picture {
+            width: 0px;
+            a {
+                display: none;
+            }
+        }
+    }
+    .card {
+        .courseimage {
+            img {
+                margin-right: 5px;
+                float: none;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+// Resize, reflow file-picker on small devices
+   #filesskin .yui3-panel,
+   #filesskin .file-picker.fp-generallayout {
+        width: 100%;
+        left: 0;
+    }
+    .navbar-toggle {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,884 @@
+#region-main ul.yearblocks {
+    @include make-row();
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: -15px;
+}
+
+.block.block_html {
+    .mbbssignpost {
+        width: 100%;
+        padding-bottom: 5px;
+        text-align: center;
+        background: url([[pix:theme|medical-symbol]]) no-repeat center 40px;
+        h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            line-height: 16px;
+            margin-top: 0;
+            margin-bottom: 120px;
+            padding: 7px 10px;
+            text-align: center;
+            color: #fff;
+            background-color: $gray-dark;
+        }
+        a {
+            @include make-button;
+            @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+            display: block;
+            width: calc(100% - 2rem);
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+            background-image: url([[pix:theme|arrowleft-blue]]);
+            background-repeat: no-repeat;
+            background-size: 12px 24px;
+            background-position: 0.5rem center;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+    .mbbssignpost.year1 {
+        background-color: #CC9933;
+    }
+    .mbbssignpost.year2 {
+        background-color: #CC6600;
+    }
+    .mbbssignpost.year3 {
+        background-color: #669900;
+    }
+    .mbbssignpost.year4 {
+        background-color: #009999;
+    }
+    .mbbssignpost.year5 {
+        background-color: #0099CC;
+    }
+    .mbbssignpost.year6 {
+        background-color: #996699;
+    }
+}
+
+ul.yearblocks li {
+    @include make-col-ready();
+    @include make-col(12);
+    @include media-breakpoint-up(md) {
+        @include make-col(3);
+    }
+    list-style: none;
+    &.mbbssignpost.year1,
+    &.year1 {
+        a {
+            background-color: #CC9933;
+        }
+    }
+    &.mbbssignpost.year2,
+    &.year2 {
+        a {
+            background-color: #CC6600;
+        }
+    }
+    &.mbbssignpost.year3,
+    &.year3 {
+        a {
+            background-color: #669900;
+        }
+    }
+    &.mbbssignpost.year4,
+    &.year4 {
+        a {
+            background-color: #009999;
+        }
+    }
+    &.mbbssignpost.year5,
+    &.year5 {
+        a {
+            background-color: #0099CC;
+        }
+    }
+    &.mbbssignpost.year6,
+    &.year6 {
+        a {
+            background-color: #996699;
+        }
+    }
+    &.dentsignpost.year1 {
+        a {
+            background-color: #e8db9d;
+        }
+    }
+    &.dentsignpost.year2 {
+        a {
+            background-color: #efb077;
+        }
+    }
+    &.dentsignpost.year3 {
+        a {
+            background-color: #bacf84;
+        }
+    }
+    &.dentsignpost.year4 {
+        a {
+            background-color: #84ccbd;
+        }
+    }
+    &.dentsignpost.year5 {
+        a {
+            background-color: #83c2cf;
+        }
+    }
+    &.dentsignpost.year6 {
+        a {
+            background-color: #828fc5;
+        }
+    }
+    &.dentsignpost.year7 {
+        a {
+            background-color: #ce89d2;
+        }
+    }
+    &.dentsignpost.year8 {
+        a {
+            background-color: #beabe7;
+        }
+    }
+}
+
+ul.yearblocks li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    border: 1px solid $gray-lighter;
+    background-color: $brand-qmul;
+    color: #fff;
+    height: 96px;
+    margin-bottom: 30px;
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    padding-right: 40px;
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-image: url([[pix:theme|mbbs-arrow]]);
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+#region-main ul.yearblocks span.title {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    line-height: 1.1;
+}
+
+ul.yearblocks li img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+ul.yearblocks li span.symbol {
+    display: none;
+}
+
+ul.yearblocks li.coreinfo {
+    background-color: #6d83a0;
+}
+
+#region-main ul.yearblocks li.coreinfo .coretext span.title {
+    color: #fff;
+    font-size: 16px;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+#region-main ul.yearblocks li.coreinfo .coretext {
+    display: block;
+    padding: 16px;
+    color: #fff;
+    font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}
+
+h2.lowercase {
+    text-transform: none;
+    font-weight: normal;
+}
+
+h2.darkblue {
+    text-transform: none;
+    color: $brand-qmul;
+    font-weight: normal;
+}
+
+h2.lightblue {
+    text-transform: none;
+    color: $brand-primary;
+    font-weight: normal;
+}
+
+h3.lowercase {
+    text-transform: none;
+    font-weight: normal;
+}
+
+h3.darkblue {
+    background: $brand-qmul;
+    text-transform: none;
+    font-weight: normal;
+    color: #fff;
+    padding: 8px 10px;
+}
+
+h3.lightblue {
+    background: $brand-info;
+    text-transform: none;
+    font-weight: normal;
+    color: #fff;
+    padding: 8px 10px;
+}
+
+#highlight-1 {
+    background: #fff;
+    border: 1px dashed #A1A1A1;
+    padding: 0.75rem;
+    margin: 10px 0;
+    width: auto;
+}
+
+#highlight-1 h2 {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+#highlight-1 p {
+    padding: 5px 0;
+}
+
+#highlight-2 {
+    background: #e8decb;
+    border: none;
+    padding: 0.75rem;
+    margin: 10px 0;
+}
+
+.editing #highlight-2 {
+    margin: 10px 0 10px 30px;
+}
+
+#highlight-2 h2 {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+#highlight-2 p {
+    padding: 5px 0;
+}
+
+#highlight-3 {
+    background: #eeeeee;
+    border: none;
+    padding: 0.75rem;
+    margin: 10px 0;
+}
+
+#highlight-3 h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#highlight-3 p {
+    padding: 5px 0;
+}
+
+#highlight-4 {
+    background: #E7EAF1;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#highlight-4 h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#highlight-4 p {
+    padding: 5px 0;
+}
+
+#course-text {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 70%;
+}
+
+#course-text p {
+    padding: 10px 5px 10px 20px;
+}
+
+#course-img {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 30%;
+    text-align: right;
+}
+
+#img-txt {
+    clear: both;
+    margin: 10px 20px;
+}
+
+#img-txt p {
+    padding: 0;
+}
+
+#img-txt .left-img {
+    float: left;
+    padding: 0 20px 20px 0;
+}
+
+#img-txt .left-txt {
+    width: auto;
+}
+
+#img-txt .right-img {
+    float: right;
+    padding: 0 0 20px 20px;
+}
+
+#img-txt .right-txt {
+    width: auto;
+}
+
+li.modassignment {
+    background: url([[pix:theme|icons/bg-assignment]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modbook {
+    background: url([[pix:theme|icons/bg-book]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modpage {
+    background: url([[pix:theme|icons/bg-page]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modsubmission {
+    background: url([[pix:theme|icons/bg-submission]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modurl {
+    background: url([[pix:theme|icons/bg-url]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modpdf {
+    background: url([[pix:theme|icons/bg-pdf]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.moddoc {
+    background: url([[pix:theme|icons/bg-doc]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modzip {
+    background: url([[pix:theme|icons/bg-zip]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modquiz {
+    background: url([[pix:theme|icons/bg-quiz]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modforum {
+    background: url([[pix:theme|icons/bg-forum]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modlightbox {
+    background: url([[pix:theme|icons/bg-lightbox]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modppt {
+    background: url([[pix:theme|icons/bg-ppt]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modimage {
+    background: url([[pix:theme|icons/bg-image]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modexcel {
+    background: url([[pix:theme|icons/bg-excel]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modaudio {
+    background: url([[pix:theme|icons/bg-audio]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modvideo {
+    background: url([[pix:theme|icons/bg-video]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modscorm {
+    background: url([[pix:theme|icons/bg-scorm]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modempty {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+    background: none;
+}
+
+li.modportfolio {
+    background: url([[pix:theme|icons/eportfolio]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modfolder {
+    background: url([[pix:theme|icons/bg-folder]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modwimba {
+    background: url([[pix:theme|icons/bg-wimba]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modquestionmark {
+    background: url([[pix:theme|icons/bg-questionmark]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modmaple {
+    background: url([[pix:theme|icons/bg-maple]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modouwiki {
+    background: url([[pix:theme|icons/bg-ouwiki]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modoublog {
+    background: url([[pix:theme|icons/bg-oublog]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modturnitin {
+    background: url([[pix:theme|icons/bg-turnitin]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+li.modcertificate {
+    background: url([[pix:theme|icons/bg-certificate]]) no-repeat;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 5px 0 10px 40px;
+    list-style: none;
+}
+
+.schoolblocks {
+    margin-top: 10px;
+}
+
+.schoolblocks a {
+    float: left;
+    position: relative;
+    width: calc(33% - 1rem);
+    margin-right: 1.75rem;
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.1;
+    background-color: darken($gray-lighter, 5%);
+    margin-bottom: 1rem;
+    padding: 1.5rem 2.5rem 2rem 1.5rem;
+    min-height: 100px;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    &:nth-child(3n+1) {
+        clear: both;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 30px;
+        background: $brand-primary;
+        background-image: url([[pix:theme|arrowright]]);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 10px;
+        right: 0;
+        top: 0;
+    }
+}
+
+.block_assessment_information #coursebox-1,
+.block_assessment_information #coursebox-2,
+.block_assessment_information #coursebox-3,
+{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.block_assessment_information .section-wrap.editing .resource-list .resource .move {
+    margin-top: 1px;
+}
+
+.block_assessment_information .section-wrap.editing .resource-list .resource .remove-link,
+.dragging-resource .remove-link {
+    margin-top: -15px;
+}
+
+#show-content {
+    display: inline-block;
+    width: 100%;
+    margin: 0 -.25rem;
+    #coursebox-1:only-child,
+    #coursebox-2:only-child,
+    #coursebox-3:only-child {
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            width: 100%;
+        }
+    }
+}
+
+#coursebox-1,
+#coursebox-2,
+#coursebox-3 {
+    width: calc(100% - .5rem);
+    padding: 0;
+    border: 1px dashed #a1a1a1;
+    background: #fff;
+    margin-bottom: .5rem;
+    float: left;
+    margin: 0 .25rem .5rem .25rem;
+    @include media-breakpoint-up(md) {
+        width: calc(50% - .5rem);
+    }
+    h2 {
+        margin: 0;
+        padding: 10px;
+        text-transform: uppercase !important;
+    }
+    h3 {
+        margin: 5px 10px;
+    }
+    p {
+        padding: 0 10px 5px 10px;
+    }
+    li {
+        padding-right: 45px;
+        background-size: 30px !important;
+        padding-left: 40px;
+        list-style: none;
+        margin-left: 20px;
+        background-position: left 6px;
+        padding-top: 10px;
+    }
+}
+
+li.activity.label #coursebox-1,
+li.activity.label #coursebox-2,
+li.activity.label #coursebox-3 {
+    p {
+        margin: 0;
+        padding: 0 10px 5px 10px;
+    }
+}
+
+a.linkbutton {
+    height: auto;
+    margin-bottom: 0.25rem;
+    text-shadow: none;
+    &:hover {
+        background-repeat: no-repeat;
+        background-position: calc(100% - .5rem) center;
+    }
+}
+
+#region-main .TabbedPanelsTab {
+    background: #eee;
+    padding: 10px 20px;
+    color: #444;
+    margin-right: 3px;
+    border-color: #ddd;
+    margin-top: 10px;
+}
+
+#region-main .TabbedPanelsTab:hover, #region-main .TabbedPanelsTab:focus {
+    background: #fff;
+    color: #3b5179;
+    outline: none;
+}
+
+#region-main .TabbedPanelsTabSelected {
+    background: #fff;
+    color: #3b5179;
+}
+
+#region-main .TabbedPanelsContentGroup {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+
+/**********************************
+Book Module
+**********************************/
+
+#page-mod-book-edit .block_settings .block_tree li.item_with_icon > p img {
+    position: relative;
+}
+
+#page-mod-book-view .block_settings .block_tree li.item_with_icon > p img {
+    position: relative;
+}
+
+.path-mod-book #region-main h2 {
+    margin-bottom: 10px;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $brand-primary;
+    background: $gray-lighter;
+}
+
+.path-mod-book #region-main h3,
+.path-mod-book #region-main h4,
+.path-mod-book #region-main h5,
+.path-mod-book #region-main h6 {
+    color: $brand-primary;
+}
+
+.path-mod-book .subtitle {
+    font-weight: normal;
+}
+
+.path-mod-book .titledivider {
+    font-size: .9em;
+    color: $gray;
+}
+
+.path-mod-book .navtop img.icon, .path-mod-book .navbottom img.icon {
+    width: auto;
+    height: auto;
+}
+
+#page-mod-book-view .generalbox {
+    border: none;
+}
+
+
+///   GLOSSARY
+
+
+#page-mod-glossary-view #intro {
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 2px solid;
+}
+
+.path-mod-glossary .glossarypost, .path-mod-glossary .glossarypost.entrylist {
+    padding: 20px 0;
+    border-bottom: 1px solid;
+}
+
+.path-mod-glossary .glossarypost .concept h4 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.path-mod-glossary .mdl-left {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+.path-mod-glossary .comment-link {
+    float: left;
+    margin: 0 5px;
+    padding: 3px 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    background: #444444;
+    &:after {
+        content: '';
+        display: table;
+    }
+}
+
+.path-mod-glossary .glossarypost.entrylist .commands {
+    float: right;
+    width: auto;
+}
+
+.path-mod-glossary .glossarypost.entrylist .entry {
+    width: 70%;
+}
+
+.path-mod-glossary .comment-link img {
+    margin-top: -2px;
+    vertical-align: middle;
+}
+
+.path-mod-glossary .glossarypost .entryheader {
+    text-align: left;
+}
+
+#page-mod-glossary-view table.glossarycategoryheader {
+    background: $brand-primary;
+    margin-top: 20px;
+    color: #fff;
+    width: 95%;
+    h3 {
+        margin: 0;
+    }
+}
+
+#page-mod-glossary-view table.glossarycategoryheader th {
+    padding: 0.5rem;
+}
+
+.path-mod-glossary .comment-link {
+    margin: 0 5px 10px;
+}
+
+.glossarypost .comment-area .fd a {
+    background: #444;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 5px;
+    margin-right: 22px;
+}
+
+.glossarypost .comment-area .fd a:hover {
+    background: #6f809f;
+}

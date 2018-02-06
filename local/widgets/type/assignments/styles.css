@@ -1,0 +1,19 @@
+.widgettype-assignments .duestatus.duesoon {
+    background-color: #cc9842;
+}
+
+.widgettype-assignments .duestatus.submitted {
+    background-color: #8ccc42;
+}
+
+.widgettype-assignments .duestatus.draft {
+    background-color: #ebe528;
+}
+
+.widgettype-assignments .duestatus.overdue {
+    background-color: #cc2b26;
+}
+
+.widgettype-assignments .duestatus.due {
+    background-color: #a7a7a7;
+}

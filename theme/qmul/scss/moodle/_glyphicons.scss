@@ -1,0 +1,1585 @@
+//
+// Glyphicons for Bootstrap
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
+
+// Import the fonts
+@font-face {
+  font-family: 'Glyphicons';
+  src: url('../fonts/glyphicons-regular.eot');
+  src: url('../fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/glyphicons-regular.woff') format('woff'),
+       url('../fonts/glyphicons-regular.woff2') format('woff2'),
+       url('../fonts/glyphicons-regular.ttf') format('truetype'),
+       url('../fonts/glyphicons-regular.svg#${icon-font-svg-id}') format('svg');
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+       url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+       url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+       url('../fonts/glyphicons-halflings-regular.svg#${icon-font-svg-id}') format('svg');
+}
+
+@font-face {
+  font-family: 'Glyphicons Social';
+  src: url('../fonts/glyphicons-social-regular.eot');
+  src: url('../fonts/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/glyphicons-social-regular.woff') format('woff'),
+       url('../fonts/glyphicons-social-regular.woff2') format('woff2'),
+       url('../fonts/glyphicons-social-regular.ttf') format('truetype'),
+       url('../fonts/glyphicons-social-regular.svg#${icon-font-svg-id}') format('svg');
+}
+
+@font-face {
+  font-family: 'Glyphicons Filetypes';
+  src: url('../fonts/glyphicons-filetypes-regular.eot');
+  src: url('../fonts/glyphicons-filetypes-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/glyphicons-filetypes-regular.woff') format('woff'),
+       url('../fonts/glyphicons-filetypes-regular.woff2') format('woff2'),
+       url('../fonts/glyphicons-filetypes-regular.ttf') format('truetype'),
+       url('../fonts/glyphicons-filetypes-regular.svg#${icon-font-svg-id}') format('svg');
+}
+
+// Catchall baseclass
+.glyphicon {
+  @include make-glyphicon;
+  text-align: center;
+}
+
+// Catchall baseclass
+.glyphicon.halflings {
+  font-family: 'Glyphicons Halflings';
+}
+
+.glyphicon.filetypes {
+  font-family: 'Glyphicons Filetypes';
+}
+
+.glyphicon.social {
+  font-family: 'Glyphicons Social';
+}
+
+
+.glyphicon.x05{
+  font-size:12px;
+}
+.glyphicon.x1{
+  font-size:20px;
+}
+.glyphicon.x2{
+  font-size:48px;
+}
+.glyphicon.x3{
+  font-size:72px;
+}
+.glyphicon.x4{
+  font-size:96px;
+}
+.glyphicon.x5{
+  font-size:120px;
+}
+
+
+// Light
+.glyphicon.light{
+  &:before{
+    color:#f2f2f2
+  }
+}
+
+// Drop shadow
+.glyphicon.drop{
+  &:before{
+    text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+// Horizontal Flip
+.glyphicon.flip{
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.glyphicon.flipv{
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
+
+// Rotate
+.glyphicon.rotate90{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.glyphicon.rotate180{
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.glyphicon.rotate270{
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+
+
+
+// Individual icons
+.glyphicon-glass{ &:before{ content:"\E001";} }
+.glyphicon-leaf{ &:before{ content:"\E002";} }
+.glyphicon-dog{ &:before{ content:"\E003";} }
+.glyphicon-user{ &:before{ content:"\E004";} }
+.glyphicon-girl{ &:before{ content:"\E005";} }
+.glyphicon-car{ &:before{ content:"\E006";} }
+.glyphicon-user-add{ &:before{ content:"\E007";} }
+.glyphicon-user-remove{ &:before{ content:"\E008";} }
+.glyphicon-film{ &:before{ content:"\E009";} }
+.glyphicon-magic{ &:before{ content:"\E010";} }
+.glyphicon-envelope{ &:before{ content:"\E011";} }
+.glyphicon-camera{ &:before{ content:"\E012";} }
+.glyphicon-heart{ &:before{ content:"\E013";} }
+.glyphicon-beach-umbrella{ &:before{ content:"\E014";} }
+.glyphicon-train{ &:before{ content:"\E015";} }
+.glyphicon-print{ &:before{ content:"\E016";} }
+.glyphicon-bin{ &:before{ content:"\E017";} }
+.glyphicon-music{ &:before{ content:"\E018";} }
+.glyphicon-music-alt{ &:before{ content:"\E019";} }
+.glyphicon-heart-empty{ &:before{ content:"\E020";} }
+.glyphicon-home{ &:before{ content:"\E021";} }
+.glyphicon-snowflake{ &:before{ content:"\E022";} }
+.glyphicon-fire{ &:before{ content:"\E023";} }
+.glyphicon-magnet{ &:before{ content:"\E024";} }
+.glyphicon-parents{ &:before{ content:"\E025";} }
+.glyphicon-binoculars{ &:before{ content:"\E026";} }
+.glyphicon-road{ &:before{ content:"\E027";} }
+.glyphicon-search{ &:before{ content:"\E028";} }
+.glyphicon-cars{ &:before{ content:"\E029";} }
+.glyphicon-notes-2{ &:before{ content:"\E030";} }
+.glyphicon-pencil{ &:before{ content:"\E031";} }
+.glyphicon-bus{ &:before{ content:"\E032";} }
+.glyphicon-wifi-alt{ &:before{ content:"\E033";} }
+.glyphicon-luggage{ &:before{ content:"\E034";} }
+.glyphicon-old-man{ &:before{ content:"\E035";} }
+.glyphicon-woman{ &:before{ content:"\E036";} }
+.glyphicon-file{ &:before{ content:"\E037";} }
+.glyphicon-coins{ &:before{ content:"\E038";} }
+.glyphicon-plane{ &:before{ content:"\E039";} }
+.glyphicon-notes{ &:before{ content:"\E040";} }
+.glyphicon-stats{ &:before{ content:"\E041";} }
+.glyphicon-charts{ &:before{ content:"\E042";} }
+.glyphicon-pie-chart{ &:before{ content:"\E043";} }
+.glyphicon-group{ &:before{ content:"\E044";} }
+.glyphicon-keys{ &:before{ content:"\E045";} }
+.glyphicon-calendar{ &:before{ content:"\E046";} }
+.glyphicon-router{ &:before{ content:"\E047";} }
+.glyphicon-camera-small{ &:before{ content:"\E048";} }
+.glyphicon-star-empty{ &:before{ content:"\E049";} }
+.glyphicon-star{ &:before{ content:"\E050";} }
+.glyphicon-link{ &:before{ content:"\E051";} }
+.glyphicon-eye-open{ &:before{ content:"\E052";} }
+.glyphicon-eye-close{ &:before{ content:"\E053";} }
+.glyphicon-alarm{ &:before{ content:"\E054";} }
+.glyphicon-clock{ &:before{ content:"\E055";} }
+.glyphicon-stopwatch{ &:before{ content:"\E056";} }
+.glyphicon-projector{ &:before{ content:"\E057";} }
+.glyphicon-history{ &:before{ content:"\E058";} }
+.glyphicon-truck{ &:before{ content:"\E059";} }
+.glyphicon-cargo{ &:before{ content:"\E060";} }
+.glyphicon-compass{ &:before{ content:"\E061";} }
+.glyphicon-keynote{ &:before{ content:"\E062";} }
+.glyphicon-paperclip{ &:before{ content:"\E063";} }
+.glyphicon-power{ &:before{ content:"\E064";} }
+.glyphicon-lightbulb{ &:before{ content:"\E065";} }
+.glyphicon-tag{ &:before{ content:"\E066";} }
+.glyphicon-tags{ &:before{ content:"\E067";} }
+.glyphicon-cleaning{ &:before{ content:"\E068";} }
+.glyphicon-ruler{ &:before{ content:"\E069";} }
+.glyphicon-gift{ &:before{ content:"\E070";} }
+.glyphicon-umbrella{ &:before{ content:"\E071";} }
+.glyphicon-book{ &:before{ content:"\E072";} }
+.glyphicon-bookmark{ &:before{ content:"\E073";} }
+.glyphicon-wifi{ &:before{ content:"\E074";} }
+.glyphicon-cup{ &:before{ content:"\E075";} }
+.glyphicon-stroller{ &:before{ content:"\E076";} }
+.glyphicon-headphones{ &:before{ content:"\E077";} }
+.glyphicon-headset{ &:before{ content:"\E078";} }
+.glyphicon-warning-sign{ &:before{ content:"\E079";} }
+.glyphicon-signal{ &:before{ content:"\E080";} }
+.glyphicon-retweet{ &:before{ content:"\E081";} }
+.glyphicon-refresh{ &:before{ content:"\E082";} }
+.glyphicon-roundabout{ &:before{ content:"\E083";} }
+.glyphicon-random{ &:before{ content:"\E084";} }
+.glyphicon-heat{ &:before{ content:"\E085";} }
+.glyphicon-repeat{ &:before{ content:"\E086";} }
+.glyphicon-display{ &:before{ content:"\E087";} }
+.glyphicon-log-book{ &:before{ content:"\E088";} }
+.glyphicon-address-book{ &:before{ content:"\E089";} }
+.glyphicon-building{ &:before{ content:"\E090";} }
+.glyphicon-eyedropper{ &:before{ content:"\E091";} }
+.glyphicon-adjust{ &:before{ content:"\E092";} }
+.glyphicon-tint{ &:before{ content:"\E093";} }
+.glyphicon-crop{ &:before{ content:"\E094";} }
+.glyphicon-vector-path-square{ &:before{ content:"\E095";} }
+.glyphicon-vector-path-circle{ &:before{ content:"\E096";} }
+.glyphicon-vector-path-polygon{ &:before{ content:"\E097";} }
+.glyphicon-vector-path-line{ &:before{ content:"\E098";} }
+.glyphicon-vector-path-curve{ &:before{ content:"\E099";} }
+.glyphicon-vector-path-all{ &:before{ content:"\E100";} }
+.glyphicon-font{ &:before{ content:"\E101";} }
+.glyphicon-italic{ &:before{ content:"\E102";} }
+.glyphicon-bold{ &:before{ content:"\E103";} }
+.glyphicon-text-underline{ &:before{ content:"\E104";} }
+.glyphicon-text-strike{ &:before{ content:"\E105";} }
+.glyphicon-text-height{ &:before{ content:"\E106";} }
+.glyphicon-text-width{ &:before{ content:"\E107";} }
+.glyphicon-text-resize{ &:before{ content:"\E108";} }
+.glyphicon-left-indent{ &:before{ content:"\E109";} }
+.glyphicon-right-indent{ &:before{ content:"\E110";} }
+.glyphicon-align-left{ &:before{ content:"\E111";} }
+.glyphicon-align-center{ &:before{ content:"\E112";} }
+.glyphicon-align-right{ &:before{ content:"\E113";} }
+.glyphicon-justify{ &:before{ content:"\E114";} }
+.glyphicon-list{ &:before{ content:"\E115";} }
+.glyphicon-text-smaller{ &:before{ content:"\E116";} }
+.glyphicon-text-bigger{ &:before{ content:"\E117";} }
+.glyphicon-embed{ &:before{ content:"\E118";} }
+.glyphicon-embed-close{ &:before{ content:"\E119";} }
+.glyphicon-table{ &:before{ content:"\E120";} }
+.glyphicon-message-full{ &:before{ content:"\E121";} }
+.glyphicon-message-empty{ &:before{ content:"\E122";} }
+.glyphicon-message-in{ &:before{ content:"\E123";} }
+.glyphicon-message-out{ &:before{ content:"\E124";} }
+.glyphicon-message-plus{ &:before{ content:"\E125";} }
+.glyphicon-message-minus{ &:before{ content:"\E126";} }
+.glyphicon-message-ban{ &:before{ content:"\E127";} }
+.glyphicon-message-flag{ &:before{ content:"\E128";} }
+.glyphicon-message-lock{ &:before{ content:"\E129";} }
+.glyphicon-message-new{ &:before{ content:"\E130";} }
+.glyphicon-inbox{ &:before{ content:"\E131";} }
+.glyphicon-inbox-plus{ &:before{ content:"\E132";} }
+.glyphicon-inbox-minus{ &:before{ content:"\E133";} }
+.glyphicon-inbox-lock{ &:before{ content:"\E134";} }
+.glyphicon-inbox-in{ &:before{ content:"\E135";} }
+.glyphicon-inbox-out{ &:before{ content:"\E136";} }
+.glyphicon-cogwheel{ &:before{ content:"\E137";} }
+.glyphicon-cogwheels{ &:before{ content:"\E138";} }
+.glyphicon-picture{ &:before{ content:"\E139";} }
+.glyphicon-adjust-alt{ &:before{ content:"\E140";} }
+.glyphicon-database-lock{ &:before{ content:"\E141";} }
+.glyphicon-database-plus{ &:before{ content:"\E142";} }
+.glyphicon-database-minus{ &:before{ content:"\E143";} }
+.glyphicon-database-ban{ &:before{ content:"\E144";} }
+.glyphicon-folder-open{ &:before{ content:"\E145";} }
+.glyphicon-folder-plus{ &:before{ content:"\E146";} }
+.glyphicon-folder-minus{ &:before{ content:"\E147";} }
+.glyphicon-folder-lock{ &:before{ content:"\E148";} }
+.glyphicon-folder-flag{ &:before{ content:"\E149";} }
+.glyphicon-folder-new{ &:before{ content:"\E150";} }
+.glyphicon-edit{ &:before{ content:"\E151";} }
+.glyphicon-new-window{ &:before{ content:"\E152";} }
+.glyphicon-check{ &:before{ content:"\E153";} }
+.glyphicon-unchecked{ &:before{ content:"\E154";} }
+.glyphicon-more-windows{ &:before{ content:"\E155";} }
+.glyphicon-show-big-thumbnails{ &:before{ content:"\E156";} }
+.glyphicon-show-thumbnails{ &:before{ content:"\E157";} }
+.glyphicon-show-thumbnails-with-lines{ &:before{ content:"\E158";} }
+.glyphicon-show-lines{ &:before{ content:"\E159";} }
+.glyphicon-playlist{ &:before{ content:"\E160";} }
+.glyphicon-imac{ &:before{ content:"\E161";} }
+.glyphicon-macbook{ &:before{ content:"\E162";} }
+.glyphicon-ipad{ &:before{ content:"\E163";} }
+.glyphicon-iphone{ &:before{ content:"\E164";} }
+.glyphicon-iphone-transfer{ &:before{ content:"\E165";} }
+.glyphicon-iphone-exchange{ &:before{ content:"\E166";} }
+.glyphicon-ipod{ &:before{ content:"\E167";} }
+.glyphicon-ipod-shuffle{ &:before{ content:"\E168";} }
+.glyphicon-ear-plugs{ &:before{ content:"\E169";} }
+.glyphicon-record{ &:before{ content:"\E170";} }
+.glyphicon-step-backward{ &:before{ content:"\E171";} }
+.glyphicon-fast-backward{ &:before{ content:"\E172";} }
+.glyphicon-rewind{ &:before{ content:"\E173";} }
+.glyphicon-play{ &:before{ content:"\E174";} }
+.glyphicon-pause{ &:before{ content:"\E175";} }
+.glyphicon-stop{ &:before{ content:"\E176";} }
+.glyphicon-forward{ &:before{ content:"\E177";} }
+.glyphicon-fast-forward{ &:before{ content:"\E178";} }
+.glyphicon-step-forward{ &:before{ content:"\E179";} }
+.glyphicon-eject{ &:before{ content:"\E180";} }
+.glyphicon-facetime-video{ &:before{ content:"\E181";} }
+.glyphicon-download-alt{ &:before{ content:"\E182";} }
+.glyphicon-mute{ &:before{ content:"\E183";} }
+.glyphicon-volume-down{ &:before{ content:"\E184";} }
+.glyphicon-volume-up{ &:before{ content:"\E185";} }
+.glyphicon-screenshot{ &:before{ content:"\E186";} }
+.glyphicon-move{ &:before{ content:"\E187";} }
+.glyphicon-more{ &:before{ content:"\E188";} }
+.glyphicon-brightness-reduce{ &:before{ content:"\E189";} }
+.glyphicon-brightness-increase{ &:before{ content:"\E190";} }
+.glyphicon-plus-sign{ &:before{ content:"\E191";} }
+.glyphicon-minus-sign{ &:before{ content:"\E192";} }
+.glyphicon-remove-sign{ &:before{ content:"\E193";} }
+.glyphicon-ok-sign{ &:before{ content:"\E194";} }
+.glyphicon-question-sign{ &:before{ content:"\E195";} }
+.glyphicon-info-sign{ &:before{ content:"\E196";} }
+.glyphicon-exclamation-sign{ &:before{ content:"\E197";} }
+.glyphicon-remove-circle{ &:before{ content:"\E198";} }
+.glyphicon-ok-circle{ &:before{ content:"\E199";} }
+.glyphicon-ban-circle{ &:before{ content:"\E200";} }
+.glyphicon-download{ &:before{ content:"\E201";} }
+.glyphicon-upload{ &:before{ content:"\E202";} }
+.glyphicon-shopping-cart{ &:before{ content:"\E203";} }
+.glyphicon-lock{ &:before{ content:"\E204";} }
+.glyphicon-unlock{ &:before{ content:"\E205";} }
+.glyphicon-electricity{ &:before{ content:"\E206";} }
+.glyphicon-ok{ &:before{ content:"\E207";} }
+.glyphicon-remove{ &:before{ content:"\E208";} }
+.glyphicon-cart-in{ &:before{ content:"\E209";} }
+.glyphicon-cart-out{ &:before{ content:"\E210";} }
+.glyphicon-arrow-left{ &:before{ content:"\E211";} }
+.glyphicon-arrow-right{ &:before{ content:"\E212";} }
+.glyphicon-arrow-down{ &:before{ content:"\E213";} }
+.glyphicon-arrow-up{ &:before{ content:"\E214";} }
+.glyphicon-resize-small{ &:before{ content:"\E215";} }
+.glyphicon-resize-full{ &:before{ content:"\E216";} }
+.glyphicon-circle-arrow-left{ &:before{ content:"\E217";} }
+.glyphicon-circle-arrow-right{ &:before{ content:"\E218";} }
+.glyphicon-circle-arrow-top{ &:before{ content:"\E219";} }
+.glyphicon-circle-arrow-down{ &:before{ content:"\E220";} }
+.glyphicon-play-button{ &:before{ content:"\E221";} }
+.glyphicon-unshare{ &:before{ content:"\E222";} }
+.glyphicon-share{ &:before{ content:"\E223";} }
+.glyphicon-chevron-right{ &:before{ content:"\E224";} }
+.glyphicon-chevron-left{ &:before{ content:"\E225";} }
+.glyphicon-bluetooth{ &:before{ content:"\E226";} }
+.glyphicon-euro{ &:before{ content:"\E227";} }
+.glyphicon-usd{ &:before{ content:"\E228";} }
+.glyphicon-gbp{ &:before{ content:"\E229";} }
+.glyphicon-retweet-2{ &:before{ content:"\E230";} }
+.glyphicon-moon{ &:before{ content:"\E231";} }
+.glyphicon-sun{ &:before{ content:"\E232";} }
+.glyphicon-cloud{ &:before{ content:"\E233";} }
+.glyphicon-direction{ &:before{ content:"\E234";} }
+.glyphicon-brush{ &:before{ content:"\E235";} }
+.glyphicon-pen{ &:before{ content:"\E236";} }
+.glyphicon-zoom-in{ &:before{ content:"\E237";} }
+.glyphicon-zoom-out{ &:before{ content:"\E238";} }
+.glyphicon-pin{ &:before{ content:"\E239";} }
+.glyphicon-albums{ &:before{ content:"\E240";} }
+.glyphicon-rotation-lock{ &:before{ content:"\E241";} }
+.glyphicon-flash{ &:before{ content:"\E242";} }
+.glyphicon-map-marker{ &:before{ content:"\E243";} }
+.glyphicon-anchor{ &:before{ content:"\E244";} }
+.glyphicon-conversation{ &:before{ content:"\E245";} }
+.glyphicon-chat{ &:before{ content:"\E246";} }
+.glyphicon-note-empty{ &:before{ content:"\E247";} }
+.glyphicon-note{ &:before{ content:"\E248";} }
+.glyphicon-asterisk{ &:before{ content:"\E249";} }
+.glyphicon-divide{ &:before{ content:"\E250";} }
+.glyphicon-snorkel-diving{ &:before{ content:"\E251";} }
+.glyphicon-scuba-diving{ &:before{ content:"\E252";} }
+.glyphicon-oxygen-bottle{ &:before{ content:"\E253";} }
+.glyphicon-fins{ &:before{ content:"\E254";} }
+.glyphicon-fishes{ &:before{ content:"\E255";} }
+.glyphicon-boat{ &:before{ content:"\E256";} }
+.glyphicon-delete{ &:before{ content:"\E257";} }
+.glyphicon-sheriffs-star{ &:before{ content:"\E258";} }
+.glyphicon-qrcode{ &:before{ content:"\E259";} }
+.glyphicon-barcode{ &:before{ content:"\E260";} }
+.glyphicon-pool{ &:before{ content:"\E261";} }
+.glyphicon-buoy{ &:before{ content:"\E262";} }
+.glyphicon-spade{ &:before{ content:"\E263";} }
+.glyphicon-bank{ &:before{ content:"\E264";} }
+.glyphicon-vcard{ &:before{ content:"\E265";} }
+.glyphicon-electrical-plug{ &:before{ content:"\E266";} }
+.glyphicon-flag{ &:before{ content:"\E267";} }
+.glyphicon-credit-card{ &:before{ content:"\E268";} }
+.glyphicon-keyboard-wireless{ &:before{ content:"\E269";} }
+.glyphicon-keyboard-wired{ &:before{ content:"\E270";} }
+.glyphicon-shield{ &:before{ content:"\E271";} }
+.glyphicon-ring{ &:before{ content:"\E272";} }
+.glyphicon-cake{ &:before{ content:"\E273";} }
+.glyphicon-drink{ &:before{ content:"\E274";} }
+.glyphicon-beer{ &:before{ content:"\E275";} }
+.glyphicon-fast-food{ &:before{ content:"\E276";} }
+.glyphicon-cutlery{ &:before{ content:"\E277";} }
+.glyphicon-pizza{ &:before{ content:"\E278";} }
+.glyphicon-birthday-cake{ &:before{ content:"\E279";} }
+.glyphicon-tablet{ &:before{ content:"\E280";} }
+.glyphicon-settings{ &:before{ content:"\E281";} }
+.glyphicon-bullets{ &:before{ content:"\E282";} }
+.glyphicon-cardio{ &:before{ content:"\E283";} }
+.glyphicon-t-shirt{ &:before{ content:"\E284";} }
+.glyphicon-pants{ &:before{ content:"\E285";} }
+.glyphicon-sweater{ &:before{ content:"\E286";} }
+.glyphicon-fabric{ &:before{ content:"\E287";} }
+.glyphicon-leather{ &:before{ content:"\E288";} }
+.glyphicon-scissors{ &:before{ content:"\E289";} }
+.glyphicon-bomb{ &:before{ content:"\E290";} }
+.glyphicon-skull{ &:before{ content:"\E291";} }
+.glyphicon-celebration{ &:before{ content:"\E292";} }
+.glyphicon-tea-kettle{ &:before{ content:"\E293";} }
+.glyphicon-french-press{ &:before{ content:"\E294";} }
+.glyphicon-coffee-cup{ &:before{ content:"\E295";} }
+.glyphicon-pot{ &:before{ content:"\E296";} }
+.glyphicon-grater{ &:before{ content:"\E297";} }
+.glyphicon-kettle{ &:before{ content:"\E298";} }
+.glyphicon-hospital{ &:before{ content:"\E299";} }
+.glyphicon-hospital-h{ &:before{ content:"\E300";} }
+.glyphicon-microphone{ &:before{ content:"\E301";} }
+.glyphicon-webcam{ &:before{ content:"\E302";} }
+.glyphicon-temple-christianity-church{ &:before{ content:"\E303";} }
+.glyphicon-temple-islam{ &:before{ content:"\E304";} }
+.glyphicon-temple-hindu{ &:before{ content:"\E305";} }
+.glyphicon-temple-buddhist{ &:before{ content:"\E306";} }
+.glyphicon-bicycle{ &:before{ content:"\E307";} }
+.glyphicon-life-preserver{ &:before{ content:"\E308";} }
+.glyphicon-share-alt{ &:before{ content:"\E309";} }
+.glyphicon-comments{ &:before{ content:"\E310";} }
+.glyphicon-flower{ &:before{ content:"\E311";} }
+.glyphicon-baseball{ &:before{ content:"\E312";} }
+.glyphicon-rugby{ &:before{ content:"\E313";} }
+.glyphicon-ax{ &:before{ content:"\E314";} }
+.glyphicon-table-tennis{ &:before{ content:"\E315";} }
+.glyphicon-bowling{ &:before{ content:"\E316";} }
+.glyphicon-tree-conifer{ &:before{ content:"\E317";} }
+.glyphicon-tree-deciduous{ &:before{ content:"\E318";} }
+.glyphicon-more-items{ &:before{ content:"\E319";} }
+.glyphicon-sort{ &:before{ content:"\E320";} }
+.glyphicon-filter{ &:before{ content:"\E321";} }
+.glyphicon-gamepad{ &:before{ content:"\E322";} }
+.glyphicon-playing-dices{ &:before{ content:"\E323";} }
+.glyphicon-calculator{ &:before{ content:"\E324";} }
+.glyphicon-tie{ &:before{ content:"\E325";} }
+.glyphicon-wallet{ &:before{ content:"\E326";} }
+.glyphicon-piano{ &:before{ content:"\E327";} }
+.glyphicon-sampler{ &:before{ content:"\E328";} }
+.glyphicon-podium{ &:before{ content:"\E329";} }
+.glyphicon-soccer-ball{ &:before{ content:"\E330";} }
+.glyphicon-blog{ &:before{ content:"\E331";} }
+.glyphicon-dashboard{ &:before{ content:"\E332";} }
+.glyphicon-certificate{ &:before{ content:"\E333";} }
+.glyphicon-bell{ &:before{ content:"\E334";} }
+.glyphicon-candle{ &:before{ content:"\E335";} }
+.glyphicon-pushpin{ &:before{ content:"\E336";} }
+.glyphicon-iphone-shake{ &:before{ content:"\E337";} }
+.glyphicon-pin-flag{ &:before{ content:"\E338";} }
+.glyphicon-turtle{ &:before{ content:"\E339";} }
+.glyphicon-rabbit{ &:before{ content:"\E340";} }
+.glyphicon-globe{ &:before{ content:"\E341";} }
+.glyphicon-briefcase{ &:before{ content:"\E342";} }
+.glyphicon-hdd{ &:before{ content:"\E343";} }
+.glyphicon-thumbs-up{ &:before{ content:"\E344";} }
+.glyphicon-thumbs-down{ &:before{ content:"\E345";} }
+.glyphicon-hand-right{ &:before{ content:"\E346";} }
+.glyphicon-hand-left{ &:before{ content:"\E347";} }
+.glyphicon-hand-up{ &:before{ content:"\E348";} }
+.glyphicon-hand-down{ &:before{ content:"\E349";} }
+.glyphicon-fullscreen{ &:before{ content:"\E350";} }
+.glyphicon-shopping-bag{ &:before{ content:"\E351";} }
+.glyphicon-book-open{ &:before{ content:"\E352";} }
+.glyphicon-nameplate{ &:before{ content:"\E353";} }
+.glyphicon-nameplate-alt{ &:before{ content:"\E354";} }
+.glyphicon-vases{ &:before{ content:"\E355";} }
+.glyphicon-bullhorn{ &:before{ content:"\E356";} }
+.glyphicon-dumbbell{ &:before{ content:"\E357";} }
+.glyphicon-suitcase{ &:before{ content:"\E358";} }
+.glyphicon-file-import{ &:before{ content:"\E359";} }
+.glyphicon-file-export{ &:before{ content:"\E360";} }
+.glyphicon-bug{ &:before{ content:"\E361";} }
+.glyphicon-crown{ &:before{ content:"\E362";} }
+.glyphicon-smoking{ &:before{ content:"\E363";} }
+.glyphicon-cloud-upload{ &:before{ content:"\E364";} }
+.glyphicon-cloud-download{ &:before{ content:"\E365";} }
+.glyphicon-restart{ &:before{ content:"\E366";} }
+.glyphicon-security-camera{ &:before{ content:"\E367";} }
+.glyphicon-expand{ &:before{ content:"\E368";} }
+.glyphicon-collapse{ &:before{ content:"\E369";} }
+.glyphicon-collapse-top{ &:before{ content:"\E370";} }
+.glyphicon-globe-af{ &:before{ content:"\E371";} }
+.glyphicon-global{ &:before{ content:"\E372";} }
+.glyphicon-spray{ &:before{ content:"\E373";} }
+.glyphicon-nails{ &:before{ content:"\E374";} }
+.glyphicon-claw-hammer{ &:before{ content:"\E375";} }
+.glyphicon-classic-hammer{ &:before{ content:"\E376";} }
+.glyphicon-hand-saw{ &:before{ content:"\E377";} }
+.glyphicon-riflescope{ &:before{ content:"\E378";} }
+.glyphicon-electrical-socket-eu{ &:before{ content:"\E379";} }
+.glyphicon-electrical-socket-us{ &:before{ content:"\E380";} }
+.glyphicon-message-forward{ &:before{ content:"\E381";} }
+.glyphicon-coat-hanger{ &:before{ content:"\E382";} }
+.glyphicon-dress{ &:before{ content:"\E383";} }
+.glyphicon-bathrobe{ &:before{ content:"\E384";} }
+.glyphicon-shirt{ &:before{ content:"\E385";} }
+.glyphicon-underwear{ &:before{ content:"\E386";} }
+.glyphicon-log-in{ &:before{ content:"\E387";} }
+.glyphicon-log-out{ &:before{ content:"\E388";} }
+.glyphicon-exit{ &:before{ content:"\E389";} }
+.glyphicon-new-window-alt{ &:before{ content:"\E390";} }
+.glyphicon-video-sd{ &:before{ content:"\E391";} }
+.glyphicon-video-hd{ &:before{ content:"\E392";} }
+.glyphicon-subtitles{ &:before{ content:"\E393";} }
+.glyphicon-sound-stereo{ &:before{ content:"\E394";} }
+.glyphicon-sound-dolby{ &:before{ content:"\E395";} }
+.glyphicon-sound-5-1{ &:before{ content:"\E396";} }
+.glyphicon-sound-6-1{ &:before{ content:"\E397";} }
+.glyphicon-sound-7-1{ &:before{ content:"\E398";} }
+.glyphicon-copyright-mark{ &:before{ content:"\E399";} }
+.glyphicon-registration-mark{ &:before{ content:"\E400";} }
+.glyphicon-radar{ &:before{ content:"\E401";} }
+.glyphicon-skateboard{ &:before{ content:"\E402";} }
+.glyphicon-golf-course{ &:before{ content:"\E403";} }
+.glyphicon-sorting{ &:before{ content:"\E404";} }
+.glyphicon-sort-by-alphabet{ &:before{ content:"\E405";} }
+.glyphicon-sort-by-alphabet-alt{ &:before{ content:"\E406";} }
+.glyphicon-sort-by-order{ &:before{ content:"\E407";} }
+.glyphicon-sort-by-order-alt{ &:before{ content:"\E408";} }
+.glyphicon-sort-by-attributes{ &:before{ content:"\E409";} }
+.glyphicon-sort-by-attributes-alt{ &:before{ content:"\E410";} }
+.glyphicon-compressed{ &:before{ content:"\E411";} }
+.glyphicon-package{ &:before{ content:"\E412";} }
+.glyphicon-cloud-plus{ &:before{ content:"\E413";} }
+.glyphicon-cloud-minus{ &:before{ content:"\E414";} }
+.glyphicon-disk-save{ &:before{ content:"\E415";} }
+.glyphicon-disk-open{ &:before{ content:"\E416";} }
+.glyphicon-disk-saved{ &:before{ content:"\E417";} }
+.glyphicon-disk-remove{ &:before{ content:"\E418";} }
+.glyphicon-disk-import{ &:before{ content:"\E419";} }
+.glyphicon-disk-export{ &:before{ content:"\E420";} }
+.glyphicon-tower{ &:before{ content:"\E421";} }
+.glyphicon-send{ &:before{ content:"\E422";} }
+.glyphicon-git-branch{ &:before{ content:"\E423";} }
+.glyphicon-git-create{ &:before{ content:"\E424";} }
+.glyphicon-git-private{ &:before{ content:"\E425";} }
+.glyphicon-git-delete{ &:before{ content:"\E426";} }
+.glyphicon-git-merge{ &:before{ content:"\E427";} }
+.glyphicon-git-pull-request{ &:before{ content:"\E428";} }
+.glyphicon-git-compare{ &:before{ content:"\E429";} }
+.glyphicon-git-commit{ &:before{ content:"\E430";} }
+.glyphicon-construction-cone{ &:before{ content:"\E431";} }
+.glyphicon-shoe-steps{ &:before{ content:"\E432";} }
+.glyphicon-plus{ &:before{ content:"\E433";} }
+.glyphicon-minus{ &:before{ content:"\E434";} }
+.glyphicon-redo{ &:before{ content:"\E435";} }
+.glyphicon-undo{ &:before{ content:"\E436";} }
+.glyphicon-golf{ &:before{ content:"\E437";} }
+.glyphicon-hockey{ &:before{ content:"\E438";} }
+.glyphicon-pipe{ &:before{ content:"\E439";} }
+.glyphicon-wrench{ &:before{ content:"\E440";} }
+.glyphicon-folder-closed{ &:before{ content:"\E441";} }
+.glyphicon-phone-alt{ &:before{ content:"\E442";} }
+.glyphicon-earphone{ &:before{ content:"\E443";} }
+.glyphicon-floppy-disk{ &:before{ content:"\E444";} }
+.glyphicon-floppy-saved{ &:before{ content:"\E445";} }
+.glyphicon-floppy-remove{ &:before{ content:"\E446";} }
+.glyphicon-floppy-save{ &:before{ content:"\E447";} }
+.glyphicon-floppy-open{ &:before{ content:"\E448";} }
+.glyphicon-translate{ &:before{ content:"\E449";} }
+.glyphicon-fax{ &:before{ content:"\E450";} }
+.glyphicon-factory{ &:before{ content:"\E451";} }
+.glyphicon-shop-window{ &:before{ content:"\E452";} }
+.glyphicon-shop{ &:before{ content:"\E453";} }
+.glyphicon-kiosk{ &:before{ content:"\E454";} }
+.glyphicon-kiosk-wheels{ &:before{ content:"\E455";} }
+.glyphicon-kiosk-light{ &:before{ content:"\E456";} }
+.glyphicon-kiosk-food{ &:before{ content:"\E457";} }
+.glyphicon-transfer{ &:before{ content:"\E458";} }
+.glyphicon-money{ &:before{ content:"\E459";} }
+.glyphicon-header{ &:before{ content:"\E460";} }
+.glyphicon-blacksmith{ &:before{ content:"\E461";} }
+.glyphicon-saw-blade{ &:before{ content:"\E462";} }
+.glyphicon-basketball{ &:before{ content:"\E463";} }
+.glyphicon-server{ &:before{ content:"\E464";} }
+.glyphicon-server-plus{ &:before{ content:"\E465";} }
+.glyphicon-server-minus{ &:before{ content:"\E466";} }
+.glyphicon-server-ban{ &:before{ content:"\E467";} }
+.glyphicon-server-flag{ &:before{ content:"\E468";} }
+.glyphicon-server-lock{ &:before{ content:"\E469";} }
+.glyphicon-server-new{ &:before{ content:"\E470";} }
+.glyphicon-charging-station{ &:before{ content:"\E471";} }
+.glyphicon-gas-station{ &:before{ content:"\E472";} }
+.glyphicon-target{ &:before{ content:"\E473";} }
+.glyphicon-bed{ &:before{ content:"\E474";} }
+.glyphicon-mosquito{ &:before{ content:"\E475";} }
+.glyphicon-dining-set{ &:before{ content:"\E476";} }
+.glyphicon-plate-of-food{ &:before{ content:"\E477";} }
+.glyphicon-hygiene-kit{ &:before{ content:"\E478";} }
+.glyphicon-blackboard{ &:before{ content:"\E479";} }
+.glyphicon-marriage{ &:before{ content:"\E480";} }
+.glyphicon-bucket{ &:before{ content:"\E481";} }
+.glyphicon-none-color-swatch{ &:before{ content:"\E482";} }
+.glyphicon-bring-forward{ &:before{ content:"\E483";} }
+.glyphicon-bring-to-front{ &:before{ content:"\E484";} }
+.glyphicon-send-backward{ &:before{ content:"\E485";} }
+.glyphicon-send-to-back{ &:before{ content:"\E486";} }
+.glyphicon-fit-frame-to-image{ &:before{ content:"\E487";} }
+.glyphicon-fit-image-to-frame{ &:before{ content:"\E488";} }
+.glyphicon-multiple-displays{ &:before{ content:"\E489";} }
+.glyphicon-handshake{ &:before{ content:"\E490";} }
+.glyphicon-child{ &:before{ content:"\E491";} }
+.glyphicon-baby-formula{ &:before{ content:"\E492";} }
+.glyphicon-medicine{ &:before{ content:"\E493";} }
+.glyphicon-atv-vehicle{ &:before{ content:"\E494";} }
+.glyphicon-motorcycle{ &:before{ content:"\E495";} }
+.glyphicon-bed-alt{ &:before{ content:"\E496";} }
+.glyphicon-tent{ &:before{ content:"\E497";} }
+.glyphicon-glasses{ &:before{ content:"\E498";} }
+.glyphicon-sunglasses{ &:before{ content:"\E499";} }
+.glyphicon-family{ &:before{ content:"\E500";} }
+.glyphicon-education{ &:before{ content:"\E501";} }
+.glyphicon-shoes{ &:before{ content:"\E502";} }
+.glyphicon-map{ &:before{ content:"\E503";} }
+.glyphicon-cd{ &:before{ content:"\E504";} }
+.glyphicon-alert{ &:before{ content:"\E505";} }
+.glyphicon-piggy-bank{ &:before{ content:"\E506";} }
+.glyphicon-star-half{ &:before{ content:"\E507";} }
+.glyphicon-cluster{ &:before{ content:"\E508";} }
+.glyphicon-flowchart{ &:before{ content:"\E509";} }
+.glyphicon-commodities{ &:before{ content:"\E510";} }
+.glyphicon-duplicate{ &:before{ content:"\E511";} }
+.glyphicon-copy{ &:before{ content:"\E512";} }
+.glyphicon-paste{ &:before{ content:"\E513";} }
+.glyphicon-bath-bathtub{ &:before{ content:"\E514";} }
+.glyphicon-bath-shower{ &:before{ content:"\E515";} }
+.glyphicon-shower{ &:before{ content:"\E516";} }
+.glyphicon-menu-hamburger{ &:before{ content:"\E517";} }
+.glyphicon-option-vertical{ &:before{ content:"\E518";} }
+.glyphicon-option-horizontal{ &:before{ content:"\E519";} }
+.glyphicon-currency-conversion{ &:before{ content:"\E520";} }
+.glyphicon-user-ban{ &:before{ content:"\E521";} }
+.glyphicon-user-lock{ &:before{ content:"\E522";} }
+.glyphicon-user-flag{ &:before{ content:"\E523";} }
+.glyphicon-user-asterisk{ &:before{ content:"\E524";} }
+.glyphicon-user-alert{ &:before{ content:"\E525";} }
+.glyphicon-user-key{ &:before{ content:"\E526";} }
+.glyphicon-user-conversation{ &:before{ content:"\E527";} }
+.glyphicon-database{ &:before{ content:"\E528";} }
+.glyphicon-database-search{ &:before{ content:"\E529";} }
+.glyphicon-list-alt{ &:before{ content:"\E530";} }
+.glyphicon-hazard-sign{ &:before{ content:"\E531";} }
+.glyphicon-hazard{ &:before{ content:"\E532";} }
+.glyphicon-stop-sign{ &:before{ content:"\E533";} }
+.glyphicon-lab{ &:before{ content:"\E534";} }
+.glyphicon-lab-alt{ &:before{ content:"\E535";} }
+.glyphicon-ice-cream{ &:before{ content:"\E536";} }
+.glyphicon-ice-lolly{ &:before{ content:"\E537";} }
+.glyphicon-ice-lolly-tasted{ &:before{ content:"\E538";} }
+.glyphicon-invoice{ &:before{ content:"\E539";} }
+.glyphicon-cart-tick{ &:before{ content:"\E540";} }
+.glyphicon-hourglass{ &:before{ content:"\E541";} }
+.glyphicon-cat{ &:before{ content:"\E542";} }
+.glyphicon-lamp{ &:before{ content:"\E543";} }
+.glyphicon-scale-classic{ &:before{ content:"\E544";} }
+.glyphicon-eye-plus{ &:before{ content:"\E545";} }
+.glyphicon-eye-minus{ &:before{ content:"\E546";} }
+.glyphicon-quote{ &:before{ content:"\E547";} }
+.glyphicon-bitcoin{ &:before{ content:"\E548";} }
+.glyphicon-yen{ &:before{ content:"\E549";} }
+.glyphicon-ruble{ &:before{ content:"\E550";} }
+.glyphicon-erase{ &:before{ content:"\E551";} }
+.glyphicon-podcast{ &:before{ content:"\E552";} }
+.glyphicon-firework{ &:before{ content:"\E553";} }
+.glyphicon-scale{ &:before{ content:"\E554";} }
+.glyphicon-king{ &:before{ content:"\E555";} }
+.glyphicon-queen{ &:before{ content:"\E556";} }
+.glyphicon-pawn{ &:before{ content:"\E557";} }
+.glyphicon-bishop{ &:before{ content:"\E558";} }
+.glyphicon-knight{ &:before{ content:"\E559";} }
+.glyphicon-mic-mute{ &:before{ content:"\E560";} }
+.glyphicon-voicemail{ &:before{ content:"\E561";} }
+.glyphicon-paragraph-alt{ &:before{ content:"\E562";} }
+.glyphicon-person-walking{ &:before{ content:"\E563";} }
+.glyphicon-person-wheelchair{ &:before{ content:"\E564";} }
+.glyphicon-underground{ &:before{ content:"\E565";} }
+.glyphicon-car-hov{ &:before{ content:"\E566";} }
+.glyphicon-car-rental{ &:before{ content:"\E567";} }
+.glyphicon-transport{ &:before{ content:"\E568";} }
+.glyphicon-taxi{ &:before{ content:"\E569";} }
+.glyphicon-ice-cream-no{ &:before{ content:"\E570";} }
+.glyphicon-uk-rat-u{ &:before{ content:"\E571";} }
+.glyphicon-uk-rat-pg{ &:before{ content:"\E572";} }
+.glyphicon-uk-rat-12a{ &:before{ content:"\E573";} }
+.glyphicon-uk-rat-12{ &:before{ content:"\E574";} }
+.glyphicon-uk-rat-15{ &:before{ content:"\E575";} }
+.glyphicon-uk-rat-18{ &:before{ content:"\E576";} }
+.glyphicon-uk-rat-r18{ &:before{ content:"\E577";} }
+.glyphicon-tv{ &:before{ content:"\E578";} }
+.glyphicon-sms{ &:before{ content:"\E579";} }
+.glyphicon-mms{ &:before{ content:"\E580";} }
+.glyphicon-us-rat-g{ &:before{ content:"\E581";} }
+.glyphicon-us-rat-pg{ &:before{ content:"\E582";} }
+.glyphicon-us-rat-pg-13{ &:before{ content:"\E583";} }
+.glyphicon-us-rat-restricted{ &:before{ content:"\E584";} }
+.glyphicon-us-rat-no-one-17{ &:before{ content:"\E585";} }
+.glyphicon-equalizer{ &:before{ content:"\E586";} }
+.glyphicon-speakers{ &:before{ content:"\E587";} }
+.glyphicon-remote-control{ &:before{ content:"\E588";} }
+.glyphicon-remote-control-tv{ &:before{ content:"\E589";} }
+.glyphicon-shredder{ &:before{ content:"\E590";} }
+.glyphicon-folder-heart{ &:before{ content:"\E591";} }
+.glyphicon-person-running{ &:before{ content:"\E592";} }
+.glyphicon-person{ &:before{ content:"\E593";} }
+.glyphicon-voice{ &:before{ content:"\E594";} }
+.glyphicon-stethoscope{ &:before{ content:"\E595";} }
+.glyphicon-paired{ &:before{ content:"\E596";} }
+.glyphicon-activity{ &:before{ content:"\E597";} }
+.glyphicon-watch{ &:before{ content:"\E598";} }
+.glyphicon-scissors-alt{ &:before{ content:"\E599";} }
+.glyphicon-car-wheel{ &:before{ content:"\E600";} }
+.glyphicon-chevron-up{ &:before{ content:"\E601";} }
+.glyphicon-chevron-down{ &:before{ content:"\E602";} }
+.glyphicon-superscript{ &:before{ content:"\E603";} }
+.glyphicon-subscript{ &:before{ content:"\E604";} }
+.glyphicon-text-size{ &:before{ content:"\E605";} }
+.glyphicon-text-color{ &:before{ content:"\E606";} }
+.glyphicon-text-background{ &:before{ content:"\E607";} }
+.glyphicon-modal-window{ &:before{ content:"\E608";} }
+.glyphicon-newspaper{ &:before{ content:"\E609";} }
+.glyphicon-tractor{ &:before{ content:"\E610";} }
+.glyphicon-camping{ &:before{ content:"\E611";} }
+.glyphicon-camping-benches{ &:before{ content:"\E612";} }
+.glyphicon-forest{ &:before{ content:"\E613";} }
+.glyphicon-park{ &:before{ content:"\E614";} }
+.glyphicon-field{ &:before{ content:"\E615";} }
+.glyphicon-mountains{ &:before{ content:"\E616";} }
+.glyphicon-fees-payments{ &:before{ content:"\E617";} }
+.glyphicon-small-payments{ &:before{ content:"\E618";} }
+.glyphicon-mixed-buildings{ &:before{ content:"\E619";} }
+.glyphicon-industrial-zone{ &:before{ content:"\E620";} }
+.glyphicon-visitor-tag{ &:before{ content:"\E621";} }
+.glyphicon-businessman{ &:before{ content:"\E622";} }
+.glyphicon-meditation{ &:before{ content:"\E623";} }
+.glyphicon-bath{ &:before{ content:"\E624";} }
+.glyphicon-donate{ &:before{ content:"\E625";} }
+.glyphicon-sauna{ &:before{ content:"\E626";} }
+.glyphicon-bedroom-nightstand{ &:before{ content:"\E627";} }
+.glyphicon-bedroom-lamp{ &:before{ content:"\E628";} }
+.glyphicon-doctor{ &:before{ content:"\E629";} }
+.glyphicon-engineering-networks{ &:before{ content:"\E630";} }
+.glyphicon-washing-machine{ &:before{ content:"\E631";} }
+.glyphicon-dryer{ &:before{ content:"\E632";} }
+.glyphicon-dishwasher{ &:before{ content:"\E633";} }
+.glyphicon-luggage-group{ &:before{ content:"\E634";} }
+.glyphicon-teenager{ &:before{ content:"\E635";} }
+.glyphicon-person-stick{ &:before{ content:"\E636";} }
+.glyphicon-person-stick-old{ &:before{ content:"\E637";} }
+.glyphicon-traveler{ &:before{ content:"\E638";} }
+.glyphicon-veteran{ &:before{ content:"\E639";} }
+.glyphicon-group-chat{ &:before{ content:"\E640";} }
+.glyphicon-elections{ &:before{ content:"\E641";} }
+.glyphicon-law-justice{ &:before{ content:"\E642";} }
+.glyphicon-judiciary{ &:before{ content:"\E643";} }
+.glyphicon-house-fire{ &:before{ content:"\E644";} }
+.glyphicon-firefighters{ &:before{ content:"\E645";} }
+.glyphicon-police{ &:before{ content:"\E646";} }
+.glyphicon-ambulance{ &:before{ content:"\E647";} }
+.glyphicon-light-beacon{ &:before{ content:"\E648";} }
+.glyphicon-important-day{ &:before{ content:"\E649";} }
+.glyphicon-bike-park{ &:before{ content:"\E650";} }
+.glyphicon-object-align-top{ &:before{ content:"\E651";} }
+.glyphicon-object-align-bottom{ &:before{ content:"\E652";} }
+.glyphicon-object-align-horizontal{ &:before{ content:"\E653";} }
+.glyphicon-object-align-left{ &:before{ content:"\E654";} }
+.glyphicon-object-align-vertical{ &:before{ content:"\E655";} }
+.glyphicon-object-align-right{ &:before{ content:"\E656";} }
+.glyphicon-reflect-y{ &:before{ content:"\E657";} }
+.glyphicon-reflect-x{ &:before{ content:"\E658";} }
+.glyphicon-tick{ &:before{ content:"\E659";} }
+.glyphicon-lawnmower{ &:before{ content:"\E660";} }
+.glyphicon-call-redirect{ &:before{ content:"\E661";} }
+.glyphicon-call-ip{ &:before{ content:"\E662";} }
+.glyphicon-call-record{ &:before{ content:"\E663";} }
+.glyphicon-call-ringtone{ &:before{ content:"\E664";} }
+.glyphicon-call-traffic{ &:before{ content:"\E665";} }
+.glyphicon-call-hold{ &:before{ content:"\E666";} }
+.glyphicon-call-incoming{ &:before{ content:"\E667";} }
+.glyphicon-call-outgoing{ &:before{ content:"\E668";} }
+.glyphicon-call-video{ &:before{ content:"\E669";} }
+.glyphicon-call-missed{ &:before{ content:"\E670";} }
+.glyphicon-theater{ &:before{ content:"\E671";} }
+.glyphicon-heartbeat{ &:before{ content:"\E672";} }
+.glyphicon-kettlebell{ &:before{ content:"\E673";} }
+.glyphicon-fireplace{ &:before{ content:"\E674";} }
+.glyphicon-street-lights{ &:before{ content:"\E675";} }
+.glyphicon-pedestrian{ &:before{ content:"\E676";} }
+.glyphicon-flood{ &:before{ content:"\E677";} }
+.glyphicon-open-water{ &:before{ content:"\E678";} }
+.glyphicon-for-sale{ &:before{ content:"\E679";} }
+.glyphicon-dustbin{ &:before{ content:"\E680";} }
+.glyphicon-door{ &:before{ content:"\E681";} }
+.glyphicon-camp-fire{ &:before{ content:"\E682";} }
+.glyphicon-fleur-de-lis{ &:before{ content:"\E683";} }
+.glyphicon-temperature-settings{ &:before{ content:"\E684";} }
+.glyphicon-article{ &:before{ content:"\E685";} }
+.glyphicon-sunbath{ &:before{ content:"\E686";} }
+.glyphicon-balanced-diet{ &:before{ content:"\E687";} }
+.glyphicon-ticket{ &:before{ content:"\E688";} }
+.glyphicon-parking-ticket{ &:before{ content:"\E689";} }
+.glyphicon-parking-meter{ &:before{ content:"\E690";} }
+.glyphicon-laptop{ &:before{ content:"\E691";} }
+.glyphicon-tree-structure{ &:before{ content:"\E692";} }
+.glyphicon-weather-warning{ &:before{ content:"\E693";} }
+.glyphicon-temperature-low{ &:before{ content:"\E694";} }
+.glyphicon-temperature-high{ &:before{ content:"\E695";} }
+.glyphicon-temperature-low-warning{ &:before{ content:"\E696";} }
+.glyphicon-temperature-high-warning{ &:before{ content:"\E697";} }
+.glyphicon-hurricane{ &:before{ content:"\E698";} }
+.glyphicon-storm{ &:before{ content:"\E699";} }
+.glyphicon-sorted-waste{ &:before{ content:"\E700";} }
+.glyphicon-ear{ &:before{ content:"\E701";} }
+.glyphicon-ear-deaf{ &:before{ content:"\E702";} }
+.glyphicon-file-plus{ &:before{ content:"\E703";} }
+.glyphicon-file-minus{ &:before{ content:"\E704";} }
+.glyphicon-file-lock{ &:before{ content:"\E705";} }
+.glyphicon-file-cloud{ &:before{ content:"\E706";} }
+.glyphicon-file-cloud-download{ &:before{ content:"\E707";} }
+.glyphicon-file-cloud-upload{ &:before{ content:"\E708";} }
+.glyphicon-paragraph{ &:before{ content:"\E709";} }
+.glyphicon-list-numbered{ &:before{ content:"\E710";} }
+.glyphicon-donate-heart{ &:before{ content:"\E711";} }
+.glyphicon-government{ &:before{ content:"\E712";} }
+.glyphicon-maze{ &:before{ content:"\E713";} }
+.glyphicon-chronicle{ &:before{ content:"\E714";} }
+.glyphicon-user-structure{ &:before{ content:"\E715";} }
+.glyphicon-recycle{ &:before{ content:"\E716";} }
+.glyphicon-gas{ &:before{ content:"\E717";} }
+.glyphicon-waste-pipe{ &:before{ content:"\E718";} }
+.glyphicon-water-pipe{ &:before{ content:"\E719";} }
+.glyphicon-parking{ &:before{ content:"\E720";} }
+.glyphicon-closed{ &:before{ content:"\E721";} }
+.glyphicon-mouse{ &:before{ content:"\E722";} }
+.glyphicon-mouse-double-click{ &:before{ content:"\E723";} }
+.glyphicon-mouse-left-click{ &:before{ content:"\E724";} }
+.glyphicon-mouse-right-click{ &:before{ content:"\E725";} }
+.glyphicon-mouse-middle-click{ &:before{ content:"\E726";} }
+.glyphicon-mouse-scroll{ &:before{ content:"\E727";} }
+.glyphicon-resize-vertical{ &:before{ content:"\E728";} }
+.glyphicon-resize-horizontal{ &:before{ content:"\E729";} }
+.glyphicon-temperature{ &:before{ content:"\E730";} }
+.glyphicon-puzzle{ &:before{ content:"\E731";} }
+.glyphicon-puzzle-2{ &:before{ content:"\E732";} }
+.glyphicon-puzzle-3{ &:before{ content:"\E733";} }
+.glyphicon-nearby-square{ &:before{ content:"\E734";} }
+.glyphicon-nearby-circle{ &:before{ content:"\E735";} }
+.glyphicon-rotate-right{ &:before{ content:"\E736";} }
+.glyphicon-rotate-left{ &:before{ content:"\E737";} }
+.glyphicon-pictures{ &:before{ content:"\E738";} }
+.glyphicon-photo-album{ &:before{ content:"\E739";} }
+.glyphicon-cadastral-map{ &:before{ content:"\E740";} }
+.glyphicon-fingerprint-scan{ &:before{ content:"\E741";} }
+.glyphicon-fingerprint{ &:before{ content:"\E742";} }
+.glyphicon-fingerprint-lock{ &:before{ content:"\E743";} }
+.glyphicon-fingerprint-ok{ &:before{ content:"\E744";} }
+.glyphicon-fingerprint-remove{ &:before{ content:"\E745";} }
+.glyphicon-fingerprint-reload{ &:before{ content:"\E746";} }
+.glyphicon-pending-notifications{ &:before{ content:"\E747";} }
+.glyphicon-synchronization{ &:before{ content:"\E748";} }
+.glyphicon-synchronization-ban{ &:before{ content:"\E749";} }
+.glyphicon-hash{ &:before{ content:"\E750";} }
+.glyphicon-gender-male{ &:before{ content:"\E751";} }
+.glyphicon-gender-female{ &:before{ content:"\E752";} }
+.glyphicon-gender-virgin-female{ &:before{ content:"\E753";} }
+.glyphicon-gender-intersex{ &:before{ content:"\E754";} }
+.glyphicon-gender-transgender{ &:before{ content:"\E755";} }
+.glyphicon-gender-ori-lesbian{ &:before{ content:"\E756";} }
+.glyphicon-gender-ori-gay{ &:before{ content:"\E757";} }
+.glyphicon-gender-ori-hetero{ &:before{ content:"\E758";} }
+.glyphicon-gender-other{ &:before{ content:"\E759";} }
+.glyphicon-gender-unknown{ &:before{ content:"\E760";} }
+.glyphicon-scanner{ &:before{ content:"\E761";} }
+.glyphicon-multifunction-printer{ &:before{ content:"\E762";} }
+.glyphicon-lasso{ &:before{ content:"\E763";} }
+.glyphicon-view-360{ &:before{ content:"\E764";} }
+.glyphicon-battery-charging{ &:before{ content:"\E765";} }
+.glyphicon-battery-full{ &:before{ content:"\E766";} }
+.glyphicon-battery-75{ &:before{ content:"\E767";} }
+.glyphicon-battery-50{ &:before{ content:"\E768";} }
+.glyphicon-battery-25{ &:before{ content:"\E769";} }
+.glyphicon-battery-10{ &:before{ content:"\E770";} }
+.glyphicon-satellite{ &:before{ content:"\E771";} }
+.glyphicon-satellite-dish{ &:before{ content:"\E772";} }
+.glyphicon-satellite-dish-alt{ &:before{ content:"\E773";} }
+.glyphicon-auction{ &:before{ content:"\E774";} }
+.glyphicon-directions{ &:before{ content:"\E775";} }
+.glyphicon-race{ &:before{ content:"\E776";} }
+.glyphicon-robot{ &:before{ content:"\E777";} }
+.glyphicon-ruler-alt{ &:before{ content:"\E778";} }
+.glyphicon-cube-empty{ &:before{ content:"\E779";} }
+.glyphicon-cube-black{ &:before{ content:"\E780";} }
+.glyphicon-move-square{ &:before{ content:"\E781";} }
+.glyphicon-drop{ &:before{ content:"\E782";} }
+.glyphicon-vr-headset{ &:before{ content:"\E783";} }
+.glyphicon-vr-charging{ &:before{ content:"\E784";} }
+.glyphicon-vr-low-battery{ &:before{ content:"\E785";} }
+.glyphicon-vr-paired{ &:before{ content:"\E786";} }
+.glyphicon-vr-settings{ &:before{ content:"\E787";} }
+.glyphicon-vr-maintenance{ &:before{ content:"\E788";} }
+.glyphicon-filter-remove{ &:before{ content:"\E789";} }
+.glyphicon-filter-applied{ &:before{ content:"\E790";} }
+.glyphicon-one-day{ &:before{ content:"\E791";} }
+.glyphicon-user-vr{ &:before{ content:"\E792";} }
+.glyphicon-user-vr-add{ &:before{ content:"\E793";} }
+.glyphicon-user-vr-remove{ &:before{ content:"\E794";} }
+.glyphicon-dice-1{ &:before{ content:"\E795";} }
+.glyphicon-dice-2{ &:before{ content:"\E796";} }
+.glyphicon-dice-3{ &:before{ content:"\E797";} }
+.glyphicon-dice-4{ &:before{ content:"\E798";} }
+.glyphicon-dice-5{ &:before{ content:"\E799";} }
+.glyphicon-dice-6{ &:before{ content:"\E800";} }
+
+// Individual icons
+.glyphicon.halflings-glass{ &:before{ content:"\E001";} }
+.glyphicon.halflings-music{ &:before{ content:"\E002";} }
+.glyphicon.halflings-search{ &:before{ content:"\E003";} }
+.glyphicon.halflings-envelope{ &:before{ content:"\2709";} }
+.glyphicon.halflings-heart{ &:before{ content:"\E005";} }
+.glyphicon.halflings-star{ &:before{ content:"\E006";} }
+.glyphicon.halflings-star-empty{ &:before{ content:"\E007";} }
+.glyphicon.halflings-user{ &:before{ content:"\E008";} }
+.glyphicon.halflings-film{ &:before{ content:"\E009";} }
+.glyphicon.halflings-th-large{ &:before{ content:"\E010";} }
+.glyphicon.halflings-th{ &:before{ content:"\E011";} }
+.glyphicon.halflings-th-list{ &:before{ content:"\E012";} }
+.glyphicon.halflings-ok{ &:before{ content:"\E013";} }
+.glyphicon.halflings-remove{ &:before{ content:"\E014";} }
+.glyphicon.halflings-zoom-in{ &:before{ content:"\E015";} }
+.glyphicon.halflings-zoom-out{ &:before{ content:"\E016";} }
+.glyphicon.halflings-off{ &:before{ content:"\E017";} }
+.glyphicon.halflings-signal{ &:before{ content:"\E018";} }
+.glyphicon.halflings-cog{ &:before{ content:"\E019";} }
+.glyphicon.halflings-trash{ &:before{ content:"\E020";} }
+.glyphicon.halflings-home{ &:before{ content:"\E021";} }
+.glyphicon.halflings-file{ &:before{ content:"\E022";} }
+.glyphicon.halflings-time{ &:before{ content:"\E023";} }
+.glyphicon.halflings-road{ &:before{ content:"\E024";} }
+.glyphicon.halflings-download-alt{ &:before{ content:"\E025";} }
+.glyphicon.halflings-download{ &:before{ content:"\E026";} }
+.glyphicon.halflings-upload{ &:before{ content:"\E027";} }
+.glyphicon.halflings-inbox{ &:before{ content:"\E028";} }
+.glyphicon.halflings-play-circle{ &:before{ content:"\E029";} }
+.glyphicon.halflings-repeat{ &:before{ content:"\E030";} }
+.glyphicon.halflings-refresh{ &:before{ content:"\E031";} }
+.glyphicon.halflings-list-alt{ &:before{ content:"\E032";} }
+.glyphicon.halflings-glyph-lock{ &:before{ content:"\E033";} }
+.glyphicon.halflings-flag{ &:before{ content:"\E034";} }
+.glyphicon.halflings-headphones{ &:before{ content:"\E035";} }
+.glyphicon.halflings-volume-off{ &:before{ content:"\E036";} }
+.glyphicon.halflings-volume-down{ &:before{ content:"\E037";} }
+.glyphicon.halflings-volume-up{ &:before{ content:"\E038";} }
+.glyphicon.halflings-qrcode{ &:before{ content:"\E039";} }
+.glyphicon.halflings-barcode{ &:before{ content:"\E040";} }
+.glyphicon.halflings-tag{ &:before{ content:"\E041";} }
+.glyphicon.halflings-tags{ &:before{ content:"\E042";} }
+.glyphicon.halflings-book{ &:before{ content:"\E043";} }
+.glyphicon.halflings-glyph-bookmark{ &:before{ content:"\E044";} }
+.glyphicon.halflings-print{ &:before{ content:"\E045";} }
+.glyphicon.halflings-glyph-camera{ &:before{ content:"\E046";} }
+.glyphicon.halflings-font{ &:before{ content:"\E047";} }
+.glyphicon.halflings-bold{ &:before{ content:"\E048";} }
+.glyphicon.halflings-italic{ &:before{ content:"\E049";} }
+.glyphicon.halflings-text-height{ &:before{ content:"\E050";} }
+.glyphicon.halflings-text-width{ &:before{ content:"\E051";} }
+.glyphicon.halflings-align-left{ &:before{ content:"\E052";} }
+.glyphicon.halflings-align-center{ &:before{ content:"\E053";} }
+.glyphicon.halflings-align-right{ &:before{ content:"\E054";} }
+.glyphicon.halflings-align-justify{ &:before{ content:"\E055";} }
+.glyphicon.halflings-list{ &:before{ content:"\E056";} }
+.glyphicon.halflings-indent-left{ &:before{ content:"\E057";} }
+.glyphicon.halflings-indent-right{ &:before{ content:"\E058";} }
+.glyphicon.halflings-facetime-video{ &:before{ content:"\E059";} }
+.glyphicon.halflings-picture{ &:before{ content:"\E060";} }
+.glyphicon.halflings-pencil{ &:before{ content:"\270F";} }
+.glyphicon.halflings-map-marker{ &:before{ content:"\E062";} }
+.glyphicon.halflings-adjust{ &:before{ content:"\E063";} }
+.glyphicon.halflings-tint{ &:before{ content:"\E064";} }
+.glyphicon.halflings-edit{ &:before{ content:"\E065";} }
+.glyphicon.halflings-share{ &:before{ content:"\E066";} }
+.glyphicon.halflings-check{ &:before{ content:"\E067";} }
+.glyphicon.halflings-move{ &:before{ content:"\E068";} }
+.glyphicon.halflings-step-backward{ &:before{ content:"\E069";} }
+.glyphicon.halflings-fast-backward{ &:before{ content:"\E070";} }
+.glyphicon.halflings-backward{ &:before{ content:"\E071";} }
+.glyphicon.halflings-play{ &:before{ content:"\E072";} }
+.glyphicon.halflings-pause{ &:before{ content:"\E073";} }
+.glyphicon.halflings-stop{ &:before{ content:"\E074";} }
+.glyphicon.halflings-forward{ &:before{ content:"\E075";} }
+.glyphicon.halflings-fast-forward{ &:before{ content:"\E076";} }
+.glyphicon.halflings-step-forward{ &:before{ content:"\E077";} }
+.glyphicon.halflings-eject{ &:before{ content:"\E078";} }
+.glyphicon.halflings-chevron-left{ &:before{ content:"\E079";} }
+.glyphicon.halflings-chevron-right{ &:before{ content:"\E080";} }
+.glyphicon.halflings-plus-sign{ &:before{ content:"\E081";} }
+.glyphicon.halflings-minus-sign{ &:before{ content:"\E082";} }
+.glyphicon.halflings-remove-sign{ &:before{ content:"\E083";} }
+.glyphicon.halflings-ok-sign{ &:before{ content:"\E084";} }
+.glyphicon.halflings-question-sign{ &:before{ content:"\E085";} }
+.glyphicon.halflings-info-sign{ &:before{ content:"\E086";} }
+.glyphicon.halflings-screenshot{ &:before{ content:"\E087";} }
+.glyphicon.halflings-remove-circle{ &:before{ content:"\E088";} }
+.glyphicon.halflings-ok-circle{ &:before{ content:"\E089";} }
+.glyphicon.halflings-ban-circle{ &:before{ content:"\E090";} }
+.glyphicon.halflings-arrow-left{ &:before{ content:"\E091";} }
+.glyphicon.halflings-arrow-right{ &:before{ content:"\E092";} }
+.glyphicon.halflings-arrow-up{ &:before{ content:"\E093";} }
+.glyphicon.halflings-arrow-down{ &:before{ content:"\E094";} }
+.glyphicon.halflings-share-alt{ &:before{ content:"\E095";} }
+.glyphicon.halflings-resize-full{ &:before{ content:"\E096";} }
+.glyphicon.halflings-resize-small{ &:before{ content:"\E097";} }
+.glyphicon.halflings-plus{ &:before{ content:"\002B";} }
+.glyphicon.halflings-minus{ &:before{ content:"\2212";} }
+.glyphicon.halflings-asterisk{ &:before{ content:"\002A";} }
+.glyphicon.halflings-exclamation-sign{ &:before{ content:"\E101";} }
+.glyphicon.halflings-gift{ &:before{ content:"\E102";} }
+.glyphicon.halflings-leaf{ &:before{ content:"\E103";} }
+.glyphicon.halflings-glyph-fire{ &:before{ content:"\E104";} }
+.glyphicon.halflings-eye-open{ &:before{ content:"\E105";} }
+.glyphicon.halflings-eye-close{ &:before{ content:"\E106";} }
+.glyphicon.halflings-warning-sign{ &:before{ content:"\E107";} }
+.glyphicon.halflings-plane{ &:before{ content:"\E108";} }
+.glyphicon.halflings-glyph-calendar{ &:before{ content:"\E109";} }
+.glyphicon.halflings-random{ &:before{ content:"\E110";} }
+.glyphicon.halflings-comments{ &:before{ content:"\E111";} }
+.glyphicon.halflings-magnet{ &:before{ content:"\E112";} }
+.glyphicon.halflings-chevron-up{ &:before{ content:"\E113";} }
+.glyphicon.halflings-chevron-down{ &:before{ content:"\E114";} }
+.glyphicon.halflings-retweet{ &:before{ content:"\E115";} }
+.glyphicon.halflings-shopping-cart{ &:before{ content:"\E116";} }
+.glyphicon.halflings-folder-close{ &:before{ content:"\E117";} }
+.glyphicon.halflings-folder-open{ &:before{ content:"\E118";} }
+.glyphicon.halflings-resize-vertical{ &:before{ content:"\E119";} }
+.glyphicon.halflings-resize-horizontal{ &:before{ content:"\E120";} }
+.glyphicon.halflings-hdd{ &:before{ content:"\E121";} }
+.glyphicon.halflings-bullhorn{ &:before{ content:"\E122";} }
+.glyphicon.halflings-glyph-bell{ &:before{ content:"\E123";} }
+.glyphicon.halflings-certificate{ &:before{ content:"\E124";} }
+.glyphicon.halflings-thumbs-up{ &:before{ content:"\E125";} }
+.glyphicon.halflings-thumbs-down{ &:before{ content:"\E126";} }
+.glyphicon.halflings-hand-right{ &:before{ content:"\E127";} }
+.glyphicon.halflings-hand-left{ &:before{ content:"\E128";} }
+.glyphicon.halflings-hand-top{ &:before{ content:"\E129";} }
+.glyphicon.halflings-hand-down{ &:before{ content:"\E130";} }
+.glyphicon.halflings-circle-arrow-right{ &:before{ content:"\E131";} }
+.glyphicon.halflings-circle-arrow-left{ &:before{ content:"\E132";} }
+.glyphicon.halflings-circle-arrow-top{ &:before{ content:"\E133";} }
+.glyphicon.halflings-circle-arrow-down{ &:before{ content:"\E134";} }
+.glyphicon.halflings-globe{ &:before{ content:"\E135";} }
+.glyphicon.halflings-glyph-wrench{ &:before{ content:"\E136";} }
+.glyphicon.halflings-tasks{ &:before{ content:"\E137";} }
+.glyphicon.halflings-filter{ &:before{ content:"\E138";} }
+.glyphicon.halflings-glyph-briefcase{ &:before{ content:"\E139";} }
+.glyphicon.halflings-fullscreen{ &:before{ content:"\E140";} }
+.glyphicon.halflings-dashboard{ &:before{ content:"\E141";} }
+.glyphicon.halflings-glyph-paperclip{ &:before{ content:"\E142";} }
+.glyphicon.halflings-heart-empty{ &:before{ content:"\E143";} }
+.glyphicon.halflings-link{ &:before{ content:"\E144";} }
+.glyphicon.halflings-phone{ &:before{ content:"\E145";} }
+.glyphicon.halflings-glyph-pushpin{ &:before{ content:"\E146";} }
+.glyphicon.halflings-euro{ &:before{ content:"\20AC";} }
+.glyphicon.halflings-usd{ &:before{ content:"\E148";} }
+.glyphicon.halflings-gbp{ &:before{ content:"\E149";} }
+.glyphicon.halflings-sort{ &:before{ content:"\E150";} }
+.glyphicon.halflings-sort-by-alphabet{ &:before{ content:"\E151";} }
+.glyphicon.halflings-sort-by-alphabet-alt{ &:before{ content:"\E152";} }
+.glyphicon.halflings-sort-by-order{ &:before{ content:"\E153";} }
+.glyphicon.halflings-sort-by-order-alt{ &:before{ content:"\E154";} }
+.glyphicon.halflings-sort-by-attributes{ &:before{ content:"\E155";} }
+.glyphicon.halflings-sort-by-attributes-alt{ &:before{ content:"\E156";} }
+.glyphicon.halflings-unchecked{ &:before{ content:"\E157";} }
+.glyphicon.halflings-expand{ &:before{ content:"\E158";} }
+.glyphicon.halflings-collapse{ &:before{ content:"\E159";} }
+.glyphicon.halflings-collapse-top{ &:before{ content:"\E160";} }
+.glyphicon.halflings-log-in{ &:before{ content:"\E161";} }
+.glyphicon.halflings-flash{ &:before{ content:"\E162";} }
+.glyphicon.halflings-log-out{ &:before{ content:"\E163";} }
+.glyphicon.halflings-new-window{ &:before{ content:"\E164";} }
+.glyphicon.halflings-record{ &:before{ content:"\E165";} }
+.glyphicon.halflings-save{ &:before{ content:"\E166";} }
+.glyphicon.halflings-open{ &:before{ content:"\E167";} }
+.glyphicon.halflings-saved{ &:before{ content:"\E168";} }
+.glyphicon.halflings-import{ &:before{ content:"\E169";} }
+.glyphicon.halflings-export{ &:before{ content:"\E170";} }
+.glyphicon.halflings-send{ &:before{ content:"\E171";} }
+.glyphicon.halflings-floppy-disk{ &:before{ content:"\E172";} }
+.glyphicon.halflings-floppy-saved{ &:before{ content:"\E173";} }
+.glyphicon.halflings-floppy-remove{ &:before{ content:"\E174";} }
+.glyphicon.halflings-floppy-save{ &:before{ content:"\E175";} }
+.glyphicon.halflings-floppy-open{ &:before{ content:"\E176";} }
+.glyphicon.halflings-credit-card{ &:before{ content:"\E177";} }
+.glyphicon.halflings-transfer{ &:before{ content:"\E178";} }
+.glyphicon.halflings-cutlery{ &:before{ content:"\E179";} }
+.glyphicon.halflings-header{ &:before{ content:"\E180";} }
+.glyphicon.halflings-compressed{ &:before{ content:"\E181";} }
+.glyphicon.halflings-earphone{ &:before{ content:"\E182";} }
+.glyphicon.halflings-phone-alt{ &:before{ content:"\E183";} }
+.glyphicon.halflings-tower{ &:before{ content:"\E184";} }
+.glyphicon.halflings-stats{ &:before{ content:"\E185";} }
+.glyphicon.halflings-sd-video{ &:before{ content:"\E186";} }
+.glyphicon.halflings-hd-video{ &:before{ content:"\E187";} }
+.glyphicon.halflings-subtitles{ &:before{ content:"\E188";} }
+.glyphicon.halflings-sound-stereo{ &:before{ content:"\E189";} }
+.glyphicon.halflings-sound-dolby{ &:before{ content:"\E190";} }
+.glyphicon.halflings-sound-5-1{ &:before{ content:"\E191";} }
+.glyphicon.halflings-sound-6-1{ &:before{ content:"\E192";} }
+.glyphicon.halflings-sound-7-1{ &:before{ content:"\E193";} }
+.glyphicon.halflings-copyright-mark{ &:before{ content:"\E194";} }
+.glyphicon.halflings-registration-mark{ &:before{ content:"\E195";} }
+.glyphicon.halflings-cloud{ &:before{ content:"\2601";} }
+.glyphicon.halflings-cloud-download{ &:before{ content:"\E197";} }
+.glyphicon.halflings-cloud-upload{ &:before{ content:"\E198";} }
+.glyphicon.halflings-tree-conifer{ &:before{ content:"\E199";} }
+.glyphicon.halflings-tree-deciduous{ &:before{ content:"\E200";} }
+.glyphicon.halflings-cd{ &:before{ content:"\E201";} }
+.glyphicon.halflings-save-file{ &:before{ content:"\E202";} }
+.glyphicon.halflings-open-file{ &:before{ content:"\E203";} }
+.glyphicon.halflings-level-up{ &:before{ content:"\E204";} }
+.glyphicon.halflings-copy{ &:before{ content:"\E205";} }
+.glyphicon.halflings-paste{ &:before{ content:"\E206";} }
+.glyphicon.halflings-door{ &:before{ content:"\1F6AA";} }
+.glyphicon.halflings-key{ &:before{ content:"\1F511";} }
+.glyphicon.halflings-alert{ &:before{ content:"\E209";} }
+.glyphicon.halflings-equalizer{ &:before{ content:"\E210";} }
+.glyphicon.halflings-king{ &:before{ content:"\E211";} }
+.glyphicon.halflings-queen{ &:before{ content:"\E212";} }
+.glyphicon.halflings-pawn{ &:before{ content:"\E213";} }
+.glyphicon.halflings-bishop{ &:before{ content:"\E214";} }
+.glyphicon.halflings-knight{ &:before{ content:"\E215";} }
+.glyphicon.halflings-baby-formula{ &:before{ content:"\E216";} }
+.glyphicon.halflings-tent{ &:before{ content:"\26FA";} }
+.glyphicon.halflings-blackboard{ &:before{ content:"\E218";} }
+.glyphicon.halflings-bed{ &:before{ content:"\E219";} }
+.glyphicon.halflings-apple{ &:before{ content:"\F8FF";} }
+.glyphicon.halflings-erase{ &:before{ content:"\E221";} }
+.glyphicon.halflings-hourglass{ &:before{ content:"\231B";} }
+.glyphicon.halflings-lamp{ &:before{ content:"\E223";} }
+.glyphicon.halflings-duplicate{ &:before{ content:"\E224";} }
+.glyphicon.halflings-piggy-bank{ &:before{ content:"\E225";} }
+.glyphicon.halflings-scissors{ &:before{ content:"\E226";} }
+.glyphicon.halflings-bitcoin{ &:before{ content:"\E227";} }
+.glyphicon.halflings-yen{ &:before{ content:"\00A5";} }
+.glyphicon.halflings-ruble{ &:before{ content:"\20BD";} }
+.glyphicon.halflings-scale{ &:before{ content:"\E230";} }
+.glyphicon.halflings-ice-lolly{ &:before{ content:"\E231";} }
+.glyphicon.halflings-ice-lolly-tasted{ &:before{ content:"\E232";} }
+.glyphicon.halflings-education{ &:before{ content:"\E233";} }
+.glyphicon.halflings-option-horizontal{ &:before{ content:"\E234";} }
+.glyphicon.halflings-option-vertical{ &:before{ content:"\E235";} }
+.glyphicon.halflings-menu-hamburger{ &:before{ content:"\E236";} }
+.glyphicon.halflings-modal-window{ &:before{ content:"\E237";} }
+.glyphicon.halflings-oil{ &:before{ content:"\E238";} }
+.glyphicon.halflings-grain{ &:before{ content:"\E239";} }
+.glyphicon.halflings-sunglasses{ &:before{ content:"\E240";} }
+.glyphicon.halflings-text-size{ &:before{ content:"\E241";} }
+.glyphicon.halflings-text-color{ &:before{ content:"\E242";} }
+.glyphicon.halflings-text-background{ &:before{ content:"\E243";} }
+.glyphicon.halflings-object-align-top{ &:before{ content:"\E244";} }
+.glyphicon.halflings-object-align-bottom{ &:before{ content:"\E245";} }
+.glyphicon.halflings-object-align-horizontal{ &:before{ content:"\E246";} }
+.glyphicon.halflings-object-align-left{ &:before{ content:"\E247";} }
+.glyphicon.halflings-object-align-vertical{ &:before{ content:"\E248";} }
+.glyphicon.halflings-object-align-right{ &:before{ content:"\E249";} }
+.glyphicon.halflings-triangle-right{ &:before{ content:"\E250";} }
+.glyphicon.halflings-triangle-left{ &:before{ content:"\E251";} }
+.glyphicon.halflings-triangle-bottom{ &:before{ content:"\E252";} }
+.glyphicon.halflings-triangle-top{ &:before{ content:"\E253";} }
+.glyphicon.halflings-terminal{ &:before{ content:"\E254";} }
+.glyphicon.halflings-superscript{ &:before{ content:"\E255";} }
+.glyphicon.halflings-subscript{ &:before{ content:"\E256";} }
+.glyphicon.halflings-menu-left{ &:before{ content:"\E257";} }
+.glyphicon.halflings-menu-right{ &:before{ content:"\E258";} }
+.glyphicon.halflings-menu-down{ &:before{ content:"\E259";} }
+.glyphicon.halflings-menu-up{ &:before{ content:"\E260";} }
+
+.glyphicon.social-pinterest{ &:before{ content:"\E001";} }
+.glyphicon.social-dropbox{ &:before{ content:"\E002";} }
+.glyphicon.social-google-plus{ &:before{ content:"\E003";} }
+.glyphicon.social-jolicloud{ &:before{ content:"\E004";} }
+.glyphicon.social-yahoo{ &:before{ content:"\E005";} }
+.glyphicon.social-blogger{ &:before{ content:"\E006";} }
+.glyphicon.social-picasa{ &:before{ content:"\E007";} }
+.glyphicon.social-amazon{ &:before{ content:"\E008";} }
+.glyphicon.social-tumblr{ &:before{ content:"\E009";} }
+.glyphicon.social-wordpress{ &:before{ content:"\E010";} }
+.glyphicon.social-instapaper{ &:before{ content:"\E011";} }
+.glyphicon.social-evernote{ &:before{ content:"\E012";} }
+.glyphicon.social-xing{ &:before{ content:"\E013";} }
+.glyphicon.social-zootool{ &:before{ content:"\E014";} }
+.glyphicon.social-dribbble{ &:before{ content:"\E015";} }
+.glyphicon.social-deviantart{ &:before{ content:"\E016";} }
+.glyphicon.social-read-it-later{ &:before{ content:"\E017";} }
+.glyphicon.social-linked-in{ &:before{ content:"\E018";} }
+.glyphicon.social-forrst{ &:before{ content:"\E019";} }
+.glyphicon.social-pinboard{ &:before{ content:"\E020";} }
+.glyphicon.social-behance{ &:before{ content:"\E021";} }
+.glyphicon.social-github{ &:before{ content:"\E022";} }
+.glyphicon.social-youtube{ &:before{ content:"\E023";} }
+.glyphicon.social-skitch{ &:before{ content:"\E024";} }
+.glyphicon.social-foursquare{ &:before{ content:"\E025";} }
+.glyphicon.social-quora{ &:before{ content:"\E026";} }
+.glyphicon.social-badoo{ &:before{ content:"\E027";} }
+.glyphicon.social-spotify{ &:before{ content:"\E028";} }
+.glyphicon.social-stumbleupon{ &:before{ content:"\E029";} }
+.glyphicon.social-readability{ &:before{ content:"\E030";} }
+.glyphicon.social-facebook{ &:before{ content:"\E031";} }
+.glyphicon.social-twitter{ &:before{ content:"\E032";} }
+.glyphicon.social-instagram{ &:before{ content:"\E033";} }
+.glyphicon.social-posterous-spaces{ &:before{ content:"\E034";} }
+.glyphicon.social-vimeo{ &:before{ content:"\E035";} }
+.glyphicon.social-flickr{ &:before{ content:"\E036";} }
+.glyphicon.social-last-fm{ &:before{ content:"\E037";} }
+.glyphicon.social-rss{ &:before{ content:"\E038";} }
+.glyphicon.social-skype{ &:before{ content:"\E039";} }
+.glyphicon.social-e-mail{ &:before{ content:"\E040";} }
+.glyphicon.social-vine{ &:before{ content:"\E041";} }
+.glyphicon.social-myspace{ &:before{ content:"\E042";} }
+.glyphicon.social-goodreads{ &:before{ content:"\E043";} }
+.glyphicon.social-apple{ &:before{ content:"\F8FF";} }
+.glyphicon.social-windows{ &:before{ content:"\E045";} }
+.glyphicon.social-yelp{ &:before{ content:"\E046";} }
+.glyphicon.social-playstation{ &:before{ content:"\E047";} }
+.glyphicon.social-xbox{ &:before{ content:"\E048";} }
+.glyphicon.social-android{ &:before{ content:"\E049";} }
+.glyphicon.social-ios{ &:before{ content:"\E050";} }
+.glyphicon.social-wikipedia{ &:before{ content:"\E051";} }
+.glyphicon.social-pocket{ &:before{ content:"\E052";} }
+.glyphicon.social-steam{ &:before{ content:"\E053";} }
+.glyphicon.social-souncloud{ &:before{ content:"\E054";} }
+.glyphicon.social-slideshare{ &:before{ content:"\E055";} }
+.glyphicon.social-netflix{ &:before{ content:"\E056";} }
+.glyphicon.social-paypal{ &:before{ content:"\E057";} }
+.glyphicon.social-google-drive{ &:before{ content:"\E058";} }
+.glyphicon.social-linux-foundation{ &:before{ content:"\E059";} }
+.glyphicon.social-ebay{ &:before{ content:"\E060";} }
+
+.glyphicon.filetypes-txt{ &:before{ content:"\E001";} }
+.glyphicon.filetypes-doc{ &:before{ content:"\E002";} }
+.glyphicon.filetypes-rtf{ &:before{ content:"\E003";} }
+.glyphicon.filetypes-log{ &:before{ content:"\E004";} }
+.glyphicon.filetypes-tex{ &:before{ content:"\E005";} }
+.glyphicon.filetypes-msg{ &:before{ content:"\E006";} }
+.glyphicon.filetypes-text{ &:before{ content:"\E007";} }
+.glyphicon.filetypes-wpd{ &:before{ content:"\E008";} }
+.glyphicon.filetypes-wps{ &:before{ content:"\E009";} }
+.glyphicon.filetypes-docx{ &:before{ content:"\E010";} }
+.glyphicon.filetypes-page{ &:before{ content:"\E011";} }
+.glyphicon.filetypes-csv{ &:before{ content:"\E012";} }
+.glyphicon.filetypes-dat{ &:before{ content:"\E013";} }
+.glyphicon.filetypes-tar{ &:before{ content:"\E014";} }
+.glyphicon.filetypes-xml{ &:before{ content:"\E015";} }
+.glyphicon.filetypes-vcf{ &:before{ content:"\E016";} }
+.glyphicon.filetypes-pps{ &:before{ content:"\E017";} }
+.glyphicon.filetypes-key{ &:before{ content:"\E018";} }
+.glyphicon.filetypes-ppt{ &:before{ content:"\E019";} }
+.glyphicon.filetypes-pptx{ &:before{ content:"\E020";} }
+.glyphicon.filetypes-sdf{ &:before{ content:"\E021";} }
+.glyphicon.filetypes-gbr{ &:before{ content:"\E022";} }
+.glyphicon.filetypes-ged{ &:before{ content:"\E023";} }
+.glyphicon.filetypes-mp3{ &:before{ content:"\E024";} }
+.glyphicon.filetypes-m4a{ &:before{ content:"\E025";} }
+.glyphicon.filetypes-waw{ &:before{ content:"\E026";} }
+.glyphicon.filetypes-wma{ &:before{ content:"\E027";} }
+.glyphicon.filetypes-mpa{ &:before{ content:"\E028";} }
+.glyphicon.filetypes-iff{ &:before{ content:"\E029";} }
+.glyphicon.filetypes-aif{ &:before{ content:"\E030";} }
+.glyphicon.filetypes-ra{ &:before{ content:"\E031";} }
+.glyphicon.filetypes-mid{ &:before{ content:"\E032";} }
+.glyphicon.filetypes-m3v{ &:before{ content:"\E033";} }
+.glyphicon.filetypes-e-3gp{ &:before{ content:"\E034";} }
+.glyphicon.filetypes-swf{ &:before{ content:"\E035";} }
+.glyphicon.filetypes-avi{ &:before{ content:"\E036";} }
+.glyphicon.filetypes-asx{ &:before{ content:"\E037";} }
+.glyphicon.filetypes-mp4{ &:before{ content:"\E038";} }
+.glyphicon.filetypes-e-3g2{ &:before{ content:"\E039";} }
+.glyphicon.filetypes-mpg{ &:before{ content:"\E040";} }
+.glyphicon.filetypes-asf{ &:before{ content:"\E041";} }
+.glyphicon.filetypes-vob{ &:before{ content:"\E042";} }
+.glyphicon.filetypes-wmv{ &:before{ content:"\E043";} }
+.glyphicon.filetypes-mov{ &:before{ content:"\E044";} }
+.glyphicon.filetypes-srt{ &:before{ content:"\E045";} }
+.glyphicon.filetypes-m4v{ &:before{ content:"\E046";} }
+.glyphicon.filetypes-flv{ &:before{ content:"\E047";} }
+.glyphicon.filetypes-rm{ &:before{ content:"\E048";} }
+.glyphicon.filetypes-png{ &:before{ content:"\E049";} }
+.glyphicon.filetypes-psd{ &:before{ content:"\E050";} }
+.glyphicon.filetypes-psp{ &:before{ content:"\E051";} }
+.glyphicon.filetypes-jpg{ &:before{ content:"\E052";} }
+.glyphicon.filetypes-tif{ &:before{ content:"\E053";} }
+.glyphicon.filetypes-tiff{ &:before{ content:"\E054";} }
+.glyphicon.filetypes-gif{ &:before{ content:"\E055";} }
+.glyphicon.filetypes-bmp{ &:before{ content:"\E056";} }
+.glyphicon.filetypes-tga{ &:before{ content:"\E057";} }
+.glyphicon.filetypes-thm{ &:before{ content:"\E058";} }
+.glyphicon.filetypes-yuv{ &:before{ content:"\E059";} }
+.glyphicon.filetypes-dds{ &:before{ content:"\E060";} }
+.glyphicon.filetypes-ai{ &:before{ content:"\E061";} }
+.glyphicon.filetypes-eps{ &:before{ content:"\E062";} }
+.glyphicon.filetypes-ps{ &:before{ content:"\E063";} }
+.glyphicon.filetypes-svg{ &:before{ content:"\E064";} }
+.glyphicon.filetypes-pdf{ &:before{ content:"\E065";} }
+.glyphicon.filetypes-pct{ &:before{ content:"\E066";} }
+.glyphicon.filetypes-indd{ &:before{ content:"\E067";} }
+.glyphicon.filetypes-xlr{ &:before{ content:"\E068";} }
+.glyphicon.filetypes-xls{ &:before{ content:"\E069";} }
+.glyphicon.filetypes-xlsx{ &:before{ content:"\E070";} }
+.glyphicon.filetypes-db{ &:before{ content:"\E071";} }
+.glyphicon.filetypes-dbf{ &:before{ content:"\E072";} }
+.glyphicon.filetypes-mdb{ &:before{ content:"\E073";} }
+.glyphicon.filetypes-pdb{ &:before{ content:"\E074";} }
+.glyphicon.filetypes-sql{ &:before{ content:"\E075";} }
+.glyphicon.filetypes-aacd{ &:before{ content:"\E076";} }
+.glyphicon.filetypes-app{ &:before{ content:"\E077";} }
+.glyphicon.filetypes-exe{ &:before{ content:"\E078";} }
+.glyphicon.filetypes-com{ &:before{ content:"\E079";} }
+.glyphicon.filetypes-bat{ &:before{ content:"\E080";} }
+.glyphicon.filetypes-apk{ &:before{ content:"\E081";} }
+.glyphicon.filetypes-jar{ &:before{ content:"\E082";} }
+.glyphicon.filetypes-hsf{ &:before{ content:"\E083";} }
+.glyphicon.filetypes-pif{ &:before{ content:"\E084";} }
+.glyphicon.filetypes-vb{ &:before{ content:"\E085";} }
+.glyphicon.filetypes-cgi{ &:before{ content:"\E086";} }
+.glyphicon.filetypes-css{ &:before{ content:"\E087";} }
+.glyphicon.filetypes-js{ &:before{ content:"\E088";} }
+.glyphicon.filetypes-php{ &:before{ content:"\E089";} }
+.glyphicon.filetypes-xhtml{ &:before{ content:"\E090";} }
+.glyphicon.filetypes-htm{ &:before{ content:"\E091";} }
+.glyphicon.filetypes-html{ &:before{ content:"\E092";} }
+.glyphicon.filetypes-asp{ &:before{ content:"\E093";} }
+.glyphicon.filetypes-cer{ &:before{ content:"\E094";} }
+.glyphicon.filetypes-jsp{ &:before{ content:"\E095";} }
+.glyphicon.filetypes-cfm{ &:before{ content:"\E096";} }
+.glyphicon.filetypes-aspx{ &:before{ content:"\E097";} }
+.glyphicon.filetypes-rss{ &:before{ content:"\E098";} }
+.glyphicon.filetypes-csr{ &:before{ content:"\E099";} }
+.glyphicon.filetypes-less{ &:before{ content:"\003C";} }
+.glyphicon.filetypes-otf{ &:before{ content:"\E101";} }
+.glyphicon.filetypes-ttf{ &:before{ content:"\E102";} }
+.glyphicon.filetypes-font{ &:before{ content:"\E103";} }
+.glyphicon.filetypes-fnt{ &:before{ content:"\E104";} }
+.glyphicon.filetypes-eot{ &:before{ content:"\E105";} }
+.glyphicon.filetypes-woff{ &:before{ content:"\E106";} }
+.glyphicon.filetypes-zip{ &:before{ content:"\E107";} }
+.glyphicon.filetypes-zipx{ &:before{ content:"\E108";} }
+.glyphicon.filetypes-rar{ &:before{ content:"\E109";} }
+.glyphicon.filetypes-targ{ &:before{ content:"\E110";} }
+.glyphicon.filetypes-sitx{ &:before{ content:"\E111";} }
+.glyphicon.filetypes-deb{ &:before{ content:"\E112";} }
+.glyphicon.filetypes-e-7z{ &:before{ content:"\E113";} }
+.glyphicon.filetypes-pkg{ &:before{ content:"\E114";} }
+.glyphicon.filetypes-rpm{ &:before{ content:"\E115";} }
+.glyphicon.filetypes-cbr{ &:before{ content:"\E116";} }
+.glyphicon.filetypes-gz{ &:before{ content:"\E117";} }
+.glyphicon.filetypes-dmg{ &:before{ content:"\E118";} }
+.glyphicon.filetypes-cue{ &:before{ content:"\E119";} }
+.glyphicon.filetypes-bin{ &:before{ content:"\E120";} }
+.glyphicon.filetypes-iso{ &:before{ content:"\E121";} }
+.glyphicon.filetypes-hdf{ &:before{ content:"\E122";} }
+.glyphicon.filetypes-vcd{ &:before{ content:"\E123";} }
+.glyphicon.filetypes-bak{ &:before{ content:"\E124";} }
+.glyphicon.filetypes-tmp{ &:before{ content:"\E125";} }
+.glyphicon.filetypes-ics{ &:before{ content:"\E126";} }
+.glyphicon.filetypes-msi{ &:before{ content:"\E127";} }
+.glyphicon.filetypes-cfg{ &:before{ content:"\E128";} }
+.glyphicon.filetypes-ini{ &:before{ content:"\E129";} }
+.glyphicon.filetypes-prf{ &:before{ content:"\E130";} }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.1); }
+  100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: rotate(-200deg);
+      opacity: 0;
+  }
+  100% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: rotate(0);
+      opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  0% {
+      transform-origin: center center;
+      transform: rotate(-200deg);
+      opacity: 0;
+  }
+  100% {
+      transform-origin: center center;
+      transform: rotate(0);
+      opacity: 1;
+  }
+}
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+  40% {-webkit-transform: translateY(-30px);}
+  60% {-webkit-transform: translateY(-15px);}
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
+  20% { -webkit-transform: rotate(15deg); }
+  40% { -webkit-transform: rotate(-10deg); }
+  60% { -webkit-transform: rotate(5deg); }
+  80% { -webkit-transform: rotate(-5deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@keyframes swing {
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+.swing {
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+
+@-webkit-keyframes tada {
+  0% {-webkit-transform: scale(1);}
+  10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+  100% {-webkit-transform: scale(1) rotate(0);}
+}
+@keyframes tada {
+  0% {transform: scale(1);}
+  10%, 20% {transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+  100% {transform: scale(1) rotate(0);}
+}
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  height: 16px;
+}
+@-moz-keyframes spin {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(360deg);}
+}
+@-webkit-keyframes spin {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.icon-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: -35%;
+    width: 2em;
+}
+.icon-stack .icon-stack-base {
+    font-size: 2em;
+}
+.icon-stack [class^="icon-"], .icon-stack [class*=" icon-"] {
+    display: block;
+    font-size: 1em;
+    height: 100%;
+    line-height: inherit;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.icon-stack .glyphicon{
+    font-size: 2em;
+}
+.glyphicon-ban-circle {
+    color:red;
+}
+
+.editing .course-content ul li.section.main .right.side {
+    a {
+        img {
+            display: none;
+        }
+        &:before,
+        &:after {
+          font-family: 'Glyphicons';
+        }
+        &.editing_delete {
+            &:before {
+                content: "\E208";
+            }
+        }
+        &.editing_chapter {
+            &:before {
+                content: "\270F";
+            }
+        }
+        &.textmenu {
+          font-family: $font-family-sans-serif;
+        }
+    }
+}

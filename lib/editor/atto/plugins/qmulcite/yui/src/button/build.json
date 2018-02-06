@@ -1,0 +1,10 @@
+{
+  "name": "moodle-atto_qmulcite-button",
+  "builds": {
+    "moodle-atto_qmulcite-button": {
+      "jsfiles": [
+        "button.js"
+      ]
+    }
+  }
+}

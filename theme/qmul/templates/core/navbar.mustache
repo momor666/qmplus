@@ -1,0 +1,87 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core/navbar
+
+    Navbar template.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * get_items - array of items
+      * has_action - boolean
+      * action - string
+      * get_title - string
+      * text - HTML
+
+    Example context (json):
+    {
+        "get_items": [
+            {
+                "has_action": true,
+                "action": "#",
+                "get_title": "Test title",
+                "text": "First & fresh"
+            },
+            {
+                "has_action": true,
+                "action": "#",
+                "get_title": "Second item & a title",
+                "text": "Second item"
+            },
+            {
+                "has_action": false,
+                "text": "Third item"
+            },
+            {
+                "has_action": false,
+                "text": "Fourth & last"
+            }
+        ]
+    }
+}}
+<nav role="navigation">
+    <ol class="breadcrumb">
+        {{#items}}
+            {{#action}}
+                {{#isdashboard}}
+                <li class="breadcrumb-item home">
+                    <a href="{{{action}}}" {{#titletext}}title="{{titletext}}"{{/titletext}}>
+                        <svg class="homeicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17px" height="14px" viewBox="0 0 17 14" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-93.000000, -143.000000)">
+                                    <polygon points="99.5557123 157 95.4682652 157 95.4682652 150.404795 93 150.404795 101.214386 143 109.428773 150.404795 106.960508 150.404795 106.960508 157 102.873061 157 102.873061 152.06347 99.5557123 152.06347"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+                {{/isdashboard}}
+                {{^isdashboard}}
+                <li class="breadcrumb-item"><a href="{{{action}}}" {{#titletext}}title="{{titletext}}"{{/titletext}}>{{{text}}}</a></li>
+                {{/isdashboard}}
+            {{/action}}
+            {{^action}}
+                <li class="breadcrumb-item">{{{text}}}</li>
+            {{/action}}
+        {{/items}}
+    </ol>
+</nav>

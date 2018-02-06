@@ -1,0 +1,8 @@
+div.editor_atto_content cite {
+    /* removed as it inheritance from theme
+    border: 1px dashed #eee;
+    border-bottom:1px dashed blue;
+     */
+    min-width:1px;
+
+}

@@ -1,0 +1,10 @@
+{
+    "name": "moodle-gradereport_qmul_sits-index",
+    "builds": {
+        "moodle-gradereport_qmul_sits-index": {
+            "jsfiles": [
+                "index.js"
+            ]
+        }
+    }
+}

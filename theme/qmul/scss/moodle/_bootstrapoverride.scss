@@ -1,0 +1,150 @@
+/**
+ * bootstrapoverride.less
+ *
+ * This file is meant to contain rules which specifically override
+ * rules defined in Bootstrap.
+*/
+
+// Printing.
+@media print {
+    a[href]:after {
+        content: "";
+    }
+}
+
+@include bg-variant('.bg-white', #fff);
+
+$icon-font-path: "[[font:theme|";
+.moodleSkin .mceIcon img.mceIcon {
+    display: block;
+    height: auto;
+    width: auto;
+}
+
+.card-block.collapse {
+    transition: padding 0.3s linear;
+}
+
+.card-block.collapsing {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+// Submenus are not supported in BS3 core.
+.dropdown-submenu {
+    position: relative;
+    & > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+    & > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: $dropdown-border-width;
+        border-left-color: $dropdown-border-color;
+        margin-top: 7px;
+        margin-right: -10px;
+    }
+}
+
+.dropdown-submenu:hover {
+    & > .dropdown-menu {
+        display: block;
+    }
+    & > a:after {
+        border-left-color: $dropdown-border-color;
+    }
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+    & > .dropdown-menu {
+        left: -100%;
+        margin-left: 10px;
+        -webkit-border-radius: 6px 0 6px 6px;
+        -moz-border-radius: 6px 0 6px 6px;
+        border-radius: 6px 0 6px 6px;
+    }
+}
+
+div[role="main"] {
+    @extend .clearfix;
+    padding-bottom: 20px;
+    ul.inline {
+        padding: 0;
+        li {
+            margin-left: 20px;
+            margin-bottom: 5px;
+            list-style: none;
+        }
+    }
+    ul,
+    ol {
+        &.section,
+        &.weeks,
+        &.topics {
+            padding: 0;
+            overflow: visible;
+        }
+    }
+    > .page-context-header {
+        margin-bottom: 1rem;
+    }
+}
+
+ul.pagination {
+    flex-wrap: wrap;
+    .page-item.active .page-link {
+        z-index: 1;
+    }
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $prop,
+        $abbrev in (margin: m, padding: p) {
+            @each $size, $lengths in $spacers {
+                $length-x: map-get($lengths, x);
+                $length-y: map-get($lengths, y);
+                .#{$abbrev}-#{$infix}-#{$size} {
+                    #{$prop}: $length-y $length-x !important;
+                }
+                .#{$abbrev}-t#{$infix}-#{$size} {
+                    #{$prop}-top: $length-y !important;
+                }
+                .#{$abbrev}-r#{$infix}-#{$size} {
+                    #{$prop}-right: $length-x !important;
+                }
+                .#{$abbrev}-b#{$infix}-#{$size} {
+                    #{$prop}-bottom: $length-y !important;
+                }
+                .#{$abbrev}-l#{$infix}-#{$size} {
+                    #{$prop}-left: $length-x !important;
+                }
+                .#{$abbrev}-x#{$infix}-#{$size} {
+                    #{$prop}-right: $length-x !important;
+                    #{$prop}-left: $length-x !important;
+                }
+                .#{$abbrev}-y#{$infix}-#{$size} {
+                    #{$prop}-top: $length-y !important;
+                    #{$prop}-bottom: $length-y !important;
+                }
+            }
+        }
+    }
+}

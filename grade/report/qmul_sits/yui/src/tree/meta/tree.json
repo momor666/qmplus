@@ -1,0 +1,9 @@
+{
+    "moodle-gradereport_qmul_sits-tree": {
+        "requires": [
+            "base",
+            "node",
+            "event"
+        ]
+    }
+}

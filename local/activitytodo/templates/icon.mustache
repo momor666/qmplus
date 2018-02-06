@@ -1,0 +1,30 @@
+{{!
+  The javascript uses the 'activitytodo' class to add event handlers to the icons, it uses the 'activitytodo-add'
+  and the 'activitytodo-remove' classes to determine what the current type of the button is.
+  All these classes must be on the outer element of the icon DOM.
+  Aside from that, the output can be changed as much as wanted.
+}}
+{{#isAdd}}
+    <a href="#" class="activitytodo activitytodo-add" title="{{#str}}addtodo, local_activitytodo{{/str}}">
+      <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(-99.000000, -585.000000)" fill-rule="nonzero" fill="#A3A3A3">
+                  <path d="M108.75,586.5625 C108.75,586.550424 108.756297,586.565117 108.72059,586.52941 C108.684883,586.493703 108.699576,586.5 108.6875,586.5 L100.5625,586.5 C100.550424,586.5 100.565117,586.493703 100.52941,586.52941 C100.493703,586.565117 100.5,586.550424 100.5,586.5625 L100.5,597.691857 L104.625,595.858524 L108.75,597.691857 L108.75,586.5625 Z M108.6875,585 C109.104169,585 109.468748,585.156248 109.78125,585.46875 C110.093752,585.781252 110.25,586.145831 110.25,586.5625 L110.25,600 L104.625,597.5 L99,600 L99,586.5625 C99,586.145831 99.1562484,585.781252 99.46875,585.46875 C99.7812516,585.156248 100.145831,585 100.5625,585 L108.6875,585 Z"></path>
+                   <title>{{#str}}addtodo, local_activitytodo{{/str}}</title>
+              </g>
+          </g>
+      </svg>
+    </a>
+{{/isAdd}}
+{{^isAdd}}
+    <a href="#" class="activitytodo activitytodo-remove" title="{{#str}}removetodo, local_activitytodo{{/str}}">
+      <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(-99.000000, -917.000000)" fill="#5F054E">
+                  <path d="M108.6875,917 C109.104169,917 109.468748,917.156248 109.78125,917.46875 C110.093752,917.781252 110.25,918.145831 110.25,918.5625 L110.25,932 L104.625,929.5 L99,932 L99,918.5625 C99,918.145831 99.1562484,917.781252 99.46875,917.46875 C99.7812516,917.156248 100.145831,917 100.5625,917 L108.6875,917 Z"></path>
+                   <title>{{#str}}removetodo, local_activitytodo{{/str}}</title>
+              </g>
+          </g>
+      </svg>
+    </a>
+{{/isAdd}}

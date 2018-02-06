@@ -1,0 +1,123 @@
+//this needs to be combined with the mod-assign
+
+#page-mod-assign-view,
+#page-mod-assign-editsubmission,
+#page-mod-coursework-actions-submissions-new{
+  #page-header{
+    background-color: $blocks-gray;
+    .breadcrumb{
+      background-color: $blocks-gray;
+      margin-bottom: 0;
+    }
+  }
+  .page-context-header{
+    margin: 0 -15px;
+    padding: 0 2rem 1.25rem;
+    background-color: $blocks-gray;
+    h1{
+      font-size: $font-size-lg;
+      font-weight: 900;
+    }
+  }
+  span#maincontent ~ h2{
+    color: $brand-secondary;
+    padding: 0 1.25rem;
+    margin: 1.25rem 0;
+    @include border-top-radius($border-radius);
+  }
+  #intro{
+    border: $border-width solid darken($blocks-blue, 10%);
+    border-top: 5px solid $bloom-assignments-color;
+    background-color: $blocks-blue;
+    color: $brand-secondary;
+    padding: 1.25rem;
+    // margin-top: 1.25rem;
+    @include border-bottom-radius($border-radius);
+  }
+  .submissionstatustable{
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: $blocks-blue;
+    border-radius: $border-radius;
+    h3{
+      @include bloom-label($font-size-base, 900, $brand-secondary);
+      border-bottom: 3px solid $brand-secondary;
+      text-align: left;
+      padding: 0 1.25rem 0.4rem 0;
+    	display: inline-block;
+    	margin-bottom: 1.25rem;
+    }
+    .generaltable tbody tr, .generaltable tbody tr:nth-of-type(odd){
+      background: transparent;
+      @include transition(background-color .25s ease-out);
+      border-radius: $border-radius;
+      &:hover, &:active, &:focus{
+        background-color: darken($blocks-blue, 5%);
+      }
+    }
+    .c0{
+      font-weight: 900;
+    }
+    td.submissionnotgraded{
+      background: transparent;
+      font-weight: 900;
+      color: $brand-secondary;
+    }
+  }
+  .submissionaction{
+    button[type="submit"]{
+      @extend .btn-primary;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      &:before{
+        content: $fa-var-plus;
+        font-family: FontAwesome;
+        margin-right: 5px;
+      }
+    }
+  }
+  .editsubmissionform{
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: $blocks-blue;
+    border-radius: $border-radius;
+    form{
+      .col-md-3{
+        float: none;
+        width: 100%;
+        .col-form-label[for="id_files_filemanager"]{
+          @include bloom-label($font-size-base, 900, $brand-secondary);
+          border-bottom: 3px solid $brand-secondary;
+          text-align: left;
+          padding: 0 1.25rem 0.4rem 0;
+        	display: inline-block !important;
+        	margin-bottom: 1.25rem;
+        }
+      }
+      .col-md-9{
+        float: none;
+        width: 100%;
+        .filemanager{
+          border-radius: $border-radius;
+          border: $border-width solid darken($blocks-blue, 10%);
+          > div{
+            padding: 1.25rem 1.25rem 0 1.25rem;
+            &:last-of-type{
+              padding-bottom: 1.25rem;
+            }
+          }
+        }
+        .fp-restrictions{
+          span{
+            text-align: left;
+          }
+        }
+        .fp-navbar{
+          border: none;
+          border-bottom: $border-width solid darken($blocks-blue, 10%);
+        }
+      }
+    }
+  }
+}

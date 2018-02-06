@@ -1,0 +1,25 @@
+.course-vs-sitsdata .description {
+    font-weight: bold;
+}
+
+.course-vs-sitsdata .button-col {
+    width: 140px;
+}
+
+.course-vs-sitsdata td {
+    vertical-align: top;
+    border: black 1px;
+}
+
+.removed {
+    text-decoration: line-through;
+}
+
+.added {
+    text-decoration: underline;
+}
+
+.course-alert {
+    color: red;
+    font-weight: bold;
+}

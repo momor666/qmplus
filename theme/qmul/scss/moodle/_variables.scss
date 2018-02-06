@@ -1,0 +1,6 @@
+$moodle-table-striped: true;
+$moodle-table-hover: true;
+$calendar-event-course-color: lighten($brand-danger, 25%); // Pale red.
+$calendar-event-global-color: lighten($brand-success, 25%); // Pale green.
+$calendar-event-group-color:  lighten($brand-warning, 25%); // Pale yellow.
+$calendar-event-user-color:   lighten($brand-info, 25%); // Pale blue.

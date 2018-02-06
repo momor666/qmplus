@@ -1,0 +1,4 @@
+Version Updates:
+
+2017080300 : Fixed the text under Staff Directory by giving padding to the staff div.
+			 Fixed the hide content not working when given a custom name by removing the “disable section hide if custom heading provided” functionality from edit_form.php

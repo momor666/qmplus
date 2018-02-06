@@ -1,0 +1,10 @@
+{
+  "name": "moodle-atto_qmultexthighlight-button",
+  "builds": {
+    "moodle-atto_qmultexthighlight-button": {
+      "jsfiles": [
+        "button.js"
+      ]
+    }
+  }
+}

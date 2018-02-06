@@ -1,0 +1,57 @@
+#page-local-qmcw_coversheet-scan #mform1 {
+  padding: 20px 0 20px 0;
+}
+#page-local-qmcw_coversheet-scan #mform2 {
+  padding: 20px 0 20px 0;
+}
+#page-local-qmcw_coversheet-scan .scan-results dt {
+  display: block;
+  float: left;
+  width: 300px;
+  text-align: right;
+  font-weight: normal;
+  padding: 2px 5px 4px 5px;
+}
+#page-local-qmcw_coversheet-scan .scan-results dt:after {
+  content: ' : ';
+}
+#page-local-qmcw_coversheet-scan .scan-results dd {
+  display: block;
+  padding: 2px 5px 4px 5px;
+}
+#page-local-qmcw_coversheet-scan #scandetails {
+  padding-top: 0px;
+}
+#page-local-qmcw_coversheet-scan #scandetails .scan-message {
+  padding: 2px 5px 4px 5px;
+}
+#page-local-qmcw_coversheet-scan #scandetails .prevmessage,
+#page-local-qmcw_coversheet-scan #scandetails .updatenote {
+  padding: 2px 5px 4px 5px;
+  margin-left: 5px;
+}
+#page-local-qmcw_coversheet-scan .updatehistory-list dt {
+  display: block;
+  float: left;
+  width: 300px;
+  text-align: right;
+  font-weight: normal;
+  padding: 2px 5px 4px 5px;
+}
+#page-local-qmcw_coversheet-scan .updatehistory-list dt:after {
+  content: ' : ';
+}
+#page-local-qmcw_coversheet-scan .updatehistory-list dd {
+  display: block;
+  padding: 2px 5px 4px 5px;
+}
+#page-local-qmcw_coversheet-scan .header {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  color: #444444;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+#page-local-qmcw_coversheet-scan #id_submitbutton {
+  margin-top: 0px;
+}

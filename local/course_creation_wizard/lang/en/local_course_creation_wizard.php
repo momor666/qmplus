@@ -1,0 +1,20 @@
+<?php
+$string['pluginname'] = 'Course Creation Wizard';
+$string['pluginname_desc'] = 'Adds menu to create courses';
+$string['create_option_a'] = "From school template";
+$string['create_option_b'] = "From previous course";
+$string['create_option_c'] = "Blank course";
+$string['create_option_label'] = "Choose a following";
+$string['template_options'] = "Choose a template";
+$string['prev_course_options'] = "Choose a previous course";
+$string['course_full_name'] = "Course Full Name";
+$string['course_short_name'] = "Course Short Name";
+$string['category_select'] = "Select a category";
+$string['course_restoring'] = "Restoring Course";
+$string['course_backing_up'] = "Backing Up Course";
+$string['stage_one'] = "1. Course Creation Wizard";
+$string['stage_two'] = "2. Course Setup";
+$string['stage_three'] = "3. Course Information";
+$string['course_creation_wizard_legend'] = "Select Type";
+$string['course_restore_wizard_legend'] = "Restore Settings";
+$string['setting_name'] = "Course Creation Wizard Settings";
