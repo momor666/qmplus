@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 if (file_exists($CFG->dirroot . "/course/format/topcoll/renderer.php")) {
     require_once($CFG->dirroot . "/course/format/topcoll/renderer.php");
     class theme_qmul_format_topcoll_renderer extends format_topcoll_renderer {
-
+/*
         private $tccolumnwidth = 100; // Default width in percent of the column(s).
         private $tccolumnpadding = 0; // Default padding in pixels of the column(s).
         private $mobiletheme = false; // As not using a mobile theme we can react to the number of columns setting.
@@ -44,6 +44,21 @@ if (file_exists($CFG->dirroot . "/course/format/topcoll/renderer.php")) {
         private $tctoggleiconsize;
         private $formatresponsive;
         private $rtl = false;
+*/
+        protected $tccolumnwidth = 100; // Default width in percent of the column(s).
+        protected $tccolumnpadding = 0; // Default padding in pixels of the column(s).
+        protected $mobiletheme = false; // As not using a mobile theme we can react to the number of columns setting.
+        protected $tablettheme = false; // As not using a tablet theme we can react to the number of columns setting.
+        protected $courseformat = null; // Our course format object as defined in lib.php;
+        protected $tcsettings; // Settings for the format - array.
+        protected $userpreference; // User toggle state preference - string.
+        protected $defaultuserpreference; // Default user preference when none set - bool - true all open, false all closed.
+        protected $togglelib;
+        protected $isoldtogglepreference = false;
+        protected $userisediting = false;
+        protected $tctoggleiconsize;
+        protected $formatresponsive;
+        protected $rtl = false;
 
         /**
          * Constructor method, calls the parent constructor - MDL-21097.

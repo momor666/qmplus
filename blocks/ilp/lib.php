@@ -74,7 +74,7 @@ function ilp_autoloader( $classname )
             }
         }
     }
-
+return true;
 }
 spl_autoload_register( 'ilp_autoloader' );
 

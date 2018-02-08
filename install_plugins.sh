@@ -1,13 +1,15 @@
-version=2.3.1
+version=2.4.1
 
 #----------------------------------------------------------------------------------------------------------
 #
 # usage: install_plugin <plugin_uri> [<plugin_name>] [<branch_name>]
 #
 # this will install plugin from the given uri. If the optional plugin_name is given it will be used.
-# Wgen the optional branch name is given the plugin will be git checked out to that branch
+# When the optional branch name is given the plugin will be git checked out to that branch
 #
 install_plugin () {
+#	update_all=1
+
 	if [ ! $1 ]
 		then
 		echo 'no plugin repository given to install - aborting!'
@@ -20,21 +22,40 @@ install_plugin () {
 		plugin_name=$2
 	fi
 
-	if [ -d $plugin_name ]
+	if [ $update_all ]
 		then
-		echo "==> Plugin $plugin_name is re-installed."
-		rm -rf $plugin_name
+
+		if [ -d $plugin_name ]
+			then
+			echo "==> Plugin $plugin_name is re-installed."
+			rm -rf $plugin_name
+		fi
+
+		if [ $3 ]
+			then
+			echo "==> GIT checking out $3"
+			git clone $plugin $plugin_name -b $3
+#			git submodule add $plugin $plugin_name
+		else
+			git clone $plugin $plugin_name
+#			git submodule add $plugin $plugin_name
+		fi
+	else
+		if [ ! -d $plugin_name ]
+			then
+			if [ $3 ]
+				then
+				echo "==> GIT checking out $3"
+				git clone $plugin $plugin_name -b $3
+#				git submodule add $plugin $plugin_name
+			else
+				git clone $plugin $plugin_name
+#				git submodule add $plugin $plugin_name
+			fi
+			echo "==> Plugin $plugin_name is installed."
+		fi
 	fi
 
-	if [ $3 ]
-		then
-		echo "==> GIT checking out $3"
-		git clone $plugin $plugin_name -b $3
-#		git submodule add $plugin $plugin_name
-	else
-		git clone $plugin $plugin_name
-#		git submodule add $plugin $plugin_name
-	fi
 
 #	Removing .git directory for each plugin thereby creating one big repo
 	if [ -d $plugin_name ]
@@ -146,7 +167,16 @@ echo "--> " $(pwd)
 echo "-----------------------------------------------------------------"
 install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultopics.git qmultopics develop_32
 install_plugin git@github.com:ULCC-QMUL/moodle-format_landingpage.git landingpage
-install_plugin https://github.com/gjb2048/moodle-format_topcoll.git topcoll master
+#install_plugin git@github.com:gjb2048/moodle-format_topcoll.git topcoll master
+#install_plugin git@github.com:QMUL/moodle-format_topcoll.git topcoll
+install_plugin git@github.com:gjb2048/moodle-format_topcoll.git topcoll
+install_plugin git@github.com:marinaglancy/moodle-format_flexsections.git flexsections
+#install_plugin git@github.com:ULCC-QMUL/moodle-format_grid.git grid develop_32
+install_plugin git@github.com:QMUL/moodle-format_grid.git grid
+install_plugin git@github.com:ULCC-QMUL/moodle-format_qmulgrid.git qmulgrid develop_32
+#install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc develop_32
+install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc qmplus34
+install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmulweeks.git qmulweeks develop_32
 
 #------------------------------------------------------------------------------------------
 cd $baseurl
@@ -434,10 +464,11 @@ echo " "
 echo "--> " $(pwd)
 echo "-----------------------------------------------------------------"
 #install_plugin git@github.com:apnet/moodle-theme_bcu.git bcu
-install_plugin git@github.com:QMUL/moodle-theme_bloom.git bloom
+#install_plugin git@github.com:QMUL/moodle-theme_bloom.git bloom
 install_plugin git@github.com:gjb2048/moodle-theme_essential.git essential
 install_plugin git@github.com:ULCC-QMUL/moodle-theme_synergy_bootstrap.git synergy_bootstrap
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul develop_32
+#install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul develop_32
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul qmplus34
 install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_humanities.git qmul_humanities develop_32
 install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_learning.git qmul_learning develop_32
 install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_lifesciences.git qmul_lifesciences develop_32
