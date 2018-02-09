@@ -1,9 +1,0 @@
-Ref: https://docs.moodle.org/dev/PHPUnit
-
-composer install --dev
-
-php admin/tool/phpunit/cli/init.php
-
-vendor/bin/phpunit format_qmultc_courseformatrenderer_testcase course/format/qmultc/tests/courseformatrenderer_test.php
-
-vendor/bin/phpunit --group format_qmultc

@@ -1,9 +1,0 @@
-{
-    "moodle-gradereport_qmul_sits-index": {
-        "requires": [
-            "base",
-            "node",
-            "event"
-        ]
-    }
-}

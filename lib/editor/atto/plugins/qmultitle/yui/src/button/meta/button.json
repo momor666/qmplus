@@ -1,7 +1,0 @@
-{
-    "moodle-atto_qmultitle-button": {
-        "requires": [
-            "moodle-editor_atto-plugin"
-        ]
-    }
-}

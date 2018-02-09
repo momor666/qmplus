@@ -1,7 +1,0 @@
-{
-    "moodle-filter_easychem-loader": {
-        "requires": [
-            "moodle-core-event"
-        ]
-    }
-}

@@ -38,7 +38,8 @@ install_plugin () {
 			if [ $submodules ] # if the submodule switch is present install plugin as submodule
 				then
 				echo "==> add submodule $plugin as $plugin_name with branch $3"
-				[ $testing ] || git submodule add -b $3 $plugin $plugin_name
+#				[ $testing ] || git submodule add -b $3 $plugin $plugin_name
+				git submodule add -b $3 $plugin $plugin_name
 			else
 				echo "==> clone repository $plugin as $plugin_name with branch $3"
 				[ $testing ] || git clone $plugin $plugin_name -b $3
@@ -48,7 +49,8 @@ install_plugin () {
 			if [ $submodules ]
 				then
 				echo "==> add submodule $plugin as $plugin_name"
-				[ $testing ] || git submodule add $plugin $plugin_name
+#				[ $testing ] || git submodule add $plugin $plugin_name
+				git submodule add $plugin $plugin_name
 			else
 				echo "==> clone repository $plugin as $plugin_name"
 				[ $testing ] || git clone $plugin $plugin_name

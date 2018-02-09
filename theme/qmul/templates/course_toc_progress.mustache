@@ -1,8 +1,0 @@
-{{#progress}}{{#progress.total}}
-    <span class="completionstatus outoftotal badge {{#completed}}badge-success{{/completed}} {{^completed}}badge-default{{/completed}}">
-        {{#completed}}
-        <img class="section-complete" src="{{pixcompleted}}" alt="{{#str}}completed, completion{{/str}}" />
-        {{/completed}}
-    {{#str}} progresstotal, completion, { "complete":  {{progress.complete}}, "total": {{progress.total}} } {{/str}}
-    </span>
-{{/progress.total}}{{/progress}}

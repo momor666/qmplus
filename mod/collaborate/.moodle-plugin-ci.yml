@@ -1,5 +1,0 @@
-filter:
-  notPaths:
-    - "vendor"
-    - "classes/soap"
-    - "amd/build"

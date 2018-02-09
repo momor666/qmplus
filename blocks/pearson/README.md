@@ -1,2 +1,0 @@
-moodle-block_pearson
-====================

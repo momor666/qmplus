@@ -1,8 +1,0 @@
-{
-  "moodle-atto_mathslate-button": {
-    "requires": [
-        "escape",
-        "moodle-tinymce_mathslate-editor"
-    ]
-  }
-}

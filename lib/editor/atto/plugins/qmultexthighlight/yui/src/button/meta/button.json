@@ -1,7 +1,0 @@
-{
-    "moodle-atto_qmultexthighlight-button": {
-        "requires": [
-            "moodle-editor_atto-plugin"
-        ]
-    }
-}

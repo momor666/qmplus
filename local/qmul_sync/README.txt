@@ -1,5 +1,0 @@
-This plugin contains common code for synchronising QM data with Moodle, and provides the recommended interface for dealing with it. Although direct database access is common Moodle practice, that doesn't make it a good thing - in this instance I'm using local tables for development [1], and remote ones for ULCC-hosted servers, so the wrapper functions are important!
-
-It would be good to adopt a better pattern for dealing with possible table/field renames when talking to remote databases, to remove the need for different local and remote queries. Unfortunately, this code has been written to enhance an existing architecture, not start from scratch, so renaming tables isn't an option.
-
-[1] Well, I was using local tables for a while. Unfortunately, the performance in Moodle 2.6 is horrible when dealing with multiple inserts, and data that imports in ~1 second using mysqlimport takes ~8 hours to process via PHP and the Moodle DB abstraction layer. I haven't pruned the local-table code yet as I'm hopeful this might become usable in a future version of Moodle - apparently 2.7 introduces a bulk-insert method that yields significant performance gains.

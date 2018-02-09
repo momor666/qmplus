@@ -1,1 +1,0 @@
-Plugin Creation and Installation Instructions

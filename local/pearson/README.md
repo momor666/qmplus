@@ -1,2 +1,0 @@
-moodle-local_pearson
-====================

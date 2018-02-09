@@ -1,7 +1,0 @@
-{
-  "moodle-format_qmulgrid-gridkeys": {
-    "requires": [
-        "event-nav-keys"
-    ]
-  }
-}
