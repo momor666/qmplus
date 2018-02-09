@@ -1,4 +1,4 @@
-version=2.4.1
+version=3.1
 
 #----------------------------------------------------------------------------------------------------------
 #
@@ -22,49 +22,41 @@ install_plugin () {
 		plugin_name=$2
 	fi
 
-	if [ $update_all ]
+	if [ $force_reinstall ]
 		then
-
 		if [ -d $plugin_name ]
 			then
-			echo "==> Plugin $plugin_name is re-installed."
-			rm -rf $plugin_name
-		fi
-
-		if [ $3 ]
-			then
-			echo "==> GIT checking out $3"
-			git clone $plugin $plugin_name -b $3
-#			git submodule add $plugin $plugin_name
-		else
-			git clone $plugin $plugin_name
-#			git submodule add $plugin $plugin_name
-		fi
-	else
-		if [ ! -d $plugin_name ]
-			then
-			if [ $3 ]
-				then
-				echo "==> GIT checking out $3"
-				git clone $plugin $plugin_name -b $3
-#				git submodule add $plugin $plugin_name
-			else
-				git clone $plugin $plugin_name
-#				git submodule add $plugin $plugin_name
-			fi
-			echo "==> Plugin $plugin_name is installed."
+			echo "==> re-installing $plugin_name"
+			[ $testing ] || rm -rf $plugin_name
 		fi
 	fi
 
-
-#	Removing .git directory for each plugin thereby creating one big repo
-	if [ -d $plugin_name ]
+	if [ ! -d $plugin_name ] || [ $force_reinstall ]
 		then
-		cd $plugin_name
-		rm -rf .git
-		cd ..
-	fi
+		if [ $3 ] #there is a specific branch/tag given
+			then
+			if [ $submodules ] # if the submodule switch is present install plugin as submodule
+				then
+				echo "==> add submodule $plugin as $plugin_name with branch $3"
+				[ $testing ] || git submodule add -b $3 $plugin $plugin_name
+			else
+				echo "==> clone repository $plugin as $plugin_name with branch $3"
+				[ $testing ] || git clone $plugin $plugin_name -b $3
+				[ $testing ] || rm -rf $plugin_name/.git # removing plugins GIT heritage to make it part of the qmplus repository
+			fi
+		else
+			if [ $submodules ]
+				then
+				echo "==> add submodule $plugin as $plugin_name"
+				[ $testing ] || git submodule add $plugin $plugin_name
+			else
+				echo "==> clone repository $plugin as $plugin_name"
+				[ $testing ] || git clone $plugin $plugin_name
+				[ $testing ] || rm -rf $plugin_name/.git #
+			fi
 
+		fi
+	fi
 }
 
 #---------------------------------------------------------------------------------------------------------
@@ -79,6 +71,38 @@ chdir() {
 }
 
 #=========================================================================================================
+
+# get options
+while getopts :fst x; do
+    case $x in
+        f)
+            force_reinstall=1
+            ;;
+        s)
+            submodules=1
+            ;;
+        t)
+            testing=1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+#if [ $submodules ]
+#	then
+#	echo "A"
+#else
+#	echo "B"
+#fi
+
+
+
+#echo "aborting now..!"
+#exit 1
+#=========================
+
+
+
 baseurl=$(pwd)
 echo " "
 echo "install all qmplus plugins into baseurl = $baseurl (v.$version)"
