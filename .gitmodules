@@ -94,6 +94,7 @@
 [submodule "blocks/widgets"]
 	path = blocks/widgets
 	url = git@github.com:ULCC-QMUL/moodle-block_widgets.git
+	branch = develop_34
 [submodule "blocks/messages"]
 	path = blocks/messages
 	url = git@github.com:moodlehq/moodle-block_messages.git
@@ -136,7 +137,7 @@
 [submodule "course/format/qmultopics"]
 	path = course/format/qmultopics
 	url = git@github.com:ULCC-QMUL/moodle-course_format_qmultopics.git
-	branch = develop_32
+	branch = develop_34
 [submodule "course/format/landingpage"]
 	path = course/format/landingpage
 	url = git@github.com:ULCC-QMUL/moodle-format_landingpage.git
@@ -152,15 +153,15 @@
 [submodule "course/format/qmulgrid"]
 	path = course/format/qmulgrid
 	url = git@github.com:ULCC-QMUL/moodle-format_qmulgrid.git
-	branch = develop_32
+	branch = develop_34
 [submodule "course/format/qmultc"]
 	path = course/format/qmultc
 	url = git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git
-	branch = qmplus34
+	branch = develop_34
 [submodule "course/format/qmulweeks"]
 	path = course/format/qmulweeks
 	url = git@github.com:ULCC-QMUL/moodle-course_format_qmulweeks.git
-	branch = develop_32
+	branch = develop_34
 [submodule "enrol/auto"]
 	path = enrol/auto
 	url = git@github.com:QMUL/moodle-enrol_auto.git
@@ -559,27 +560,27 @@
 [submodule "theme/qmul"]
 	path = theme/qmul
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul.git
-	branch = qmplus34
+	branch = develop_34
 [submodule "theme/qmul_humanities"]
 	path = theme/qmul_humanities
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul_humanities.git
-	branch = develop_32
+	branch = develop_34
 [submodule "theme/qmul_learning"]
 	path = theme/qmul_learning
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul_learning.git
-	branch = develop_32
+	branch = develop_34
 [submodule "theme/qmul_lifesciences"]
 	path = theme/qmul_lifesciences
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul_lifesciences.git
-	branch = develop_32
+	branch = develop_34
 [submodule "theme/qmul_medicine"]
 	path = theme/qmul_medicine
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul_medicine.git
-	branch = develop_32
+	branch = develop_34
 [submodule "theme/qmul_science"]
 	path = theme/qmul_science
 	url = git@github.com:ULCC-QMUL/moodle-theme_qmul_science.git
-	branch = develop_32
+	branch = develop_34
 [submodule "theme/adaptable"]
 	path = theme/adaptable
 	url = git@github.com:QMUL/moodle-theme_adaptable.git

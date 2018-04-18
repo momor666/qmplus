@@ -1,4 +1,4 @@
-version=3.2
+version=18040900
 
 #----------------------------------------------------------------------------------------------------------
 #
@@ -34,24 +34,24 @@ install_plugin () {
 		then
 		if [ $3 ] #there is a specific branch/tag given
 			then
-			if [ $submodules ] # if the submodule switch is present install plugin as submodule
+			if [ $single_repo ] # if the singel repo switch is present install plugin as code of one big repository
 				then
-				echo "==> add submodule $plugin as $plugin_name with branch $3"
-				[ $testing ] || git submodule add --force -b $3 $plugin $plugin_name
-			else
 				echo "==> clone repository $plugin as $plugin_name with branch $3"
 				[ $testing ] || git clone $plugin $plugin_name -b $3
 				[ $testing ] || rm -rf $plugin_name/.git # removing plugins GIT heritage to make it part of the qmplus repository
+			else
+				echo "==> add submodule $plugin as $plugin_name with branch $3"
+				[ $testing ] || git submodule add --force -b $3 $plugin $plugin_name
 			fi
 		else
-			if [ $submodules ]
+			if [ $single_repo ]
 				then
-				echo "==> add submodule $plugin as $plugin_name"
-				[ $testing ] || git submodule add --force $plugin $plugin_name
-			else
 				echo "==> clone repository $plugin as $plugin_name"
 				[ $testing ] || git clone $plugin $plugin_name
 				[ $testing ] || rm -rf $plugin_name/.git #
+			else
+				echo "==> add submodule $plugin as $plugin_name"
+				[ $testing ] || git submodule add --force $plugin $plugin_name
 			fi
 
 		fi
@@ -79,7 +79,7 @@ while getopts :fst x; do
             force_reinstall=1
             ;;
         s)
-            submodules=1
+            single_repo=1
             ;;
         t)
             testing=1
@@ -114,7 +114,7 @@ install_plugin git@github.com:ULCC-QMUL/talis-block_aspirelists.git aspirelists
 install_plugin git@github.com:ULCC-QMUL/moodle-block_assessment_information.git assessment_information master
 install_plugin git@github.com:danmarsden/moodle-block_attendance.git attendance
 #install_plugin git@github.com:netsapiensis/moodle-block_course_menu.git course_menu
-install_plugin git@github.com:QMUL/moodle-block_course_menu.git course_menu
+install_plugin git@github.com:ULCC-QMUL/moodle-block_course_menu.git course_menu dev
 install_plugin git@github.com:moodleuulm/moodle-block_course_overview_campus.git course_overview_campus
 install_plugin git@github.com:ULCC-QMUL/moodle-block_course_profile.git course_profile develop_32
 #install_plugin git@github.com:ULCC/public-moodle-block_reports.git reports
@@ -139,7 +139,7 @@ install_plugin git@github.com:QMUL/moodle-block_side_bar.git side_bar
 #install_plugin git@github.com:jfilip/moodle-block_side_bar.git side_bar
 install_plugin git@github.com:ULCC-QMUL/moodle-block_turningtech.git turningtech
 install_plugin git@github.com:QMUL/moodle-block_ulcc_diagnostics.git ulcc_diagnostics
-install_plugin git@github.com:ULCC-QMUL/moodle-block_widgets.git widgets
+install_plugin git@github.com:ULCC-QMUL/moodle-block_widgets.git widgets develop_34
 install_plugin git@github.com:moodlehq/moodle-block_messages.git messages
 install_plugin git@github.com:QMUL/moodle-block_accessibility.git accessibility
 install_plugin git@github.com:moodlehq/moodle-block_course_overview.git course_overview
@@ -156,18 +156,18 @@ install_plugin git@github.com:QMUL/moodle-block_course_contents.git course_conte
 
 #------------------------------------------------------------------------------------------
 chdir course/format/
-install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultopics.git qmultopics develop_32
+install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultopics.git qmultopics develop_34
 install_plugin git@github.com:ULCC-QMUL/moodle-format_landingpage.git landingpage
 #install_plugin git@github.com:gjb2048/moodle-format_topcoll.git topcoll master
 #install_plugin git@github.com:QMUL/moodle-format_topcoll.git topcoll
 install_plugin git@github.com:gjb2048/moodle-format_topcoll.git topcoll
 install_plugin git@github.com:marinaglancy/moodle-format_flexsections.git flexsections
-#install_plugin git@github.com:ULCC-QMUL/moodle-format_grid.git grid develop_32
+#install_plugin git@github.com:ULCC-QMUL/moodle-format_grid.git grid develop_34
 install_plugin git@github.com:QMUL/moodle-format_grid.git grid
-install_plugin git@github.com:ULCC-QMUL/moodle-format_qmulgrid.git qmulgrid develop_32
-#install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc qmplus34
-install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmulweeks.git qmulweeks develop_32
+install_plugin git@github.com:ULCC-QMUL/moodle-format_qmulgrid.git qmulgrid develop_34
+#install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmultc.git qmultc develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-course_format_qmulweeks.git qmulweeks develop_34
 
 #------------------------------------------------------------------------------------------
 chdir enrol/
@@ -269,7 +269,7 @@ install_plugin git@github.com:gbateson/moodle-mod_hotpot.git hotpot
 #install_plugin git@github.com:projectestac/moodle-mod_hvp.git hvp
 install_plugin git@github.com:QMUL/moodle-mod_hvp.git hvp
 install_plugin git@github.com:elearningsoftware/moodle-mod_journal.git journal
-install_plugin git@github.com:PoetOS/moodle-mod_questionnaire.git questionnaire MOODLE_34_STABLE
+install_plugin git@github.com:PoetOS/moodle-mod_questionnaire.git questionnaire
 install_plugin git@github.com:learnweb/moodle-mod_ratingallocate.git ratingallocate
 install_plugin git@github.com:bostelm/moodle-mod_scheduler.git scheduler
 install_plugin git@github.com:mudrd8mz/moodle-mod_subcourse.git subcourse
@@ -374,13 +374,13 @@ chdir theme/
 #install_plugin git@github.com:QMUL/moodle-theme_bloom.git bloom
 install_plugin git@github.com:gjb2048/moodle-theme_essential.git essential
 install_plugin git@github.com:ULCC-QMUL/moodle-theme_synergy_bootstrap.git synergy_bootstrap
-#install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul qmplus34
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_humanities.git qmul_humanities develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_learning.git qmul_learning develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_lifesciences.git qmul_lifesciences develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_medicine.git qmul_medicine develop_32
-install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_science.git qmul_science develop_32
+#install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul.git qmul develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_humanities.git qmul_humanities develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_learning.git qmul_learning develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_lifesciences.git qmul_lifesciences develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_medicine.git qmul_medicine develop_34
+install_plugin git@github.com:ULCC-QMUL/moodle-theme_qmul_science.git qmul_science develop_34
 install_plugin git@github.com:QMUL/moodle-theme_adaptable.git adaptable
 install_plugin git@github.com:QMUL/moodle-theme_klass.git klass
 
