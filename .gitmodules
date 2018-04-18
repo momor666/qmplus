@@ -31,7 +31,8 @@
 	url = git@github.com:danmarsden/moodle-block_attendance.git
 [submodule "blocks/course_menu"]
 	path = blocks/course_menu
-	url = git@github.com:QMUL/moodle-block_course_menu.git
+	url = git@github.com:ULCC-QMUL/moodle-block_course_menu.git
+	branch = dev
 [submodule "blocks/course_overview_campus"]
 	path = blocks/course_overview_campus
 	url = git@github.com:moodleuulm/moodle-block_course_overview_campus.git
@@ -593,3 +594,7 @@
 [submodule "user/profile/field/oidc"]
 	path = user/profile/field/oidc
 	url = git@github.com:QMUL/moodle-profilefield_oidc.git
+[submodule "course_menu"]
+	path = course_menu
+	url = git@github.com:ULCC-QMUL/moodle-block_course_menu.git
+	branch = dev
