@@ -1,4 +1,4 @@
-version=18040900
+version=18041900
 
 #----------------------------------------------------------------------------------------------------------
 #
@@ -269,7 +269,7 @@ install_plugin git@github.com:gbateson/moodle-mod_hotpot.git hotpot
 #install_plugin git@github.com:projectestac/moodle-mod_hvp.git hvp
 install_plugin git@github.com:QMUL/moodle-mod_hvp.git hvp
 install_plugin git@github.com:elearningsoftware/moodle-mod_journal.git journal
-install_plugin git@github.com:PoetOS/moodle-mod_questionnaire.git questionnaire
+install_plugin git@github.com:PoetOS/moodle-mod_questionnaire.git questionnaire MOODLE_34_STABLE
 install_plugin git@github.com:learnweb/moodle-mod_ratingallocate.git ratingallocate
 install_plugin git@github.com:bostelm/moodle-mod_scheduler.git scheduler
 install_plugin git@github.com:mudrd8mz/moodle-mod_subcourse.git subcourse
